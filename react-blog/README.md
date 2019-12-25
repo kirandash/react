@@ -15,3 +15,6 @@
 3. <Router/> wraps entire app component that is dynamic. And exact to match the path exactly otherwise everything will be mapped to root
 
 ### 01.04 Creating Pages
+
+### 01.05 Reacct-router links for navbar with Link
+1. import { Link } from "react-router-dome":
