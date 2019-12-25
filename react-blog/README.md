@@ -22,3 +22,5 @@
 ### 01.06 URL parameters with react-router
 1. <Route path="/article:name" component={ArticlePage} exact />
 2. { match }, .find and .map to loop through results
+
+### 01.07 Creating and Linking the articles List
