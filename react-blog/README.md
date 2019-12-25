@@ -13,3 +13,5 @@
 1. Install react-router for navigation: npm install --save react-router-dom
 2. import { BrowserRouter as Router, Route } from 'react-router-dom';
 3. <Router/> wraps entire app component that is dynamic. And exact to match the path exactly otherwise everything will be mapped to root
+
+### 01.04 Creating Pages
