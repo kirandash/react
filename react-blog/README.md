@@ -26,3 +26,6 @@
 ### 01.07 Creating and Linking the articles List
 
 ### 01.08 Making Article List Modular
+
+### 01.09 Creating a 404 page in React
+1. Switch makes sure that NotFoundPage does not appear on other pages aswell. Only one route is shown at a time.

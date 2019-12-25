@@ -1,7 +1,8 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom';
 
 import HomePage from './pages/HomePage';
@@ -11,6 +12,7 @@ import ArticlesListPage from './pages/ArticlesListPage';
 import NavBar from './components/NavBar';
 
 import './App.css';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
@@ -18,10 +20,13 @@ function App() {
       <div className="App">
         <NavBar />
         <div id="page-body">
-          <Route path="/" component={HomePage} exact />
-          <Route path="/about" component={AboutPage} exact />
-          <Route path="/articles-list" component={ArticlesListPage} exact />
-          <Route path="/article/:name" component={ArticlePage} exact />
+          <Switch>
+            <Route path="/" component={HomePage} exact />
+            <Route path="/about" component={AboutPage} exact />
+            <Route path="/articles-list" component={ArticlesListPage} exact />
+            <Route path="/article/:name" component={ArticlePage} exact />
+            <Route component={NotFoundPage} />
+          </Switch>
         </div>
       </div>
     </Router>
