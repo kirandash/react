@@ -5,3 +5,6 @@
 2. cd react-blog and npm start
 3. Project structure: public/index.html - entry point of our app, public/manifest.json : Used with mobile phones
 4. src/App.js: Root component of our blog, App.css and App.test.js are the CSS and test files for the root component
+
+### Create the APP component
+1. src/pages/HomePage.js, React.Fragment to wrap JSX expressions or <> and </>
