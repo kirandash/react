@@ -18,3 +18,7 @@
 
 ### 01.05 Reacct-router links for navbar with Link
 1. import { Link } from "react-router-dome":
+
+### 01.06 URL parameters with react-router
+1. <Route path="/article:name" component={ArticlePage} exact />
+2. { match }, .find and .map to loop through results
