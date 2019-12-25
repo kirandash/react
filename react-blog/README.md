@@ -24,3 +24,5 @@
 2. { match }, .find and .map to loop through results
 
 ### 01.07 Creating and Linking the articles List
+
+### 01.08 Making Article List Modular
