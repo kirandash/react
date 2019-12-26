@@ -1,0 +1,10 @@
+{
+  "name": "recipes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Kiran Dash",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./index.js"
+  }
+}
