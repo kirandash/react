@@ -10,6 +10,13 @@
 7. Commands: npm init, yarn init, npm install, yarn install, npm install package --save, yarn add package, npm run script, yarn script
 
 ## React Project Structure
+1. Module 1 Summary:
+1.1. Create project from scratch
+1.2. Initialize project using yarn
+1.3. JS and ES6
+1.4. Use babel to transpile code into plain JS
+1.5. Webpack and Webpack Dev Server
+
 ### 01.01 Start project
 1. mkdir recipes
 2. cd recipes, yarn init, add script in package.json file: node ./index.js, yarn start
@@ -63,3 +70,26 @@ yarn add @babel/preset-env --dev
 "babel-loader": "^8.0.6",
 "webpack": "^4.41.5",
 "webpack-cli": "^3.3.10"
+
+### 01.04 Set up a development server
+webpack-dev-server
+1. Express server
+2. Reads your webpack configuration file and keeps a fast in-memory bundle
+3. It'll watch your source files, and recompile the bundle whenever they are changed
+4. CLI or programmatic configuration
+5. Only for development
+
+Steps:
+1. yarn add webpack-dev-server
+2. This will install a binary in node_modules folder and can be run with the following command:
+3. node_modules/.bin/webpack-dev-server
+
+html-webpack-plugin
+1. Simplifies the creation of HTML files to serve your webpack bundles
+2. Injects a script tag for build.js into the target HTML, or even create the index.html if not present on the build process
+3. yarn add html-webpack-plugin
+4. Since this is a plugin, add it to plugin section of webpack config js file
+6. Run node_modules/.bin/webpack-dev-server, it will add the script file to html and run on server
+
+Build
+1. Run yarn build to created the dist folder with index.html and bundle.js file
