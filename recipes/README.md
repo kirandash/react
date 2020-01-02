@@ -34,3 +34,32 @@ This will convert ES6 code to plain JS code (function and import replaced by req
 10. We can define our presets in .babelrc file
 Then no need to mention presets in script
 ./node_modules/.bin/babel index.js -o ./bundle.js
+
+### 01.03 Understand and Configure Webpack
+Webpack helps bundle our project with the help of dependency graph.
+1. Entry: Starting point of the graph. From here, webpack starts following the imports to form the rest of the graph.
+2. Output: Explicit path where to save the output bundle
+3. Module: Any file, (JS, img, font, markdown etc)
+4. Loaders: Apply transformations to modules through the bundling process
+5. Plugins: Apply transformations on parts of the bundle output
+
+Steps:
+1. yarn add webpack --dev
+2. Like babel, this too installs a binary folder, to run it follow below:
+3. node_modules/.bin/webpack entrypoint output ex: node_modules/.bin/webpack ./index.js ./bundle.js
+(This will ask us to install webpack cli as well, pls proceed)
+
+Config:
+Like babel can be configured with .babelrc file. Webpack can be configured with webpack.config.js file
+
+After config just run the command: node_modules/.bin/webpack
+
+Add babel loader to webpack config. And add it to package: yarn add babel-loader. So that we don't have to run babel manually
+yarn add @babel/core --dev
+yarn add @babel/preset-env --dev
+
+"@babel/core": "^7.7.7",
+"@babel/preset-env": "^7.7.7",
+"babel-loader": "^8.0.6",
+"webpack": "^4.41.5",
+"webpack-cli": "^3.3.10"

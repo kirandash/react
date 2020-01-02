@@ -1,9 +1,5 @@
-import path from 'path';
+import log from './log'
 
-const log = (string) => {
-    console.log(string);
-}
+log("React Recipe Project with Webpack");
 
-console.log("React Recipe Project Started!");
-
-log('Hello World!!!');
+log('Hello World!');
