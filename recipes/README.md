@@ -112,3 +112,22 @@ Otherwise yarn build will throw error
 6. yarn add react-dom
 7. yarn build
 8. yarn start
+
+### 02.02 Use functional components
+1. Class Component: class App extends React.Component{ render(){ return (html...); } }
+2. Functional Component: const App = () => (html...);
+
+PROs:
+2.1 More readable/Easy to understand
+2.2 less boilerplate
+2.3 Easy to test (I/O function)
+2.4 Enforce good practices
+2.5 No this keyword
+2.6 Not bounded to react
+2.7 Optimized for performance
+
+CONs:
+2.1 Can't use lifecycle hooks
+2.2 Can't use state
+2.3 Can't use refs
+2.4 Need to convert to class component if any of the above is reqd
