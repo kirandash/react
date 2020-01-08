@@ -1,5 +1,7 @@
-import log from './log'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-log("React Recipe Project with Webpack");
+const MOUNT_ELEMENT = document.getElementById("root");
 
-log('Hello World!');
+ReactDOM.render(<App />, MOUNT_ELEMENT); // Mounter Function of react renderer, which mounts the App React component on DOM

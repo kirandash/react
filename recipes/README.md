@@ -93,3 +93,22 @@ html-webpack-plugin
 
 Build
 1. Run yarn build to created the dist folder with index.html and bundle.js file
+
+## Creating First Components
+Module Summary:
+
+### 02.01 Create and mount root component
+1. Renderers: It manage how a React tree turns into the underlying platform calls.
+2. React ----> Renderer(React-DOM, React-native, React-VR, React-PDF) ----> Underlying Platform(Browser, Apps, VR, PDF)
+3. Each renderer has a mounter function
+3.1. E.g. React-dom renderer: ReactDOM.render(<App />, rootEl);
+3.2 Mounter function called render
+3.3 Takes two arguments: React Component and DOM element
+3.4 The mounter function will recursively render the component, and inject it into the DOM element
+4. Add react to project: yarn add react : This project (16.12.0)
+5. This will still not render HTML in render. Need to install babel-react which will convert HTML code into createElement calls
+yarn add @babel/preset-react --dev
+Otherwise yarn build will throw error
+6. yarn add react-dom
+7. yarn build
+8. yarn start
