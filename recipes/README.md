@@ -153,3 +153,24 @@ propsTypes:
 2. Prevent unwanted bugs in component props
 3. Logs error in console. But they dont stop code execution
 4. Since React 16 it comes in a different package called prop-types. Before, it was part of the React public API.
+
+### 02.05 Make async request in the component life cycle
+1. Fetch API: Promise-based mechanism for programmatically making web requests in the browser. (Included in every modern browser)
+2. Set up Fetch Polyfill to support older browsers
+3. Defining env variables
+4. Using fetch to make async network calls
+5. Syntax:
+```fetch(<url>, {
+    method: <string>, // Get, Put, Post, Delete, Patch
+    body: <object>,
+    ...otherOptions
+}).then(res=>res.json());```
+6. Add dotenv: yarn add dotenv --dev
+It will search for .env file in the project folder and if found, it will make all its content accessible via process.env
+7. require('dotenv').config(); (In webpack.config)
+8. webpack.DefinePlugin to avoid repeating variable
+9. IMPORTANT NOTE: in Other Projects, ADD .env to .gitignore as .env is automatically added to process.env
+10. Fetch is not supported in older browsers. 
+Polyfill: ```yarn add whatwg-fetch```
+webpack.config.js:
+```entry: ['whatwg-fetch', './index.js']```

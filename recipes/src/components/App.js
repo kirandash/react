@@ -4,6 +4,9 @@ import Header from './Header.js';
 import RecipeList from './RecipeList.js';
 import RecipeDetail from './RecipeDetail.js';
 
+fetch(`${API_URL}/v1/recipes`) // template string
+    .then(res => res.json())
+    .then(json => console.log(json));
 // Class React Component
 // class App extends React.Component {
 //     render() {
