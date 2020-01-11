@@ -139,3 +139,17 @@ CONs:
 4. yarn add file-loader --dev
 5. yarn start
 6. yarn build (Will copy the image to dist folder)
+
+### 02.04 Compose components to create more complex UI
+Component Props:
+1. Should be read-only. Do not edit them inside the component
+2. Think of them as data that comes from the outside of component, no matter the source of it. (If you edit in component: you will have problem during debugging)
+3. Can be any type of data: numbers, arrays, objects, strings etc...
+4. In Class components: they are accessible via this.props
+5. In Functional components: they are accessible as arguments
+
+propsTypes:
+1. React uses propsTypes to help check type of a prop
+2. Prevent unwanted bugs in component props
+3. Logs error in console. But they dont stop code execution
+4. Since React 16 it comes in a different package called prop-types. Before, it was part of the React public API.
