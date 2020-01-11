@@ -17,6 +17,10 @@ module.exports = {
                 query: {
                     presets: ['@babel/preset-env']
                 }
+            },
+            {
+                test: /\.(png|jpeg)$/,
+                loader: 'file-loader' // A loader transforms modules during bundling eg file loader to process images
             }
         ]
     },

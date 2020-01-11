@@ -131,3 +131,11 @@ CONs:
 2.2 Can't use state
 2.3 Can't use refs
 2.4 Need to convert to class component if any of the above is reqd
+
+### 02.03 Import assets
+1. Configure webpack to accept image modules
+2. Understanding File loader (file-loader converts the import statements to render correct image path after build is done)
+3. Rendering an image inside our main component
+4. yarn add file-loader --dev
+5. yarn start
+6. yarn build (Will copy the image to dist folder)
