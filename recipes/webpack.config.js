@@ -15,11 +15,16 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
+                exclude: /node_modules/, // To exclude babel from compiling JS files from node_modules folder and limit it to only our code (No more warning during yarn start compilation)
                 loader: 'babel-loader', // A loader transforms modules during bundling eg babel
                 query: {
                     presets: ['@babel/preset-env']
                 }
             },
+            {
+                test: /\.css/,
+                loader: ['style-loader', 'css-loader', 'postcss-loader'] // A loader transforming CSS modules and injects it into head of index.html file during bundling
+            }, // Note that webpack applies loader from last one to first one
             {
                 test: /\.(png|jpeg)$/,
                 loader: 'file-loader' // A loader transforms modules during bundling eg file loader to process images

@@ -191,3 +191,71 @@ webpack.config.js:
 4. Tobe able to use arrow functions use the plugin plugin-proposal-class-properties.
 `yarn add @babel/plugin-proposal-class-properties`
 Add it to .babelrc presets plugin list
+
+## Styling
+Module Summary:
+
+### 03.01 Component styling: Different approaches
+Different ways of styling:
+1. Plain CSS: main.css --- Old school styling when pages were documents instead of apps. Hard to maintain in large scale: global naming, monolithic files, high coupling b/w components
+2. Inline styling: Use the style prop of React elements. Pro: CSS in JS. Cons: No CSS reusage, High coupling b/w markup and styles. Huge components.
+3. CSS Modules: Treat a CSS files as one module using webpack. Pro: Isolated CSS per component. No more global naming or monolithic files. Cons: Huge amount of files. (1 per component). No CSS reusage
+It is normal to use CSS modules with other CSS preprocessor such as SASS or LESS.
+4. Styled Components: CSS in JS solution that uses ES^ backtick syntax. Pro: CSS and JS altogether, Easy to define styles based on props, Good for animations. Cons: Odd syntax at first. Hard to style components with too many nested elements.
+5. Functional CSS: CSS toolkit with extensible predefined class Pro: Almost zero repitition, Enforce styleguide. Quick to prototype, PostCSS and CSSNext. Cons: Hard to apply scientific styles, Long Class names
+6. Other styling options: Radium, Aphrodite, Styletron, JSS
+
+### 03.02 Functional CSS:
+1. The real way to scale CSS is to stop writing CSS
+2. An overwhelming majority of CSS you would need for your site has already been written.
+
+Functional CSS is a CSS toolkit of predefined classes to add CSS to our app. Ex: `<p class="h1">This is h1</p>`
+Two main libraries:
+1. Basscss,
+2. Tachyons
+
+Pros of Functional CSS:
+1. Rarely write new CSS
+2. %99.99 reusable styles
+3. Team understanding
+4. Small CSS bundle ---> Faster load time
+5. Forces style guide
+6. No styles definition inside JS
+7. No component.scss
+
+Cons:
+1. Less semantic names
+2. Learn proprietary class names
+3. Fixed units for margin, padding etc
+4. Hacky when you need a custom style
+5. Find and replace problem
+
+### 03.03 Set up PostCSS and Basscss
+PostCSS:
+1. Tool for transforming styles with JS plugins
+2. PostCSS is to CSS what is babel is to JS
+3. 200+ plugins
+4. Webpack integration via a loader
+5. Enables us to write CSSNext
+
+CSSNext:
+1. Plugin helps you to use latest CSS syntax today
+2. CSSNext is to CSS, what ES6 to JS
+3. Features: 
+3.1 Automatic vendor prefixer
+3.2 Custom properties and var()
+3.3 Nesting
+3.4 Many color fns (grey, rgba, color etc)
+
+Basscss:
+1. Functional CSS implementation
+2. One core package (basscss)
+3. Many addons: basscss-btn, basscss-btn-primary, basscss-colors, basscss-background-colors
+4. Core and addons are extensible and configurable by editing some root variables
+5. yarn add style-loader --dev
+6. yarn add postcss --dev
+7. yarn add postcss-cssnext --dev
+8. yarn add postcss-import --dev (So that we can use @import statements in .css files)
+9. yarn add css-loader --dev
+10. yarn add postcss-loader --dev (will take all the files and transpile them, which will feed them to css-loader i.e. helps in resolving the require statements)
+11. yarn add basscss basscss-colors basscss-background-colors
