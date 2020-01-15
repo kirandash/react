@@ -96,6 +96,11 @@ Build
 
 ## Creating First Components
 Module Summary:
+1. Write and mount React root component
+2. Difference b/w Functional and Class component
+3. React Component
+4. Network Request
+5. State API of React Component
 
 ### 02.01 Create and mount root component
 1. Renderers: It manage how a React tree turns into the underlying platform calls.
@@ -159,18 +164,30 @@ propsTypes:
 2. Set up Fetch Polyfill to support older browsers
 3. Defining env variables
 4. Using fetch to make async network calls
-5. Syntax:
-```fetch(<url>, {
+5. Syntax: `fetch(<url>, {
     method: <string>, // Get, Put, Post, Delete, Patch
     body: <object>,
     ...otherOptions
-}).then(res=>res.json());```
+}).then(res=>res.json());`
 6. Add dotenv: yarn add dotenv --dev
 It will search for .env file in the project folder and if found, it will make all its content accessible via process.env
 7. require('dotenv').config(); (In webpack.config)
 8. webpack.DefinePlugin to avoid repeating variable
 9. IMPORTANT NOTE: in Other Projects, ADD .env to .gitignore as .env is automatically added to process.env
 10. Fetch is not supported in older browsers. 
-Polyfill: ```yarn add whatwg-fetch```
+Polyfill: `yarn add whatwg-fetch`
 webpack.config.js:
-```entry: ['whatwg-fetch', './index.js']```
+`entry: ['whatwg-fetch', './index.js']`
+
+### 02.06 Use the state to make your components dynamic
+1. Using Component Lifecycle hooks
+1.1 Mounting: componentWillMount, componentDidMount
+1.2 Mounted: componentWillReceiveProps, shouldComponentUpdate, componentWillUpdate, componentDidUpdate
+1.3 Unmounting: componentWillMount
+2. Using Component state API
+2.1 State API: Data needed by the component that it can change over time (while props are readonly)
+2.2 Intitialize with state `this.state ={...}`, Accessing state with `variable = this.state`, Editing state with `this.setState({...})`
+3. Handling Zero state of components
+4. Tobe able to use arrow functions use the plugin plugin-proposal-class-properties.
+`yarn add @babel/plugin-proposal-class-properties`
+Add it to .babelrc presets plugin list
