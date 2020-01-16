@@ -4,3 +4,29 @@
 /* Add Ons */
 @import "basscss-colors";
 @import "basscss-background-colors";
+
+@import "./borders";
+@import "./shame.css";
+
+/* Customizing Core basscss by overriding basscss variables in the root section */
+:root {
+    --h1: 70px;
+    --h2: 50px;
+    --black: #222;
+    --lime: #cdebdb;
+}
+
+* {
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--black);
+}
+
+body {
+    background-color: var(--lime);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0.4em 0px;
+    font-family: 'Oswald', sans-serif;
+}

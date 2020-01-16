@@ -3,7 +3,7 @@ const postcssImport = require('postcss-import');
 
 module.exports = {
     plugins: [
-        postcssCssNext,
-        postcssImport
+        postcssImport,
+        postcssCssNext
     ]
-}; // Note that plugins order here is important, Plugins are applied from last to the first. First postcssImport is resoled and then postcssCssNext is resolved
+}; // Note that plugins order here is important, Plugins are applied from last to the first. First postcssCssNext is resoled and then postcssImport is resolved

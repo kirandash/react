@@ -259,3 +259,10 @@ Basscss:
 9. yarn add css-loader --dev
 10. yarn add postcss-loader --dev (will take all the files and transpile them, which will feed them to css-loader i.e. helps in resolving the require statements)
 11. yarn add basscss basscss-colors basscss-background-colors
+
+### 03.04 Adapt Basscss to our site style guide
+1. Override basscss with `:root {}`
+2. px4: padding of 4 spaces on x axis : left and right not top and bottom
+3. py2: padding y axis : top and bottom
+4. `yarn add classnames` to handle classnames. As ``className={`p2 bg-white ${props.className}`}>`` has chances where props.className might become null
+Syntax: `className={classNames('p2 bg-white', props.className)}` This won't render if one of the value ie. props.className is null

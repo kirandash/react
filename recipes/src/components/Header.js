@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Header = () => (
-    <header>
-        <h1 className="red">React Recipes</h1>
+    <header className="px4">
+        <h1 className="h1">🍽️ React Recipes</h1>
     </header>
 );
 
