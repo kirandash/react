@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 const RecipeDetail = (props) => {
     if(!props.recipe){
@@ -10,7 +11,7 @@ const RecipeDetail = (props) => {
     return (
         <div style={props.style}  className={classNames('p2 bg-white', props.className)}>
             <h2 className="h2">{props.recipe.name}</h2>
-            <img src={props.recipe.image} className="fit"/>
+            <img src={props.recipe.image} className="fit" alt={props.recipe.name} />
             <div>
                 <span>{props.recipe.category}</span>
                 <span>{props.recipe.calories}</span>
@@ -31,6 +32,12 @@ const RecipeDetail = (props) => {
             </ol>
         </div>
     )
+};
+
+RecipeDetail.propTypes = {
+    recipe: PropTypes.Object,
+    className: PropTypes.string,
+    style: PropTypes.Object
 };
 
 export default RecipeDetail;

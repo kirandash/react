@@ -9,8 +9,10 @@
     ],
     "globals": {
         "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "SharedArrayBuffer": "readonly",
+        "API_URL": true // To make sure that API_URL is globally available and ESLint ignores it (To fix API_URL is not defined error)
     },
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -21,5 +23,9 @@
         "react"
     ],
     "rules": {
+        "react/jsx-filename-extension": 0, // disabling a rule
+        "react/react/require-default-props": 0,
+        "react/forbid-prop-types": 0,
+        "react/jsx-a11y/click-events-have-key-events": 0
     }
 }

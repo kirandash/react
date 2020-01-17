@@ -291,3 +291,6 @@ Install ESLint and use airbnb guide
 3. yarn lint
 4. ./node_modules/.bin/eslint --init
 5. yarn lint : will throw all errors (Not all are syntax errors)
+6. yarn add babel-eslint --dev
+7. eslintrc.json: "parser": "babel-eslint", (This will not show all errors. And filter out only syntax errors)
+8. yarn add prop-types
