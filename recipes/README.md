@@ -266,3 +266,28 @@ Basscss:
 3. py2: padding y axis : top and bottom
 4. `yarn add classnames` to handle classnames. As ``className={`p2 bg-white ${props.className}`}>`` has chances where props.className might become null
 Syntax: `className={classNames('p2 bg-white', props.className)}` This won't render if one of the value ie. props.className is null
+
+### 03.05 Code styling: Following a style guide
+1. Linter: Tool that detects and flags errors in programming languages without executing them.
+
+Benefits of linter:
+1. Warns about code syntax (ex: missing closing bracket) before running the code
+2. Enforce good practices
+3. Quick debugging
+4. Follow a styleguide b/w team members
+
+ESLint:
+Open Source JS Lint library
+1. You can configure own set of code rules
+2. Every rule is standalone, and can be individually plugged on or off, set as warning or error.
+3. ESLint does not promote any particular coding style
+4. Rules are usually shipped in plugins that you can plug into your ESLint config
+5. You can also extend from predefined style guides, so you don't have to setup all rules every time.
+
+### 03.06 Setup ESLint
+Install ESLint and use airbnb guide
+1. yarn add eslint --dev
+2. package.json: "lint": "./node_modules/.bin/eslint ./src"
+3. yarn lint
+4. ./node_modules/.bin/eslint --init
+5. yarn lint : will throw all errors (Not all are syntax errors)
