@@ -4,47 +4,54 @@ import Header from './Header';
 import RecipeList from './RecipeList';
 import RecipeDetail from './RecipeDetail';
 
-
 // Class React Component
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            recipes: [],
-            currentRecipe: null
-        };
-        // Explicitly bind the function to constructor so that the fn is in the scope of the class, because the fn is not in the scope of the class by default
-        this.onRecipeClick = this.onRecipeClick.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      recipes: [],
+      currentRecipe: null,
+    };
+    // Explicitly bind the function to constructor so that the fn is in the scope of the class, because the fn is not in the scope of the class by default
+    this.onRecipeClick = this.onRecipeClick.bind(this);
+  }
 
-    componentDidMount() {
-        fetch(`${API_URL}/v1/recipes`) // template string
-            .then((res) => res.json())
-            .then((recipes) => {
-                this.setState({ recipes });
-            });
-    }
+  componentDidMount() {
+    fetch(`${API_URL}/v1/recipes`) // template string
+      .then(res => res.json())
+      .then(recipes => {
+        this.setState({ recipes });
+      });
+  }
 
-    onRecipeClick = (id) => {
-        fetch(`${API_URL}/v1/recipes/${id}`) // template string
-            .then((res) => res.json())
-            .then((recipe) => {
-                this.setState({ currentRecipe: recipe });
-            });
-    }
+  onRecipeClick = id => {
+    fetch(`${API_URL}/v1/recipes/${id}`) // template string
+      .then(res => res.json())
+      .then(recipe => {
+        this.setState({ currentRecipe: recipe });
+      });
+  };
 
-    render() {
-        const { recipes, currentRecipe } = this.state;
-        return (
-            <div>
-                <Header/>
-                <main className="px4 flex">
-                    <RecipeList style={{ flex: 3 }} recipes={recipes} onClick={this.onRecipeClick}/>
-                    <RecipeDetail style={{ flex: 5 }} recipe={currentRecipe} className="ml4"/>
-                </main>
-            </div>
-        );
-    }
+  render() {
+    const { recipes, currentRecipe } = this.state;
+    return (
+      <div>
+        <Header />
+        <main className="px4 flex">
+          <RecipeList
+            style={{ flex: 3 }}
+            recipes={recipes}
+            onClick={this.onRecipeClick}
+          />
+          <RecipeDetail
+            style={{ flex: 5 }}
+            recipe={currentRecipe}
+            className="ml4"
+          />
+        </main>
+      </div>
+    );
+  }
 }
 // console.log(Logo); // Logo variable has the image content. File loader converts it and returns the path that can be used in react component
 // Functional React Component

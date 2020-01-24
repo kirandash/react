@@ -294,3 +294,16 @@ Install ESLint and use airbnb guide
 6. yarn add babel-eslint --dev
 7. eslintrc.json: "parser": "babel-eslint", (This will not show all errors. And filter out only syntax errors)
 8. yarn add prop-types
+
+### 03.07 Set up Prettier
+1. Tool for building and enforcing a style guide.
+2. Prettier transforms your code to match your style guide
+3. `yarn add prettier --dev`
+4. Run prettier on every js file in src folder: `./node_modules/.bin/prettier ./src/*.js --write`
+5. Avoid conflict with ESlint on Double quote, single quote:
+`{
+    "singleQuote": true
+}`
+6. `./node_modules/.bin/prettier ./src/components/*.js --write`
+7. `yarn add eslint-config-prettier --dev`
+8. Now everything is properly set up. So, let's run eslint and prettier. `./node_modules/.bin/prettier ./src/*.js --write` and `yarn lint`
