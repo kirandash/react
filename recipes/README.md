@@ -345,3 +345,9 @@ Switch
 1. React-router helper component
 2. Renders the first child <Route> that matches the location. Thus order is important.
 3. If no matches are found then the last Route component will be displayed.
+
+### 04.03 Handle redirects
+React-router-dom helps us handle redirects in a declarative way. Using "Redirect"
+Redirect:
+1. React-router helper
+2. If the from value match the current location, the router will handle the redirection to the to value.
