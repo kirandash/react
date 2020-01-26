@@ -22,10 +22,10 @@ const RecipeList = ({ style, favorites, recipes, ...props }) => (
     <ul className="list-reset">
       {recipes.map(recipe => (
         <RecipeListItem
-          recipe = {recipe}
+          recipe={recipe}
           favorited={favorites.includes(recipe.id)}
           {...props}
-          key = {recipe.id}
+          key={recipe.id}
         />
       ))}
     </ul>

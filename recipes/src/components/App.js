@@ -6,17 +6,17 @@ import Header from './Header';
 import NotFound from './NotFound';
 
 const App = () => (
-    <BrowserRouter>
-        <main>
-            <Header/>
-            <Switch>
-                <Redirect from="/home" to="/" />
-                <Route exact path="/" component={Home} />
-                <Route exact path="/favorites" component={Favorites} />
-                <Route component={NotFound} />
-            </Switch>
-        </main>
-    </BrowserRouter>
+  <BrowserRouter>
+    <main>
+      <Header />
+      <Switch>
+        <Redirect from="/home" to="/" />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/favorites" component={Favorites} />
+        <Route component={NotFound} />
+      </Switch>
+    </main>
+  </BrowserRouter>
 );
 
 export default App;

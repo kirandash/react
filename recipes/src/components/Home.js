@@ -34,14 +34,15 @@ class Home extends React.Component {
 
   toggleFavorite = id => {
     // console.log(id);
-    this.setState(({ favorites, ...state }) => { // Destructuring to get the favorites and the rest of the state from state
+    this.setState(({ favorites, ...state }) => {
+      // Destructuring to get the favorites and the rest of the state from state
       const idx = favorites.indexOf(id);
-      if(idx !== -1) {
-        return { ...state, favorites: favorites.filter(f => f.id !== id) }
+      if (idx !== -1) {
+        return { ...state, favorites: favorites.filter(f => f.id !== id) };
       }
       return { ...state, favorites: [...favorites, id] };
     }); // Recommended to use a fn instead of JSON object since can get return data and pass more values
-  }
+  };
 
   render() {
     const { recipes, favorites, currentRecipe } = this.state;
