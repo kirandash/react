@@ -194,7 +194,12 @@ Add it to .babelrc presets plugin list
 
 ## Styling
 Module Summary:
-
+1. Styling a component with Functional CSS
+2. Post CSS and CSSNext
+3. Configure Basscss in your project
+4. Functional CSS 
+5. Code styling
+6. Linter and ESLint
 ### 03.01 Component styling: Different approaches
 Different ways of styling:
 1. Plain CSS: main.css --- Old school styling when pages were documents instead of apps. Hard to maintain in large scale: global naming, monolithic files, high coupling b/w components
@@ -312,3 +317,26 @@ Install ESLint and use airbnb guide
 Flow: Pre-Commit ---> Lint ---> Fail? ---> Show Errors ---> Success? ---> Prettier ---> Persist
 1. `yarn add husky --dev` : Helps us execute precommit command. Add precommit to scripts in package.json file
 2. `yarn add lint-staged --dev` : Helps to run a set of commands and the commit will fail if there is any error
+
+## 4. Routing
+Module Summary:
+
+### 04. 01 React router to create basic routing
+React Router:
+1. Declarative routing for React
+2. Available for both DOM and native environments
+3. React-Router v3.x !== v4.x
+
+Keywords:
+1. BrowserRouter: Component that uses the HTML5 history API to keep your UI in sync with the URL.
+2. Route: To render some UI when a location matches the route's path
+
+Steps:
+1. `yarn add react-router-dom`
+2. `yarn start`
+3. To load the route properly on dev server: modify webpack.config.js: 
+`devServer: {
+    historyApiFallback: true,
+}`
+It will make sure that 404s will fall back to index.html file and thus loading the routes properly on webpack server
+
