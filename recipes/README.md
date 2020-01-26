@@ -340,3 +340,8 @@ Steps:
 }`
 It will make sure that 404s will fall back to index.html file and thus loading the routes properly on webpack server
 
+### 04.02 Handle 404 requests
+Switch
+1. React-router helper component
+2. Renders the first child <Route> that matches the location. Thus order is important.
+3. If no matches are found then the last Route component will be displayed.
