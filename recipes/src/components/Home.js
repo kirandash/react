@@ -9,6 +9,7 @@ class Home extends React.Component {
     super(props);
     this.state = {
       recipes: [],
+      favorites: [],
       currentRecipe: null,
     };
     // Explicitly bind the function to constructor so that the fn is in the scope of the class, because the fn is not in the scope of the class by default
@@ -31,8 +32,19 @@ class Home extends React.Component {
       });
   };
 
+  toggleFavorite = id => {
+    // console.log(id);
+    this.setState(({ favorites, ...state }) => { // Destructuring to get the favorites and the rest of the state from state
+      const idx = favorites.indexOf(id);
+      if(idx !== -1) {
+        return { ...state, favorites: favorites.filter(f => f.id !== id) }
+      }
+      return { ...state, favorites: [...favorites, id] };
+    }); // Recommended to use a fn instead of JSON object since can get return data and pass more values
+  }
+
   render() {
-    const { recipes, currentRecipe } = this.state;
+    const { recipes, favorites, currentRecipe } = this.state;
     return (
       <div>
         <main className="px4 flex">
@@ -40,6 +52,8 @@ class Home extends React.Component {
             style={{ flex: 3 }}
             recipes={recipes}
             onClick={this.onRecipeClick}
+            onFavorited={this.toggleFavorite}
+            favorites={favorites}
           />
           <RecipeDetail
             style={{ flex: 5 }}

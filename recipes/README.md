@@ -355,3 +355,5 @@ Redirect:
 ### 04.04 Add links to different routes with NavLink
 1. NavLink component to navigate through routes
 2. activeClassName, from, to, children and ...props
+
+### 04.05 Implement favorites
