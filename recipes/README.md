@@ -351,3 +351,7 @@ React-router-dom helps us handle redirects in a declarative way. Using "Redirect
 Redirect:
 1. React-router helper
 2. If the from value match the current location, the router will handle the redirection to the to value.
+
+### 04.04 Add links to different routes with NavLink
+1. NavLink component to navigate through routes
+2. activeClassName, from, to, children and ...props

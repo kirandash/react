@@ -12,7 +12,7 @@ const App = () => (
             <Switch>
                 <Redirect from="/home" to="/" />
                 <Route exact path="/" component={Home} />
-                <Route path="/favorites" component={Favorites} />
+                <Route exact path="/favorites" component={Favorites} />
                 <Route component={NotFound} />
             </Switch>
         </main>
