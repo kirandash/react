@@ -307,3 +307,8 @@ Install ESLint and use airbnb guide
 6. `./node_modules/.bin/prettier ./src/components/*.js --write`
 7. `yarn add eslint-config-prettier --dev`
 8. Now everything is properly set up. So, let's run eslint and prettier. `./node_modules/.bin/prettier ./src/*.js --write` and `yarn lint`
+
+### 03.08 Wrap everything up with a git hook
+Flow: Pre-Commit ---> Lint ---> Fail? ---> Show Errors ---> Success? ---> Prettier ---> Persist
+1. `yarn add husky --dev` : Helps us execute precommit command. Add precommit to scripts in package.json file
+2. `yarn add lint-staged --dev` : Helps to run a set of commands and the commit will fail if there is any error
