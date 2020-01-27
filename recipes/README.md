@@ -371,3 +371,25 @@ Redirect:
 1. http://localhost:8080/recipe/2 will throw an error recipe/bundle.js not found. To fix this, modify your webpack configuration. `publicPath: '/'`
 2. `const { id } = this.props.match.params` match props has all the info related to URL visited by user in react application
 3. Use a Link from react-router-dom to navigate to details page.
+
+## 5. Components Testing
+### 05.01 Configure Jest
+JEST:
+1. JS Testing engine
+2. Fast and sandboxed
+3. Built-in coverage reports
+4. Snapshot testing support
+5. Automatic integration with babel
+6. Easy to configure
+
+JEST Test API:
+1. The describe fn creates a block that groups together several realted tests in one suite.
+`describe('Test module name', () => {});`
+2. Test fn also called it, defines a new test to be run.
+`test('Test name', () => {})`
+3. Callbacks that can be configured in certain moments of the tests execution: beforeEach, beforeAll, afterEach, afterAll.
+
+Installation:
+1. `yarn add jest --dev`
+2. `yarn add eslint-plugin-jest --dev`: To avoid eslint warnihngs for jest
+3. After adding script: run `yarn test` which will automatically identify the jest.config.js file and perform accordingly.
