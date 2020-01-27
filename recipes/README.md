@@ -357,3 +357,6 @@ Redirect:
 2. activeClassName, from, to, children and ...props
 
 ### 04.05 Implement favorites
+
+### 04.06 Share state between routes
+1. States can be shared only b/w siblings from parent. So better to manage all your state at parent level.

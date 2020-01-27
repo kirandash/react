@@ -2,27 +2,28 @@ import React from 'react';
 // import Logo from './static/images/logo.png';
 import RecipeList from './RecipeList';
 import RecipeDetail from './RecipeDetail';
+import PropTypes from 'prop-types';
 
 // Class React Component
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      recipes: [],
-      favorites: [],
+      // recipes: [],
+      // favorites: [],
       currentRecipe: null,
     };
     // Explicitly bind the function to constructor so that the fn is in the scope of the class, because the fn is not in the scope of the class by default
     this.onRecipeClick = this.onRecipeClick.bind(this);
   }
 
-  componentDidMount() {
-    fetch(`${API_URL}/v1/recipes`) // template string
-      .then(res => res.json())
-      .then(recipes => {
-        this.setState({ recipes });
-      });
-  }
+  // componentDidMount() {
+  //   fetch(`${API_URL}/v1/recipes`) // template string
+  //     .then(res => res.json())
+  //     .then(recipes => {
+  //       this.setState({ recipes });
+  //     });
+  // }
 
   onRecipeClick = id => {
     fetch(`${API_URL}/v1/recipes/${id}`) // template string
@@ -32,30 +33,34 @@ class Home extends React.Component {
       });
   };
 
-  toggleFavorite = id => {
-    // console.log(id);
-    this.setState(({ favorites, ...state }) => {
-      // Destructuring to get the favorites and the rest of the state from state
-      const idx = favorites.indexOf(id);
-      if (idx !== -1) {
-        return { ...state, favorites: favorites.filter(f => f.id !== id) };
-      }
-      return { ...state, favorites: [...favorites, id] };
-    }); // Recommended to use a fn instead of JSON object since can get return data and pass more values
-  };
+  // toggleFavorite = id => {
+  //   // console.log(id);
+  //   this.setState(({ favorites, ...state }) => {
+  //     // Destructuring to get the favorites and the rest of the state from state
+  //     const idx = favorites.indexOf(id);
+  //     if (idx !== -1) {
+  //       return { ...state, favorites: favorites.filter(f => f.id !== id) };
+  //     }
+  //     return { ...state, favorites: [...favorites, id] };
+  //   }); // Recommended to use a fn instead of JSON object since can get return data and pass more values
+  // };
 
   render() {
-    const { recipes, favorites, currentRecipe } = this.state;
+    const { recipes, favorites } = this.props.state; // state is being sent as props
+    const { currentRecipe } = this.state;
+    // const { recipes, favorites, currentRecipe } = this.state;
     return (
       <div>
         <main className="px4 flex">
-          <RecipeList
-            style={{ flex: 3 }}
-            recipes={recipes}
-            onClick={this.onRecipeClick}
-            onFavorited={this.toggleFavorite}
-            favorites={favorites}
-          />
+          <div style={{ flex: 3 }}>
+            <h2 className="h2">Recipes</h2>
+            <RecipeList
+              recipes={recipes}
+              onClick={this.onRecipeClick}
+              onFavorited={this.props.toggleFavorite}
+              favorites={favorites}
+            />
+          </div>
           <RecipeDetail
             style={{ flex: 5 }}
             recipe={currentRecipe}
@@ -77,5 +82,10 @@ class Home extends React.Component {
         </main>
     </div>
 ); */
+
+Home.propTypes = {
+  state: PropTypes.object,
+  toggleFavorite: PropTypes.func
+}
 
 export default Home;

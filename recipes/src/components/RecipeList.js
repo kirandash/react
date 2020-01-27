@@ -16,9 +16,7 @@ import RecipeListItem from './RecipeListItem';
 //     </div>
 // );
 
-const RecipeList = ({ style, favorites, recipes, ...props }) => (
-  <div style={style}>
-    <h2 className="h2">Recipes</h2>
+const RecipeList = ({ favorites, recipes, ...props }) => (
     <ul className="list-reset">
       {recipes.map(recipe => (
         <RecipeListItem
@@ -29,13 +27,11 @@ const RecipeList = ({ style, favorites, recipes, ...props }) => (
         />
       ))}
     </ul>
-  </div>
 );
 
 RecipeList.propTypes = {
   recipes: PropTypes.Object,
   favorites: PropTypes.Object,
-  style: PropTypes.Object,
 };
 
 export default RecipeList;
