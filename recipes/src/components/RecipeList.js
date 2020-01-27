@@ -34,4 +34,9 @@ RecipeList.propTypes = {
   favorites: PropTypes.Object,
 };
 
+RecipeList.defaultProps = {
+  recipes: [],
+  favorites: []
+}
+
 export default RecipeList;

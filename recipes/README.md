@@ -410,3 +410,7 @@ How?
 3. `yarn add react-test-renderer --dev`
 4. While testing always think of Component as i/p o/p fns. What i/ps it will eg props, states etc and what o/p it will generate using that.
 5. yarn test
+
+### 05.03 Spec for other Component with i/ps
+Note: If we change test cases, earlier snapshots still exists and might throw errors. So better to update the snapshots by running the command:
+`yarn test -- -u` to test by updating snapshot values.
