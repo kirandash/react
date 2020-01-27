@@ -320,6 +320,12 @@ Flow: Pre-Commit ---> Lint ---> Fail? ---> Show Errors ---> Success? ---> Pretti
 
 ## 4. Routing
 Module Summary:
+1. react routers
+2. creating route
+3. Handling 404 requests with Switch
+4. Handling redirects
+5. Sharing state b/w diff routes
+6. Get data from URLs
 
 ### 04. 01 React router to create basic routing
 React Router:
@@ -360,3 +366,8 @@ Redirect:
 
 ### 04.06 Share state between routes
 1. States can be shared only b/w siblings from parent. So better to manage all your state at parent level.
+
+### 04.07 Get parameters from URLs
+1. http://localhost:8080/recipe/2 will throw an error recipe/bundle.js not found. To fix this, modify your webpack configuration. `publicPath: '/'`
+2. `const { id } = this.props.match.params` match props has all the info related to URL visited by user in react application
+3. Use a Link from react-router-dom to navigate to details page.

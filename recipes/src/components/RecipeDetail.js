@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const RecipeDetail = props => {
   if (!props.recipe) {
@@ -36,6 +37,11 @@ const RecipeDetail = props => {
         <li>Second do this</li>
         <li>Third do this</li>
       </ol>
+      <Link
+        to={`/recipe/${props.recipe.id}`}
+      >
+        See more
+      </Link>
     </div>
   );
 };

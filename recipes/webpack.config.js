@@ -9,7 +9,8 @@ module.exports = {
     entry: ['whatwg-fetch', './index.js'], // starting point of app (src/index.js) // First load polyfill for fetch API and then build the dependency graph for index.js file
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: './bundle.js'
+        filename: './bundle.js',
+        publicPath: '/' // To make sure recipe/2 loads properly
     }, // output path and file name after processing entry file with loader and plugins (dist/bundle.js)
     module: {
         rules: [
