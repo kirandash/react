@@ -393,3 +393,20 @@ Installation:
 1. `yarn add jest --dev`
 2. `yarn add eslint-plugin-jest --dev`: To avoid eslint warnihngs for jest
 3. After adding script: run `yarn test` which will automatically identify the jest.config.js file and perform accordingly.
+
+### 05.02 Use snapshots to test React components
+Snapshot Testing:
+1. Easy way of creating unit tests of components
+2. Consists of creating a file and saving the test's success o/p on it
+3. Every time test runs, compare i/p with file content: --> If same: Test succeded. If diff ---> Test failed
+
+How?
+1. The `toMatchSnapshot` fn does all the job:
+---> If it's the first time the test runs, takes the JSON tree and saves it.
+---> If snapshot exists, it compares it with the i/p JSON & check if matches
+`test('Test name', () => { expect(json).toMatchSnapshot(); })`
+2. React Test renderer: React official renderer to create representations of a component.
+`component = renderer.create(<Component/>); tree = component.toJSON()`
+3. `yarn add react-test-renderer --dev`
+4. While testing always think of Component as i/p o/p fns. What i/ps it will eg props, states etc and what o/p it will generate using that.
+5. yarn test
