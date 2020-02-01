@@ -7,7 +7,26 @@ A react project for Understanding APIs in React
 ## React Project Structure
 1. Module 1 Summary:
 1.1. Intitialize project with create-react-app
+1.2. Register an account with newsapi
 
 ### 01.01 Initialize a React project
 1. create-react-app portal
 2. npm start
+
+### 01.02 Concepts
+RESTful APIs
+1. Use HTTP protocols to do transactions with backend
+2. Use GET, POST, PUT, DELETE calls to the backend
+3. Interact with endpoints created on backend
+
+Asynchronous vs Synchronous Code
+1. Sync: Seq code execution. Thus if code halts, next code won't execute. But in async, next code execution won't halt
+
+### 01.03 Intro to API
+https://newsapi.org/
+
+## Fetch method for APIs
+1. Module 2 Summary:
+1.1. Initial component for news
+
+### 02.01 Create news component, Fetch data & update ur state
