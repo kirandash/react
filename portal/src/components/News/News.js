@@ -33,9 +33,9 @@ class News extends React.Component {
 
     render() {
         return (
-            <ul>
+            <div className="row">
                 {this.renderItems()}
-            </ul>
+            </div>
         )
     }
 }

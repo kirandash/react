@@ -4,7 +4,7 @@ A react project for Understanding APIs in React
 ## Tools needed
 1. node, postman, create-react-app
 
-## React Project Structure
+## 01 React Project Structure
 1. Module 1 Summary:
 1.1. Intitialize project with create-react-app
 1.2. Register an account with newsapi
@@ -25,8 +25,11 @@ Asynchronous vs Synchronous Code
 ### 01.03 Intro to API
 https://newsapi.org/
 
-## Fetch method for APIs
+## 02 Fetch method for APIs
 1. Module 2 Summary:
 1.1. Initial component for news
 
 ### 02.01 Create news component, Fetch data & update ur state
+
+### 02.02 Finalize component with data
+1. Style with https://materializecss.com/
