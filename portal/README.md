@@ -55,3 +55,5 @@ Install:
 ### 03.02 Create SideNews
 
 ### 03.03 Axios Get and POST
+
+### 03.04 Add an error component for Fetch errors

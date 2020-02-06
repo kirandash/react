@@ -1,12 +1,14 @@
 import React from 'react';
-import SingleSide from './SingleSide';
 import axios from 'axios';
+import SingleSide from './SingleSide';
+import Error from './Error';
 
 class SideNews extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            sidenews: []
+            sidenews: [],
+            error: false
         }
     }
 
@@ -34,7 +36,11 @@ class SideNews extends React.Component {
                     sidenews: response.data.articles
                 })
             })
-            .catch((error) => console.log(error));
+            .catch((error) => {
+                this.setState({
+                    error: true
+                })
+            });
         
         // POST example
         // axios.post(url, { // url, config for sending data
@@ -49,9 +55,13 @@ class SideNews extends React.Component {
     }
 
     renderItems() {
-        return this.state.sidenews.map((item, index) => (
-            <SingleSide key={index} item={item} />
-        ));
+        if(!this.state.error){
+            return this.state.sidenews.map((item, index) => (
+                <SingleSide key={index} item={item} />
+            ));
+        }else{
+            return <Error/>
+        }
     }
 
     render() {

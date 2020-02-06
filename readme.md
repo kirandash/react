@@ -8,3 +8,4 @@ Projects:
 
 Basic Helpful React Tips:
 1. Create-react-app: Package to help create react apps with ease - npm install -g create-react-app
+2. Importing resources Order: imports from node module packages should be on top. And local imports should be next.
