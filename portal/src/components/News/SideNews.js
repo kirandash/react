@@ -1,5 +1,6 @@
 import React from 'react';
 import SingleSide from './SingleSide';
+import axios from 'axios';
 
 class SideNews extends React.Component {
     constructor(props){
@@ -24,7 +25,27 @@ class SideNews extends React.Component {
         //         console.log(error);
         //     });
         
-        // Replace Fetch with Axios 
+        // Replace Fetch with Axios
+        const url = `https://newsapi.org/v2/${this.props.news.type}?${this.props.news.query}&apiKey=19a2c684bb1a4f4495818650af9bb4d3`;
+
+        axios.get(url)
+            .then((response) => { // No need to convert to JSON
+                this.setState({
+                    sidenews: response.data.articles
+                })
+            })
+            .catch((error) => console.log(error));
+        
+        // POST example
+        // axios.post(url, { // url, config for sending data
+        //     data: {
+        //         news: {
+        //             title: 'blahblahblah',
+        //             description: 'blahblahblah'
+        //         }
+        //     }
+        // });
+    
     }
 
     renderItems() {

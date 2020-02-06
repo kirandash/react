@@ -14,6 +14,10 @@ class App extends React.Component {
       news2: {
         type: 'top-headlines',
         query: 'sources=bbc-news'
+      },
+      news3: {
+        type: 'top-headlines',
+        query: 'country=in&category=entertainment'
       }
     }
   }
@@ -29,7 +33,7 @@ class App extends React.Component {
         <div className="navbar-fixed">
           <nav>
             <div className="nav-wrapper indigo lighten-4">
-              <a href="#" className="bran-logo center">My Feed</a>
+              <a href="/" className="bran-logo center">My Feed</a>
             </div>
           </nav>
         </div>
@@ -39,7 +43,7 @@ class App extends React.Component {
             <News news={this.state.news2}></News>   
           </div>
           <div className="col s4">
-            <SideNews/>
+            <SideNews news={this.state.news3}/>
           </div>
         </div>     
       </div>
