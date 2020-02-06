@@ -33,3 +33,5 @@ https://newsapi.org/
 
 ### 02.02 Finalize component with data
 1. Style with https://materializecss.com/
+
+### 02.03 Refactor component for reuse

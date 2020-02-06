@@ -10,7 +10,7 @@ class News extends React.Component {
     }
 
     componentDidMount() {
-        const url = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=19a2c684bb1a4f4495818650af9bb4d3';
+        const url = `https://newsapi.org/v2/${this.props.news.type}?${this.props.news.query}&apiKey=19a2c684bb1a4f4495818650af9bb4d3`;
         fetch(url)
             .then((response) => {
                 return response.json(); // Must return response in JSON format to be able to do something with it
