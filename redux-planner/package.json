@@ -1,0 +1,16 @@
+{
+  "name": "redux-planner",
+  "version": "1.0.0",
+  "description": "Describes how redux can be used",
+  "main": "constants.js",
+  "scripts": {
+    "start": "./node_modules/.bin/babel-node ./src/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kiran Dash",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
