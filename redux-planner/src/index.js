@@ -1,5 +1,6 @@
 import C from './constants';
 import { goal } from './store/reducers';
+import { skiDay } from './store/reducers';
 // import { allSkiDays, goal } from './initialState.json';
 
 // console.log(`
@@ -25,4 +26,23 @@ console.log(`
     initial goal: ${state},
     action: ${JSON.stringify(action)},
     new goal: ${nextState}
+`);
+
+const skiDayState = null; // initialize object state
+const addDayAction = {
+    type: C.ADD_DAY, // type of action (mandatory)
+    payload: {
+        "resort": "Changi Resort",
+        "date": "2019-19-04",
+        "powder": true,
+        "backcountry": false
+    } // desired ski day
+} // Action obj
+
+const nextSkiDayState = skiDay(skiDayState, addDayAction);
+
+console.log(`
+    initial goal: ${skiDayState},
+    action: ${JSON.stringify(addDayAction)},
+    new goal: ${JSON.stringify(nextSkiDayState)}
 `);

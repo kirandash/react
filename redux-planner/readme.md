@@ -52,3 +52,5 @@ Unlike OOPS, where we are much interested in Nouns/Objects. Redux is a Functiona
 Reducers are pure functions designed to manage specific parts of ur state object.
 1. Create your reducer and run npm start (babel-node)
 2. Tips: Create a const arrow fn and export it
+
+### 2.3 Create Object Reducer
