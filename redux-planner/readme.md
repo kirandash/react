@@ -47,3 +47,8 @@ Unlike OOPS, where we are much interested in Nouns/Objects. Redux is a Functiona
 5. npm install babel-preset-latest --save-dev and npm install babel-preset-stage-0 --save-dev (deprecated) Now, use npm install babel-preset-env --save-dev
 6. Create .babelrc file.
 7. Run babel-node from npm start script.
+
+### 2.2 Build your first reducer
+Reducers are pure functions designed to manage specific parts of ur state object.
+1. Create your reducer and run npm start (babel-node)
+2. Tips: Create a const arrow fn and export it
