@@ -1,4 +1,5 @@
 import C from '../constants';
+import { combineReducers } from 'redux';
 
 export const goal = (state=10, action) => 
 // { // const to make sure that we don't manipulate it, // ES6 default implementation for state = 10
@@ -71,3 +72,27 @@ export const suggestions = (state=[], action) => {
             return state;
     }
 }
+
+// 2.10 Combining all Reducers created so far
+// const resortNames = combineReducers({
+//     fetching,
+//     suggestions
+// }); // Resort names has 2 reducers
+
+// const singleReducer = combineReducers({
+//     allSkiDays,
+//     goal,
+//     errors,
+//     resortNames
+// }) // This reducer structure is created to match the structure of initialState.json file
+
+// export default singleReducer;   
+export default combineReducers({
+    allSkiDays,
+    goal,
+    errors,
+    resortNames: combineReducers({
+        fetching,
+        suggestions
+    })
+});

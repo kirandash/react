@@ -74,3 +74,7 @@ Add/Remove a ski day and Fetch all ski days
 
 ### 2.9 Change Suggestions
 1. `npm run change-suggestions`
+
+### 2.10 Combine all reducers
+1. Install Redux: npm i redux --save
+2. npm run combine-reducers

@@ -8,7 +8,8 @@
     "fetch-resorts": "babel-node ./src/resort-names/FETCH_RESORT_NAMES.js",
     "cancel-fetch": "babel-node ./src/resort-names/CANCEL_FETCHING.js",
     "clear-suggestions": "babel-node ./src/resort-names/CLEAR_SUGGESTIONS.js",
-    "change-suggestions": "babel-node ./src/resort-names/CHANGE_SUGGESTIONS.js"
+    "change-suggestions": "babel-node ./src/resort-names/CHANGE_SUGGESTIONS.js",
+    "combine-reducers": "babel-node ./src/index-2-10.js"
   },
   "author": "Kiran Dash",
   "license": "ISC",
@@ -17,6 +18,7 @@
     "babel-preset-env": "^1.7.0"
   },
   "dependencies": {
-    "expect": "^25.1.0"
+    "expect": "^25.1.0",
+    "redux": "^4.0.5"
   }
 }
