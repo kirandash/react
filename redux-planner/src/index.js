@@ -2,6 +2,7 @@ import C from './constants';
 import { goal } from './store/reducers';
 import { skiDay } from './store/reducers';
 import { errors } from './store/reducers';
+import { allSkiDays } from './store/reducers';
 // import { allSkiDays, goal } from './initialState.json';
 
 // console.log(`
@@ -15,7 +16,7 @@ import { errors } from './store/reducers';
 //     ${Object.keys(C).join('\n    ')}
 // `);
 
-// Simple reducer
+// 2.2 Simple reducer
 const state = 10; // const, Never change the state. Produce new values from given state
 const action = {
     type: C.SET_GOAL, // type of action (mandatory)
@@ -30,7 +31,7 @@ console.log(`
     new goal: ${nextState}
 `);
 
-// Object Reducer
+// 2.3 Object Reducer
 const skiDayState = null; // initialize object state
 const addDayAction = {
     type: C.ADD_DAY, // type of action (mandatory)
@@ -50,7 +51,7 @@ console.log(`
     new ski days: ${JSON.stringify(nextSkiDayState)}
 `);
 
-// Array Reducer - Add Error
+// 2.4 Array Reducer - Add Error
 const errorsState = [
     "user not authorized",
     "server feed not found"
@@ -82,4 +83,70 @@ console.log(`
     initial errors: ${JSON.stringify(errorsState)},
     action: ${JSON.stringify(removeErrorAction)},
     new errors: ${JSON.stringify(nextErrorsRemState)}
+`);
+
+// 2.5 Compose reducer - All Ski days
+const allSkiDaysState = [
+    {
+        "resort": "Kirkwood",
+        "date": "2019-18-02",
+        "powder": true,
+        "backcountry": false
+    },
+    {
+        "resort": "China",
+        "date": "2020-18-02",
+        "powder": true,
+        "backcountry": false
+    }
+];
+
+const addskiDayAction = {
+    type: C.ADD_DAY,
+    payload: {
+        "resort": "Boreal",
+        "date": "2020-11-08",
+        "powder": true,
+        "backcountry": false
+    }
+}
+
+// Do not add a day if any other ski day is already present
+const addskiDayAction2 = {
+    type: C.ADD_DAY,
+    payload: {
+        "resort": "Boreal",
+        "date": "2019-18-02",
+        "powder": true,
+        "backcountry": false
+    }
+}
+
+const nextAllSkiState = allSkiDays(allSkiDaysState, addskiDayAction); // Add a ski day and return all ski days
+const nextAllSkiState2 = allSkiDays(allSkiDaysState, addskiDayAction2); // Add a ski day if doesn't exist already
+
+console.log(`
+    initial All ski days: ${JSON.stringify(allSkiDaysState)},
+    action: ${JSON.stringify(addskiDayAction)},
+    new all ski days: ${JSON.stringify(nextAllSkiState)}
+`);
+
+console.log(`
+    initial All ski days: ${JSON.stringify(allSkiDaysState)},
+    action: ${JSON.stringify(addskiDayAction2)},
+    new all ski days: ${JSON.stringify(nextAllSkiState2)}
+`);
+
+// Remove a ski day
+const removeskiDayAction = {
+    type: C.REMOVE_DAY,
+    payload: "2019-18-02"
+}
+
+const nextAllSkiState3 = allSkiDays(allSkiDaysState, removeskiDayAction); // Remove a ski day and return all ski days
+
+console.log(`
+    initial All ski days: ${JSON.stringify(allSkiDaysState)},
+    action: ${JSON.stringify(removeskiDayAction)},
+    new all ski days: ${JSON.stringify(nextAllSkiState3)}
 `);

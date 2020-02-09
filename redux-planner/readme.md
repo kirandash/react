@@ -58,3 +58,6 @@ For skiDays
 
 ### 2.4 Create Array Reducer
 For Errors
+
+### 2.5 Composing Reducers
+Add/Remove a ski day and Fetch all ski days

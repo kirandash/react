@@ -31,3 +31,19 @@ export const errors = (state=[], action) => {
             return state
     }
 }
+
+export const allSkiDays = (state=[], action) => {
+    switch (action.type) {
+        case C.ADD_DAY:
+            // Do not add a day if any other ski day is already present
+            const hasDay = state.some(skiDay => skiDay.date === action.payload.date)
+            return (hasDay) ? state : [
+                ...state,
+                skiDay(null, action) // composing reducer
+            ]
+            case C.REMOVE_DAY:
+                return state.filter(skiDay => skiDay.date !== action.payload)
+            default:
+                return state
+    }
+}
