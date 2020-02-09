@@ -5,7 +5,8 @@
   "main": "constants.js",
   "scripts": {
     "start": "./node_modules/.bin/babel-node ./src/",
-    "fetch-resorts": "babel-node ./src/resort-names/FETCH_RESORT_NAMES.js"
+    "fetch-resorts": "babel-node ./src/resort-names/FETCH_RESORT_NAMES.js",
+    "cancel-fetch": "babel-node ./src/resort-names/CANCEL_FETCHING.js"
   },
   "author": "Kiran Dash",
   "license": "ISC",
