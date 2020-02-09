@@ -47,3 +47,12 @@ export const allSkiDays = (state=[], action) => {
                 return state
     }
 }
+
+export const fetching = (state=false, action) => {
+    switch (action.type) {
+        case C.FETCH_RESORT_NAMES:
+            return true;
+        default:
+            return state
+    }
+}

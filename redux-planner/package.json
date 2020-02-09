@@ -5,12 +5,15 @@
   "main": "constants.js",
   "scripts": {
     "start": "./node_modules/.bin/babel-node ./src/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "fetch-resorts": "babel-node ./src/resort-names/FETCH_RESORT_NAMES.js"
   },
   "author": "Kiran Dash",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0"
+  },
+  "dependencies": {
+    "expect": "^25.1.0"
   }
 }

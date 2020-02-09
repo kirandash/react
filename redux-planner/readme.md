@@ -61,3 +61,7 @@ For Errors
 
 ### 2.5 Composing Reducers
 Add/Remove a ski day and Fetch all ski days
+
+### 2.6 Fetch Resort Names
+1. `npm i expect`
+2. `npm run fetch-resorts`
