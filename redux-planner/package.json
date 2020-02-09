@@ -6,7 +6,8 @@
   "scripts": {
     "start": "./node_modules/.bin/babel-node ./src/",
     "fetch-resorts": "babel-node ./src/resort-names/FETCH_RESORT_NAMES.js",
-    "cancel-fetch": "babel-node ./src/resort-names/CANCEL_FETCHING.js"
+    "cancel-fetch": "babel-node ./src/resort-names/CANCEL_FETCHING.js",
+    "clear-suggestions": "babel-node ./src/resort-names/CLEAR_SUGGESTIONS.js"
   },
   "author": "Kiran Dash",
   "license": "ISC",

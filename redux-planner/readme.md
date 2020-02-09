@@ -68,3 +68,6 @@ Add/Remove a ski day and Fetch all ski days
 
 ### 2.7 Cancel Fetching Resort Names
 1. `npm run cancel-fetch`
+
+### 2.8 Clear Suggestions
+1. `npm run clear-suggestions`
