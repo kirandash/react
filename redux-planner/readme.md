@@ -54,3 +54,7 @@ Reducers are pure functions designed to manage specific parts of ur state object
 2. Tips: Create a const arrow fn and export it
 
 ### 2.3 Create Object Reducer
+For skiDays
+
+### 2.4 Create Array Reducer
+For Errors

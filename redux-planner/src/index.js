@@ -1,6 +1,7 @@
 import C from './constants';
 import { goal } from './store/reducers';
 import { skiDay } from './store/reducers';
+import { errors } from './store/reducers';
 // import { allSkiDays, goal } from './initialState.json';
 
 // console.log(`
@@ -14,6 +15,7 @@ import { skiDay } from './store/reducers';
 //     ${Object.keys(C).join('\n    ')}
 // `);
 
+// Simple reducer
 const state = 10; // const, Never change the state. Produce new values from given state
 const action = {
     type: C.SET_GOAL, // type of action (mandatory)
@@ -28,6 +30,7 @@ console.log(`
     new goal: ${nextState}
 `);
 
+// Object Reducer
 const skiDayState = null; // initialize object state
 const addDayAction = {
     type: C.ADD_DAY, // type of action (mandatory)
@@ -42,7 +45,41 @@ const addDayAction = {
 const nextSkiDayState = skiDay(skiDayState, addDayAction);
 
 console.log(`
-    initial goal: ${skiDayState},
+    initial ski days: ${skiDayState},
     action: ${JSON.stringify(addDayAction)},
-    new goal: ${JSON.stringify(nextSkiDayState)}
+    new ski days: ${JSON.stringify(nextSkiDayState)}
+`);
+
+// Array Reducer - Add Error
+const errorsState = [
+    "user not authorized",
+    "server feed not found"
+];
+
+const addErrorAction = {
+    type: C.ADD_ERROR,
+    payload: "cannot connect to server"
+}
+
+const nextErrorsState = errors(errorsState, addErrorAction);
+
+console.log(`
+    initial errors: ${JSON.stringify(errorsState)},
+    action: ${JSON.stringify(addErrorAction)},
+    new errors: ${JSON.stringify(nextErrorsState)}
+`);
+
+// Array Reducer - Remove an Error
+
+const removeErrorAction = {
+    type: C.REMOVE_ERROR,
+    payload: 0
+}
+
+const nextErrorsRemState = errors(errorsState, removeErrorAction);
+
+console.log(`
+    initial errors: ${JSON.stringify(errorsState)},
+    action: ${JSON.stringify(removeErrorAction)},
+    new errors: ${JSON.stringify(nextErrorsRemState)}
 `);

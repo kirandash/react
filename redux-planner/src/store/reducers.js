@@ -16,3 +16,18 @@ export const skiDay = (state=null, action) =>
     (action.type === C.ADD_DAY) ? 
         action.payload
         : state
+
+export const errors = (state=[], action) => {
+    switch (action.type) {
+        case C.ADD_ERROR:
+            // return state.push(action.payload) not recommended as it will mutate the original state
+            return [
+                ...state,
+                action.payload
+            ] // create a new state array with prev state array items and add the new payload item
+        case C.REMOVE_ERROR:
+            return state.filter((message, i) => i !== action.payload) // Filter returns a new array. Thus state is not mutated
+        default:
+            return state
+    }
+}
