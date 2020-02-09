@@ -71,3 +71,6 @@ Add/Remove a ski day and Fetch all ski days
 
 ### 2.8 Clear Suggestions
 1. `npm run clear-suggestions`
+
+### 2.9 Change Suggestions
+1. `npm run change-suggestions`
