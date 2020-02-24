@@ -108,3 +108,8 @@ subscribe is called everytime state changes or an action dispatches
 
 ### 03.04 Unsubscribe from the store
 Calling the subscribe callback again will unsubscribe the store
+
+### 03.05 Create Middleware
+1. Middleware gives us ability to add more functionality directly into the redux dispatch pipeline.
+2. Subscribe method is called after dispatch is done. But middleware is more powerful since it determines how actions are dispatched. Add functionality before/after action is dispatched. Can delay the dispatch of actions or skip the dispatch.
+3. applyMiddleware from redux: Helps us use the higher order fn in reducer and give it proper arguments.
