@@ -96,3 +96,8 @@ Note: use @babel/core and @babel/preset-env since the older ones have deprecated
     "webpack-dev-server": "^3.10.3",
     "html-webpack-plugin": "^3.2.0"
 }`
+
+### 03.02 Create a Store (createStore, getState and dispatch)
+1. store = createStore(reducer); create state
+2. store.getState(); read state
+3. store.dispatch({}); mutate state
