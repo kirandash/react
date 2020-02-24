@@ -78,3 +78,21 @@ Add/Remove a ski day and Fetch all ski days
 ### 2.10 Combine all reducers
 1. Install Redux: npm i redux --save
 2. npm run combine-reducers
+
+## 3. The Store
+### 03.01 Create a static build with webpack
+1. npm i webpack --save-dev (webpack to help us create bundle file)
+2. npm i webpack-dev-server --save-dev (to run dev server locally) - uses an express server
+3. npm i babel-loader --save-dev (to convert ES5 to supported code)
+4. npm i json-loader --save-dev (to get any JSON documents inside of our bundle) (deprecated) Don't install anymore
+5. npm i babel-core --save-dev (comes with babel cli but still install in case you don't have babel cli installed) - includes core functionalities reqd by babel
+6. npm start will fail for webpack config. Need to install webpack-cli as well to fix this
+7. npm i webpack-cli --save-dev
+Note: use @babel/core and @babel/preset-env since the older ones have deprecated.
+8. Working webpack configuration:
+`{
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.3",
+    "html-webpack-plugin": "^3.2.0"
+}`
