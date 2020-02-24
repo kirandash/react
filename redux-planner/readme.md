@@ -105,3 +105,6 @@ Note: use @babel/core and @babel/preset-env since the older ones have deprecated
 ### 03.03 Subscribe to the store
 subscribe is called everytime state changes or an action dispatches
 1. `localStorage.clear()`
+
+### 03.04 Unsubscribe from the store
+Calling the subscribe callback again will unsubscribe the store
