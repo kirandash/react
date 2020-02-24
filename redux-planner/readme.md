@@ -101,3 +101,7 @@ Note: use @babel/core and @babel/preset-env since the older ones have deprecated
 1. store = createStore(reducer); create state
 2. store.getState(); read state
 3. store.dispatch({}); mutate state
+
+### 03.03 Subscribe to the store
+subscribe is called everytime state changes or an action dispatches
+1. `localStorage.clear()`
