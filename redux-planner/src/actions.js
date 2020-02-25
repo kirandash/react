@@ -21,3 +21,16 @@ export const setGoal = (goal) =>
         type: C.SET_GOAL,
         payload: goal
     })
+
+export function addError(message) {
+    return {
+        type: C.ADD_ERROR,
+        payload: message
+    }
+}
+
+export const clearError = idx => 
+    ({
+        type: C.CLEAR_ERROR,
+        payload: idx
+    })

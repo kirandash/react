@@ -26,7 +26,7 @@ export const errors = (state=[], action) => {
                 ...state,
                 action.payload
             ] // create a new state array with prev state array items and add the new payload item
-        case C.REMOVE_ERROR:
+        case C.CLEAR_ERROR:
             return state.filter((message, i) => i !== action.payload) // Filter returns a new array. Thus state is not mutated
         default:
             return state

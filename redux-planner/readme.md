@@ -120,3 +120,6 @@ Calling the subscribe callback again will unsubscribe the store
 2. Thus, we have action creators to contain the logic of our app with functions and not objects.
 3. action creators are basically fn with business logic
 4. Even if there is no logic, it is better to dispatch actions through action creators or functions instead of objects directly.
+
+### 04.02 Build Action Creators
+addError, clearError, changeSuggestions, clearSuggestions

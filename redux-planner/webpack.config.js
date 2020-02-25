@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: "./src/index-4-1.js",
+    entry: "./src/index-4-2.js",
     output: {
         path: path.resolve(__dirname, 'dist'), // This is where the o/p should be kept
         filename: "./bundle.js",
