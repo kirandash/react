@@ -63,7 +63,7 @@ For Errors
 Add/Remove a ski day and Fetch all ski days
 
 ### 2.6 Fetch Resort Names
-1. `npm i expect`
+1. `npm i expect --save-dev`
 2. `npm run fetch-resorts`
 
 ### 2.7 Cancel Fetching Resort Names
@@ -132,3 +132,13 @@ addError, clearError, changeSuggestions, clearSuggestions
 5. thunk is used with applyMiddleware
 6. thunks does not return action objects directly. They return another higher order fn with args dispatch and getState which will help us control dispatching our actions or get current state
 7. Thunks allows us to write robust action creators that are asynchronous
+
+### 04.04 Using the express server
+1. `npm install express`
+2. `npm install cors`
+3. `npm install minimist`
+4. `npm run suggestions`
+
+If it throws babel compatibility issue, use the babel upgrade tool to get the right set of versions for your project.
+https://github.com/babel/babel-upgrade
+

@@ -10,7 +10,8 @@
     "cancel-fetch": "babel-node ./src/resort-names/CANCEL_FETCHING.js",
     "clear-suggestions": "babel-node ./src/resort-names/CLEAR_SUGGESTIONS.js",
     "change-suggestions": "babel-node ./src/resort-names/CHANGE_SUGGESTIONS.js",
-    "combine-reducers": "babel-node ./src/index-2-10.js"
+    "combine-reducers": "babel-node ./src/index-2-10.js",
+    "suggestions": "./node_modules/.bin/babel-node ./server --port 3333 --delay 500"
   },
   "author": "Kiran Dash",
   "license": "ISC",
@@ -25,7 +26,9 @@
     "html-webpack-plugin": "^3.2.0"
   },
   "dependencies": {
-    "expect": "^25.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "minimist": "^1.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"
   }
