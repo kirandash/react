@@ -123,3 +123,12 @@ Calling the subscribe callback again will unsubscribe the store
 
 ### 04.02 Build Action Creators
 addError, clearError, changeSuggestions, clearSuggestions
+
+### 04.03 Async actions with redux-thunk
+1. action creators have business logic.
+2. But it first must wait for ajax data to be received before running the logic and dispatching the actions
+3. redux-thunk are higher order middleware functions that helps us determine when the action will be dispatched
+4. `npm install redux-thunk --save` (Install as dependencies)
+5. thunk is used with applyMiddleware
+6. thunks does not return action objects directly. They return another higher order fn with args dispatch and getState which will help us control dispatching our actions or get current state
+7. Thunks allows us to write robust action creators that are asynchronous

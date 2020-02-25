@@ -1,5 +1,6 @@
 import C from '../constants';
 import appReducer from './reducers';
+import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 
 // Middleware uses a higher order fn (async)
@@ -28,6 +29,6 @@ const consoleMessages = store => next => action => {
 } // This middleware helps us logging messages to console before and after an action is dispatched
 
 export default (initialState={}) => {
-    return applyMiddleware(consoleMessages)(createStore)(appReducer, initialState); // apply middleware will return a fn to which we should pass the createStore fn with the args reducer and initial state
+    return applyMiddleware(thunk, consoleMessages)(createStore)(appReducer, initialState); // apply middleware will return a fn to which we should pass the createStore fn with the args reducer and initial state
     // return createStore(appReducer, initialState);
 } // default fn to create a store

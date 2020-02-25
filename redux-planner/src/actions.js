@@ -45,3 +45,18 @@ export const clearSuggestions = () =>
     ({
         type: C.CLEAR_SUGGESTIONS
     })
+
+export const randomGoals = () => (dispatch, getState) => {
+    // Thunk does not return action objects directly. They return another higher order fn with args dispatch and getState which will help us control dispatching our actions or get current state
+    if(!getState().resortNames.fetching) {
+        dispatch({
+            type: C.FETCH_RESORT_NAMES
+        })
+    
+        setTimeout(() => {
+            dispatch({
+                type: C.CANCEL_FETCHING
+            })
+        }, 1500)
+    }
+}
