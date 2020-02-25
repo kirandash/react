@@ -113,3 +113,10 @@ Calling the subscribe callback again will unsubscribe the store
 1. Middleware gives us ability to add more functionality directly into the redux dispatch pipeline.
 2. Subscribe method is called after dispatch is done. But middleware is more powerful since it determines how actions are dispatched. Add functionality before/after action is dispatched. Can delay the dispatch of actions or skip the dispatch.
 3. applyMiddleware from redux: Helps us use the higher order fn in reducer and give it proper arguments.
+
+## 4. Action Creators
+### 04.01 What are action creators?
+1. Store in redux are only for storing data/state. But not for storing any business logic e.g. generating unique ids, read-write datas, mutating global states, or fetching data etc.
+2. Thus, we have action creators to contain the logic of our app with functions and not objects.
+3. action creators are basically fn with business logic
+4. Even if there is no logic, it is better to dispatch actions through action creators or functions instead of objects directly.
