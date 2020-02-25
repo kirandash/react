@@ -138,7 +138,8 @@ addError, clearError, changeSuggestions, clearSuggestions
 2. `npm install cors`
 3. `npm install minimist`
 4. `npm run suggestions`
-
-If it throws babel compatibility issue, use the babel upgrade tool to get the right set of versions for your project.
+5. If it throws babel compatibility issue, use the babel upgrade tool to get the right set of versions for your project.
 https://github.com/babel/babel-upgrade
-
+Run the command `npx babel-upgrade --write`. It will change the version numbers to correct configuration.
+6. Then run `npm install` and `npm run suggestions`
+7. Server will be available at http://localhost:3333/resorts
