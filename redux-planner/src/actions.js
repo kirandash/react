@@ -34,3 +34,14 @@ export const clearError = idx =>
         type: C.CLEAR_ERROR,
         payload: idx
     })
+
+export const changeSuggestions = suggestions => 
+    ({
+        type: C.CHANGE_SUGGESTIONS,
+        payload: suggestions
+    })
+
+export const clearSuggestions = () =>
+    ({
+        type: C.CLEAR_SUGGESTIONS
+    })

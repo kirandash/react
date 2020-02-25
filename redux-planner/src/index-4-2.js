@@ -20,3 +20,21 @@ store.dispatch(
 expect(store.getState().errors).toEqual([])
 
 console.log(`clearError() Action Creator Works!`);
+
+/* Change Suggestions */
+store.dispatch(
+    changeSuggestions(['One', 'Two', 'Three'])
+)
+
+expect(store.getState().resortNames.suggestions).toEqual(['One', 'Two', 'Three'])
+
+console.log(`changeSuggestions() Action Creator Works!`);
+
+/* Clear Suggestions */
+store.dispatch(
+    clearSuggestions()
+)
+
+expect(store.getState().resortNames.suggestions).toEqual([])
+
+console.log(`clearSuggestions() Action Creator Works!`);
