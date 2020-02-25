@@ -143,3 +143,7 @@ https://github.com/babel/babel-upgrade
 Run the command `npx babel-upgrade --write`. It will change the version numbers to correct configuration.
 6. Then run `npm install` and `npm run suggestions`
 7. Server will be available at http://localhost:3333/resorts
+
+### 04.05 Autocomplete Thunk
+1. To make an AJAX request of our resorts express server, we are going to use `npm install isomorphic-fetch -save`. This works both in nodejs and browser to create fetch requests.
+2. Start the server `npm run suggestions`

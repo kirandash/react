@@ -1,4 +1,5 @@
 import C from './constants';
+import fetch from 'isomorphic-fetch';
 
 export function addDay(resort, date, powder=false, backcountry=false) {
     // Add App logic here...
@@ -59,4 +60,29 @@ export const randomGoals = () => (dispatch, getState) => {
             })
         }, 1500)
     }
+}
+
+export const suggestResortNames = value => dispatch => {
+    // Thunk for suggesting resort names
+    dispatch({
+        type: C.FETCH_RESORT_NAMES
+    }) // This tells us that we are currently fetching resort names
+
+    fetch('http://localhost:3333/resorts/' + value)
+        .then(response => response.json())
+        .then(suggestions => {
+            dispatch({
+                type: C.CHANGE_SUGGESTIONS,
+                payload: suggestions
+            }) // changes fetching to false after getting the suggestions
+        })
+        .catch(error => {
+            dispatch(
+                addError(error.message)
+            )
+
+            dispatch({
+                type: C.CANCEL_FETCHING
+            }) // change fetching back to false
+        })
 }
