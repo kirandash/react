@@ -133,6 +133,11 @@ addError, clearError, changeSuggestions, clearSuggestions
 6. thunks does not return action objects directly. They return another higher order fn with args dispatch and getState which will help us control dispatching our actions or get current state
 7. Thunks allows us to write robust action creators that are asynchronous
 
+Thunks can:
+1. wait before dispatching an action
+2. obtain state from the store
+3. dispatch more than one action
+
 ### 04.04 Using the express server
 1. `npm install express`
 2. `npm install cors`
@@ -147,3 +152,9 @@ Run the command `npx babel-upgrade --write`. It will change the version numbers 
 ### 04.05 Autocomplete Thunk
 1. To make an AJAX request of our resorts express server, we are going to use `npm install isomorphic-fetch -save`. This works both in nodejs and browser to create fetch requests.
 2. Start the server `npm run suggestions`
+
+## 5. Integrating React
+### 05.01 Setting up React App
+1. npm i react react-dom react-icons react-router
+2. Add stylesheets, routes.js, index-react.js
+4. npm i css-loader json-loader node-sass optimize-css-assets-webpack-plugin sass-loader style-loader @babel/preset-react --save-dev
