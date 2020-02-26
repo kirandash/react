@@ -158,3 +158,13 @@ Run the command `npx babel-upgrade --write`. It will change the version numbers 
 1. npm i react react-dom react-icons react-router
 2. Add stylesheets, routes.js, index-react.js
 4. npm i css-loader json-loader node-sass optimize-css-assets-webpack-plugin sass-loader style-loader @babel/preset-react --save-dev
+
+### 05.02 Integrating redux to react App with react-redux Provider
+1. React redux library
+2. `npm install react-redux --save`
+3. `import { Provider } from 'react-redux'` Provider helps us pass redux store to routes/component tree
+4. Provider only takes redux store as arg
+5. Once wrapped around App component, Provider will make sure that the store is accessible by any of the child components of App
+6. In browser console, run `localStorage.clear()` and `store.getState()` to check if the initial state is being returned
+7. In dev tools, go under `components` tab to see DOM structure. Provider ---> ReactRedux.Provider ---> App ---> BrowserRouter ---> Router.Provider
+8. Since Provider is at the very top. The redux store is available to all children components. 
