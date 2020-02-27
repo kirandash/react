@@ -187,3 +187,7 @@ Handling all errors of app. Code at: container/ShowErrors.js
 2. Run this in console to dispatch an error `store.dispatch({ type: "ADD_ERROR", payload: "something went wrong" })`
 3. Record any error occurring in the App
 4. Test by adding some error to index.react.js
+
+### 05.05 Map router params to React components
+1. Use `props.match.params.paramname` to get the param
+2. pass it to component with `mapStateToProps`
