@@ -191,3 +191,5 @@ Handling all errors of app. Code at: container/ShowErrors.js
 ### 05.05 Map router params to React components
 1. Use `props.match.params.paramname` to get the param
 2. pass it to component with `mapStateToProps`
+
+### 05.06 Connecting the Goal Component
