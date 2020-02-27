@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 	}
 }
 
-const Container = connect(mapStateToProps)(SkiDayCount)
+const Container = connect(mapStateToProps)(SkiDayCount) // connect is an higher order fn
 
 export default Container
 

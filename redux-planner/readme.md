@@ -170,7 +170,7 @@ Run the command `npx babel-upgrade --write`. It will change the version numbers 
 8. Since Provider is at the very top. The redux store is available to all children components. 
 
 ### 05.03 Map Props/States to React Components
-1. Wire skiDayCount Data to component
+Wire skiDayCount Data to component (container/SkiDayCount.js)
 
 React Project Architecture:
 1. Two types of components: UI and Containers
@@ -180,3 +180,10 @@ Ex: containers/SkiDayCount.js is a stateless functional react component that wra
 4. We will feed our redux data at the container/wrapper level which can then be feeded to the UI level.
 5. connect from react-redux helps us map state from store to props in components
 6. It does so with the help of mapStateToProps()
+
+### 05.04 Map dispatch to React components
+Handling all errors of app. Code at: container/ShowErrors.js
+1. mapDispatchToProps is used to dispatch fns from store to components
+2. Run this in console to dispatch an error `store.dispatch({ type: "ADD_ERROR", payload: "something went wrong" })`
+3. Record any error occurring in the App
+4. Test by adding some error to index.react.js
