@@ -168,3 +168,15 @@ Run the command `npx babel-upgrade --write`. It will change the version numbers 
 6. In browser console, run `localStorage.clear()` and `store.getState()` to check if the initial state is being returned
 7. In dev tools, go under `components` tab to see DOM structure. Provider ---> ReactRedux.Provider ---> App ---> BrowserRouter ---> Router.Provider
 8. Since Provider is at the very top. The redux store is available to all children components. 
+
+### 05.03 Map Props/States to React Components
+1. Wire skiDayCount Data to component
+
+React Project Architecture:
+1. Two types of components: UI and Containers
+2. UI components are pure react components. These components communicate solely through properties. Pass data to parent through 2 way binding and receive props as well.
+3. Container Components: These components are wrappers. They wrap around the UI components and feed data to it.
+Ex: containers/SkiDayCount.js is a stateless functional react component that wraps around the ui/SkiDayCount Component
+4. We will feed our redux data at the container/wrapper level which can then be feeded to the UI level.
+5. connect from react-redux helps us map state from store to props in components
+6. It does so with the help of mapStateToProps()
