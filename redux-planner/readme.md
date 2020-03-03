@@ -193,3 +193,7 @@ Handling all errors of app. Code at: container/ShowErrors.js
 2. pass it to component with `mapStateToProps`
 
 ### 05.06 Connecting the Goal Component
+
+### 05.07 Create containers for form components
+1. withRouter wrapped around main container if navigation from within componenet is required
+2. with new react router dom : `router.history.push('/')` is used to navigate to any specific path

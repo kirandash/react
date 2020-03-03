@@ -20,7 +20,8 @@ const AddDayForm = ({ suggestions=[], onNewDay=f=>f, onChange=f=>f, onClear=f=>f
         const addAnother = confirm(`${_resort.value} on ${_date.value.toString()} added. Add another?`)
 
         if (!addAnother) {
-            router.push('/')
+            // router.push('/')
+            router.history.push('/')
         }
 
         _resort.value = ''
