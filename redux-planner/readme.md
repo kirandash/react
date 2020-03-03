@@ -197,3 +197,24 @@ Handling all errors of app. Code at: container/ShowErrors.js
 ### 05.07 Create containers for form components
 1. withRouter wrapped around main container if navigation from within componenet is required
 2. with new react router dom : `router.history.push('/')` is used to navigate to any specific path
+
+Quiz:
+1. The connect function from react-redux expects what type of arguments. 
+Ans: Functions eg. mapStateToProps and mapDispatchToProps
+2. What are Container Components?
+Ans: Container components wrap presentational React components with data.
+3. What are Reducers?
+Reducers can open websocket connections,and used to fetch data from REST apis.
+4. What are thunks?
+Thunks can wait before dispatching an action, obtain state from the store, dispatch more than one action.
+5. Middleware?
+Ans: Middleware uses a higher order function.
+6. Why babel?
+Ans: The reason we use babel in this project is to use the latest JavaScript in our source code.
+7. how to combine multiple reducers?
+Ans: `combineReducers({ key: reducer, key: reducer })`
+8. Which of the following libraries is not based on Flux?
+Ans: Angular
+9. Redux pattern?
+Ans: action -> store -> view
+10. Reducers are pure functions
