@@ -10,7 +10,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     onNewGoal(goal) {
-        setGoal(goal)
+        dispatch(
+            setGoal(goal)
+        )
     }
 })
 
