@@ -14,6 +14,14 @@
 5. Return to terminal. Hit enter. Enter Access Key Id, secretaccesskey, profile name default and enter. Download csv file or copy the details (Important since it won't show up again)
 6. User is successfully setup
 
+### 1.3 Hosting a React App on AWS
+1. `cd react-aws-todo` and init amplify: `amplify init`
+2. enter details: project: react-aws-todo, environment: todo, editor: VSCode, app: js, framework: react, choose commands, use aws profile ---> Default one
+3. Add hosting: `amplify hosting add`, choose: DEV (S3 Only with HTTP), choose default settings for the rest
+4. Now our app is setup successfully on local. Publish it to aws server with `amplify publish`
+5. Once published, we can check our app on aws console at s3 services: https://s3.console.aws.amazon.com/s3/home?region=us-east-2#. This will show 2 buckets. A deployment bucket for entire project and one hosting bucket from which our project is running. Go in hosting bucket to check the project structure.
+6. App is hosted at s3 bucket: http://react-aws-todo-20200401173150-hostingbucket-todo.s3-website-us-east-1.amazonaws.com/
+
 ## Extra Default Info
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
