@@ -22,6 +22,12 @@
 5. Once published, we can check our app on aws console at s3 services: https://s3.console.aws.amazon.com/s3/home?region=us-east-2#. This will show 2 buckets. A deployment bucket for entire project and one hosting bucket from which our project is running. Go in hosting bucket to check the project structure.
 6. App is hosted at s3 bucket: http://react-aws-todo-20200401173150-hostingbucket-todo.s3-website-us-east-1.amazonaws.com/
 
+### 1.4 Edit, Test Locally and Deploy to AWS
+1. Change code
+2. Check locally: `npm run start`
+3. Deploy to AWS: `amplify publish`
+4. App changes can be seen at: http://react-aws-todo-20200401173150-hostingbucket-todo.s3-website-us-east-1.amazonaws.com/
+
 ## Extra Default Info
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
