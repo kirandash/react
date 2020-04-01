@@ -28,6 +28,19 @@
 3. Deploy to AWS: `amplify publish`
 4. App changes can be seen at: http://react-aws-todo-20200401173150-hostingbucket-todo.s3-website-us-east-1.amazonaws.com/
 
+## 2. User Authentication for React App
+### 2.1 IAM and Cognito concepts
+1. User ---> AWS services ---> Incognito Identity pool ---> Identity Provider (viz Google, FB, Twitter etc) OR User Pool(Create username and password without any provider).
+2. In this project we are going to use the **user pool** for authentication
+
+### 2.2 Adding user auth to an AWS project
+1. `amplify add auth`, choose default configuration. ---> Choose username for sign in ---> Additional Settings ---> For sign up need Email Address ---> Email Verification Link with Redirect
+2. `amplify status` to check if Auth has been added to amplify.
+3. `amplify push` to push our changes to aws server. Note that we are not using `amplify publish`, since there is no change to our hosting code. But changes are to additional resource ie Auth.\
+4. Once pushing is finished. Go to aws console, services ---> search for cognito ---> Go to Manage Identity Pools ---> Create Identity Pool, allow unauthenticated Identities ---> Create Identity ---> Go to Dashboard to check reports
+5. Create a user pool: services ---> search for cognito ---> Go to View Identity Pools ---> Create User pool
+6. Add amplify to code: `npm add aws-amplify aws-amplify-react`
+
 ## Extra Default Info
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
