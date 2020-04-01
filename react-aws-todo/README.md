@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 # React AWS ToDo Application
 
 ## 1. Hosting React App on AWS
@@ -8,7 +6,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 2. `cd react-aws-do`
 3. `npm start` will launch app on localhost:3000
 
+### 1.2 AWS S3 hosting with Amplify
+1. Create AWS account with debit/credit card details. Not chargeable for free account with basic usage.
+2. Install amplify cli: `sudo npm install -g @aws-amplify/cli` (Installs globally)
+3. Configure amplify: `amplify configure` will open console.aws on browser. Make sure that you have signed in to AWS account before configuring this. Once signed in, return to the terminal. Hit enter, And choose the region. eg us-east-1, user name: default name. Hit enter. Will launch browser. - Programmatic access --> Next --> Next --> Create. 
+4. User created
+5. Return to terminal. Hit enter. Enter Access Key Id, secretaccesskey, profile name default and enter. Download csv file or copy the details (Important since it won't show up again)
+6. User is successfully setup
+
 ## Extra Default Info
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
