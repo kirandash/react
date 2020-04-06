@@ -41,6 +41,11 @@
 5. Create a user pool: services ---> search for cognito ---> Go to View Identity Pools ---> Create User pool
 6. Add amplify to code: `npm add aws-amplify aws-amplify-react`
 
+### 2.3 Adding user auth to a React App
+1. import assets
+2. config auth: `Auth.configure(awsconfig);`
+3. We will see sign up screen on app front page (can be customized)
+
 ## Extra Default Info
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
