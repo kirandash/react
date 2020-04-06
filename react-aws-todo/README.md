@@ -69,3 +69,7 @@
 2. Run: `amplify add api` ---> GraphQL ---> API name: todo ---> Authorization: Amazon Cognito User pool ---> Additional Settings ---> Guided schema (Y) ---> Single object with fields ---> Edit (Y) have a look at model and leave as is
 3. push: `amplify push`: will show list of data being pushed. Make sure todo API is in the list mentioned as Create operation
 4. Generate code for new GraphQL API (Y) ---> All defaults
+
+## 4. AppSync GraphQL Calls with React
+### 4.1 Adding AppSync GraphQL to a React App
+1. Add configuration in App.js file
