@@ -85,3 +85,9 @@
 ### 4.5 Testing DynamoDB CRUD with a React app
 
 ### 4.6 Filter todo items with name as kirandash
+
+### 4.7 Learn More
+1. Subscriptions
+2. Filters, sorting
+3. UI
+4. IAM, Cognito, DynamoDB, AppSync
