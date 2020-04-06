@@ -51,3 +51,21 @@
 2. Sign in with same details.
 3. Check in cognito user pool if data is there (sign in ---> manage user pools ---> click users and groups ---> refresh to see if user exists)
 4. use `{includeGreetings: true}` to show sign out link as well.
+
+## 3. DynamoDB API with AppSync
+### 3.1 AppSync Concepts and setup
+1. Go to aws console ---> services ---> search for AWS AppSync
+2. Create API ---> Create with wizard ---> start ---> Create
+3. We can manage this API directly from react app. Since we are using AWS amplify. No need to even create this API here. This is just for demo and will be deleted later
+
+### 3.2 DynamoDB Tables
+1. Choose API ---> Data Sources ---> Click on Table name from Resources column
+2. Can do CRUD operation on aws console. But we will use the API through amplify in React
+3. In AppSync console, go to APIs, select API and delete
+4. Deleting API doesnt delete table. So go to dynamodb table console, select db and delete
+
+### 3.3 Creating a GraphQL API with Amplify
+1. Go to Terminal - project folder
+2. Run: `amplify add api` ---> GraphQL ---> API name: todo ---> Authorization: Amazon Cognito User pool ---> Additional Settings ---> Guided schema (Y) ---> Single object with fields ---> Edit (Y) have a look at model and leave as is
+3. push: `amplify push`: will show list of data being pushed. Make sure todo API is in the list mentioned as Create operation
+4. Generate code for new GraphQL API (Y) ---> All defaults
