@@ -78,3 +78,6 @@
 1. Add Get queries
 
 ### 4.3 CRUD DynamoDB data with a React app
+
+### 4.4 Get username
+1. `Auth.currentAuthenticatedUser({})`

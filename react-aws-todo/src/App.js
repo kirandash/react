@@ -11,9 +11,16 @@ API.configure(awsconfig);
 
 function App() {
   // Create To Do
-  const todo = {name: "App", description: "new todo"};
-  const newTodo = API.graphql(graphqlOperation(mutations.createTodo, {input: todo}));
-  console.log(newTodo)
+  Auth.currentAuthenticatedUser({
+    bypassCache: false
+  }).then(function(user){
+    console.log("User: " + JSON.stringify(user));
+    const todo = {name: user['username'], description: "new todo"};
+    const newTodo = API.graphql(graphqlOperation(mutations.createTodo, {input: todo}));
+    console.log(newTodo)
+  }).catch(err => {
+    console.log(err)
+  })
 
   // Get Queries
   const allToDos = API.graphql(graphqlOperation(queries.listTodos));
