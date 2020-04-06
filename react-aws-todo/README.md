@@ -83,3 +83,5 @@
 1. `Auth.currentAuthenticatedUser({})`
 
 ### 4.5 Testing DynamoDB CRUD with a React app
+
+### 4.6 Filter todo items with name as kirandash

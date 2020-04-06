@@ -19,6 +19,11 @@ function deleteToDo(todo) {
 }
 
 function App() {
+
+  // Filter todo items with name as kirandash
+  const userToDos = API.graphql(graphqlOperation(queries.listTodos, {filter:{'name': {'eq': 'kirandash'}}}));
+  console.log(userToDos)
+
   // Create To Do
   Auth.currentAuthenticatedUser({
     bypassCache: false
