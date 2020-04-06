@@ -73,3 +73,6 @@
 ## 4. AppSync GraphQL Calls with React
 ### 4.1 Adding AppSync GraphQL to a React App
 1. Add configuration in App.js file
+
+### 4.2 Adding DynamoDB data through a React app
+1. Add Get queries
