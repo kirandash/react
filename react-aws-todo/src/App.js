@@ -9,6 +9,15 @@ import * as mutations from './graphql/mutations';
 Auth.configure(awsconfig);
 API.configure(awsconfig);
 
+function updateToDo(todo, newdesc) {
+  todo['description'] = newdesc
+  API.graphql(graphqlOperation(mutations.updateTodo, {input: todo}))
+}
+
+function deleteToDo(todo) {
+  API.graphql(graphqlOperation(mutations.deleteTodo, {input: {'id': todo['id']}}))
+}
+
 function App() {
   // Create To Do
   Auth.currentAuthenticatedUser({
@@ -26,7 +35,10 @@ function App() {
   const allToDos = API.graphql(graphqlOperation(queries.listTodos));
   console.log(allToDos);
 
-  const oneToDo = API.graphql(graphqlOperation(queries.getTodo, {id: "faccd00a-3357-4ee8-91ce-076b70f10c7c"}));
+  const oneToDo = API.graphql(graphqlOperation(queries.getTodo, {id: "f411ad05-5f60-4bab-b10f-223f0dc753b6"})).then(function(todo){
+    updateToDo(todo['data']['getTodo'], "new desc");
+    // deleteToDo(todo['data']['getTodo']);
+  });
   console.log(oneToDo);
 
   return (

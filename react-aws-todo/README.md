@@ -81,3 +81,5 @@
 
 ### 4.4 Get username
 1. `Auth.currentAuthenticatedUser({})`
+
+### 4.5 Testing DynamoDB CRUD with a React app
