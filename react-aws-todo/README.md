@@ -76,3 +76,5 @@
 
 ### 4.2 Adding DynamoDB data through a React app
 1. Add Get queries
+
+### 4.3 CRUD DynamoDB data with a React app
