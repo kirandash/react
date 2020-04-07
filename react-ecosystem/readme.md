@@ -84,3 +84,5 @@
 ### 3.1 Create TodoList component
 1. create src/todos/TodoList.js
 2. Create ToDoList.css
+
+### 3.2 Create TodoListItem component
