@@ -71,3 +71,11 @@
 3. Create **webpack.config.js** file to tell webpack what to do with our source code. webpack code is written in plain JS.
     - Mention entry, output, module with rules to apply loaders for js, jsx and css files.devServer config, add hotreload plugin.
 4. After adding webpack code, run webpack dev server: `npx webpack-dev-server --mode development` and app will start running at http://localhost:3000/
+
+### 2.6 Hot reloading with react-hot-loader
+1. As of now, changing codw won't reflect in browser instantly. Install react-hot-loader: `npm install --save-dev react-hot-loader`
+2. Export App component through hot loader in App.js `export default hot(module)(App)`
+3. Create a script to run webpack-dev-server in package.json file: `npm run dev`
+4. Now changing code will change brwoser content immediately
+5. Note that webpack-dev-server creates the dist folder in memory and serves the output in browser. In order to create dist folder, we must create another build command in package.json file. `npx webpack --mode development`
+6. Run `npm run build`. It will create dist/ folder
