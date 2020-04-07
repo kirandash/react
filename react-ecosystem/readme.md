@@ -59,3 +59,15 @@
     - **index.js**: Code in this will help us insert our React App into index.html with `ReactDOM.render()`
     - **App.js**: Holds JS code for our root React component
     - **App.css**: Holds CSS code for our root React component
+
+### 2.5 Building and Serving with Webpack
+1. Webpack will do the following action: transpile react code in src/ directory. And after transpiling, host our public/ directory in browser for viewing. Webpack helps bundle our project with the help of dependency graph. Settings in **webpack.config.js**:
+    - Entry: Starting point of the graph. From here, webpack starts following the imports to form the rest of the graph.
+    - Output: Explicit path where to save the output bundle
+    - Module: Any file (JS, JSX, CSS, img, font, markdown etc)
+    - Loaders: Apply transformations to modules through the bundling process
+    - Plugins: Apply transformations on parts of the bundle output
+2. Install reqd packages: `npm install --save-dev webpack webpack-cli webpack-dev-server style-loader css-loader babel-loader`
+3. Create **webpack.config.js** file to tell webpack what to do with our source code. webpack code is written in plain JS.
+    - Mention entry, output, module with rules to apply loaders for js, jsx and css files.devServer config, add hotreload plugin.
+4. After adding webpack code, run webpack dev server: `npx webpack-dev-server --mode development` and app will start running at http://localhost:3000/
