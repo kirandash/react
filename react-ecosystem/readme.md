@@ -52,3 +52,10 @@
 4. Add presets to .babelrc file:
     - **@babel/preset-env**: transpiles ES6 into common JS
     - **@babel/preset-react**: handles JSX and converts it into browser compatible code.
+
+### 2.4 The index.js file and App component
+1. First install React and ReactDOM to our project react-ecosystem: `npm install react react-dom`
+2. We will create 3 files for our react code in src/ folder
+    - **index.js**: Code in this will help us insert our React App into index.html with `ReactDOM.render()`
+    - **App.js**: Holds JS code for our root React component
+    - **App.css**: Holds CSS code for our root React component
