@@ -40,7 +40,15 @@
 3. create folders:
     - **public**: to hold publicly accessible resources of our app
     - **src**: will hold actual react code
-4. create **index.html** file inside public folder. This file is going to be sent to the client when react app loads.
+4. create **index.html** file inside public folder. This file is going to be sent to the client when react app loads. (HTML Boilerplate code: http://htmlshell.com/)
 5. Add code to index.html file with a div of id `root` which is the target where our react app is going to load. 
 6. Add a noscript tag if JS is disabled for client browser.
 7. Add bundle.js to index.html.
+
+### 2.3 Supporting ES6 and JSX with babel
+1. Add support for ES6 syntax and JSX
+2. In react-ecosystem project run: `npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/preset-react`
+3. Create a **.babelrc** file: It will tell the babel transpiler what plugins and presets to use while transpiling our code.
+4. Add presets to .babelrc file:
+    - **@babel/preset-env**: transpiles ES6 into common JS
+    - **@babel/preset-react**: handles JSX and converts it into browser compatible code.
