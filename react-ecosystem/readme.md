@@ -92,3 +92,7 @@ This is to hold individual todo list item data
 ### 3.3 Create NewToDoForm component - with useState hook
 This is to hold form using which user can create new to do items
 1. create functional component to hold form data and then use react hook `useState` to store todo input value
+
+### 3.4 Putting the App together
+1. Add TodoList to App.js
+2. Add NewTodoForm to TodoList.js and make sure to have default todos to avoid error. `todos = []`

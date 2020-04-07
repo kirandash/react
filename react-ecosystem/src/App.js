@@ -1,11 +1,13 @@
-import React from 'react';
-import './App.css';
-import { hot } from 'react-hot-loader';
+import React from 'react'
+import { hot } from 'react-hot-loader'
+
+import TodoList from './todos/TodoList'
+import './App.css'
 
 const App = () => (
     <div className="App">
-        <h1>React Ecosystem!!!!</h1>
+        <TodoList />
     </div>
 )
 
-export default hot(module)(App);
+export default hot(module)(App)
