@@ -82,7 +82,13 @@
 
 ## 3. Creating Components
 ### 3.1 Create TodoList component
+It will hold list of all todos
 1. create src/todos/TodoList.js
 2. Create ToDoList.css
 
 ### 3.2 Create TodoListItem component
+This is to hold individual todo list item data
+
+### 3.3 Create NewToDoForm component - with useState hook
+This is to hold form using which user can create new to do items
+1. create functional component to hold form data and then use react hook `useState` to store todo input value
