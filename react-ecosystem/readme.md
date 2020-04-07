@@ -79,3 +79,8 @@
 4. Now changing code will change brwoser content immediately
 5. Note that webpack-dev-server creates the dist folder in memory and serves the output in browser. In order to create dist folder, we must create another build command in package.json file. `npx webpack --mode development`
 6. Run `npm run build`. It will create dist/ folder
+
+## 3. Creating Components
+### 3.1 Create TodoList component
+1. create src/todos/TodoList.js
+2. Create ToDoList.css
