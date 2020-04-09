@@ -71,6 +71,9 @@
 3. Create **webpack.config.js** file to tell webpack what to do with our source code. webpack code is written in plain JS.
     - Mention entry, output, module with rules to apply loaders for js, jsx and css files.devServer config, add hotreload plugin.
 4. After adding webpack code, run webpack dev server: `npx webpack-dev-server --mode development` and app will start running at http://localhost:3000/
+5. Note: If during build it throws babel compatibility issue, use the babel upgrade tool to get the right set of versions for your project.
+https://github.com/babel/babel-upgrade
+Run the command `npx babel-upgrade --write`. It will change the version numbers to correct configuration.
 
 ### 2.6 Hot reloading with react-hot-loader
 1. As of now, changing codw won't reflect in browser instantly. Install react-hot-loader: `npm install --save-dev react-hot-loader`
@@ -96,3 +99,28 @@ This is to hold form using which user can create new to do items
 ### 3.4 Putting the App together
 1. Add TodoList to App.js
 2. Add NewTodoForm to TodoList.js and make sure to have default todos to avoid error. `todos = []`
+
+## 4. Adding Redux
+### 4.1 Why do we need Redux?
+1. Let's have a look at ways to manage state:
+    - **A single state**: Creating state for root component and using that for all child components following a prop chain. **Cons**: Not suitable for large applications. As lots of props get attached to root state. And we will have to deal with **props drilling**. For example: App ---> Page ---> Section ---> List ---> ListItem. Ugly and difficult to troubleshoot. Prone to errors if we break the prop chain by mistake.
+    - **Components manageing their own state**: Creating state for each component. Pros: No Props drilling. **Cons**: Difficult to share data between two components.
+    - **Global State Management**: A single centralized state, With all child components having unlimited access to it. **Pros**: No Props drilling. Easy to share state data b/w components. **Cons**: No rules/organizations on how to create state and use it. Thus leads to inconsistency b/w developers. And hard to recreate bugs for troubleshooting. Thus, unrestricted global state is not an ideal choice.
+    - **Redux** solves this problem by adding rules/orgnaizations to global state management.
+
+### 4.2 How redux works?
+1. Works on global state management concept. Thus have a centralized state called **Store**.
+2. **The redux store** is basically a JSON object that can hold any type of data we want. Ex: `{ user: {...}, products: {...} }`
+3. How redux controls the global state?: The main problem with global state is there is no rules/restrictions. Redux solves this problem by adding some rules.
+4. Other pieces of Redux: 
+    - **{ Redux Store }**: JSON object that contains current state of our app
+    - **Redux actions**: JSON object consisting of two things: `{ type, payload }`. It defines different actions that can occur in our app. Ex: `USER_DATA_LOADED`, `ITEM_ADDED_TO_CART`
+    - **Reducers**: This defines what changes to do with Redux Store when a Redux action occurs. Ex: When `ITEM_ADDED_TO_CART` action occurs, we take all the data in payload and store it in shoppingcart prop in redux store.
+5. Summary: Components can only interact with the state by triggering Redux actions.
+6. Thus Redux follows a **Unidirectional Data Flow**: UI Triggers action ---> State is updated ---> Components see updated State
+
+### 4.3 Adding redux to a React App
+1. Install redux: `npm install redux react-redux`
+2. Create src/store.js: will hold logic for redux store
+    - Create root store by combining all reducers
+3. In index.js: wrap `App`with `Provider`. Ex: `<Provider store={configureStore()}><App/></Provider>`
