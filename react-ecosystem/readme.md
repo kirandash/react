@@ -168,3 +168,26 @@ This is to hold form using which user can create new to do items
 ### 4.11 Redux flow for Mark as Completed
 1. Create MARK_TODO_AS_COMPLETED action in action.js and add it to the list of reducers in reducers.js
 2. Dispatch the action Creator in Todolist.js and pass it as a props to child component TodoListitem.js. Note: We are not connecting redux directly to TodoListItem.js because we want to keep it reusable. Always good practice to keep our redux connection at parent level and pass to child as props.
+
+## 5. Dealing with Side Effects
+### 5.1 Why Do We need Redux-Thunk?
+1. With Redux now our components size are really small as most of the state management code is moved out of component to store.js, actions.js and reducers.js file.
+2. Still in our current code: component has to contain code for asnyc/API calls. This is called **Side Effects**
+3. To separate it out we should use **Side effect libraries**
+4. Thus: Redux ---> State Management, Components ---> View Logic, Side Effect Libraries ---> Side Effects
+5. Side Effect libraries: Redux Thunk, Redux Saga, Redux Logic etc.
+6. Redux saga is more popular.
+7. Redux Thunk is simpler and easy to learn.
+
+### 5.2 How Redux Thunk works?
+1. UI Triggers Action ---> State is Updated ---> Component See updated State
+2. Redux Thunk allows us to add a fork to the above loop after ui triggers action. For Async loading data etc. Thus removing the side effect logic from components.
+
+### 5.3 Adding Redux Thunk to React
+1. `npm install redux-thunk redux-devtools-extension @babel/runtime`
+    - redux-devtools-extension is used for adding redux-thunk to our devtools middleware.
+    - @babel/runtime: is used so that async thunks can work in our app
+2. `npm install --save-dev @babel/plugin-transform-runtime`
+    - Dev version of @babel/runtime: used for async thunks to work in our app
+3. Add @babel/plugin-transform-runtime to .babelrc file
+4. Add thunk to store.js file
