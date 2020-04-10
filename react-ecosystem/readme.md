@@ -145,3 +145,9 @@ This is to hold form using which user can create new to do items
 1. src/todos/TodoList.js: Use connect witih mapStateToProps and mapDispatchToProps
 2. Note: mapStateToProps and mapDispatchToProps are optional. Ex: `connect(mapStateToProps)(mycomponent)` and `connect(null, mapDispatchToProps)(mycomponent)`
 3. Run: `npm run dev` and test create/delete functionality at http://localhost:3000/
+
+### 4.8 Persisting the Redux store with redux-persist
+1. Our current store gets cleared on reloading browser. To persist data in store: use **redux-persist**. `npm install redux-persist`
+2. store.js file: Wrap rootReducer with persistReducer configuration.
+3. index.js file: Wrap App with PersistGate
+4. Now on reloading browser, the state will be still saved. In order to clear it, delete the `persist:root` data from localStorage. 
