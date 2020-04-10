@@ -151,3 +151,11 @@ This is to hold form using which user can create new to do items
 2. store.js file: Wrap rootReducer with persistReducer configuration.
 3. index.js file: Wrap App with PersistGate
 4. Now on reloading browser, the state will be still saved. In order to clear it, delete the `persist:root` data from localStorage. 
+
+### 4.9 Redux DevTools
+1. To monitor states from chrome dev tools. And also manually dispatch actions to test reducers.
+2. Add Redux DevTools extension to chrome : https://chrome.google.com/webstore/detail/redux-devtools
+3. Add __REDUX_DEVTOOLS_EXTENSION__ to store.js
+4. Run app with `npm run dev`
+5. Go to localhost and on performing some action: it will show the list of actions. The difference it makes to state and new state after the action, all in the Redux devtools extension
+6. Also we can dispatch actions to test reducers from redux dev tools. Click on the dispatch icon(keyboard) at bottom panel and enter the data in JSON to dispatch `{type: 'CREATE_TODO',payload: {text: 'Gym'}}` and click dispatch btn.
