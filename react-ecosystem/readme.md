@@ -135,3 +135,8 @@ This is to hold form using which user can create new to do items
 3. Reducer takes 2 args: current state, action triggered
 4. Note: In reducers, we should not mutate the original state. Always return a new copy
 5. After todos reducers is created in reducers.ts file. Import it and add it to the list of reducers in store.js file
+
+### 4.6 Connecting Component to the Store with connect from react-redux
+1. connect is a higher order fn with 2 sets of args: `connect()()` Ex: `conneect(mapStateToProps, mapDispatchToProps)`
+2. mapStateToProps is a Fn which takes the entire state of our app as input and return specific props from the state which the specific component requires. And all props defined inside mapStateToProps is automatically made available by connect as prop for the component to use.
+3. mapDispatchToProps is a Fn which takes dispatch as input. A dispatch is a fn used to call an action creator.
