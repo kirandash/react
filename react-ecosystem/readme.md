@@ -191,3 +191,8 @@ This is to hold form using which user can create new to do items
     - Dev version of @babel/runtime: used for async thunks to work in our app
 3. Add @babel/plugin-transform-runtime to .babelrc file
 4. Add thunk to store.js file
+
+### 5.4 Creating a sample thunk
+1. Create src/todos/thunks.js file
+2. A thunk is a fn which calls another fn which performs a particular task
+3. Create a sample Thunk to test
