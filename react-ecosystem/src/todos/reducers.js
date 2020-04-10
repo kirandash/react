@@ -1,4 +1,4 @@
-import { CREATE_TODO, REMOVE_TODO } from './actions';
+import { CREATE_TODO, REMOVE_TODO, MARK_TODO_AS_COMPLETED } from './actions';
 
 export const todos = (state = [], action) => { // Default state is mentioned as an empty array to avoid any error in case, the state passed is not having any data
     const { type, payload } = action; // Get Action Type and payload from the action (By destructuring)
@@ -14,6 +14,15 @@ export const todos = (state = [], action) => { // Default state is mentioned as 
         case REMOVE_TODO: {
             const { text } = payload;
             return state.filter(todo => todo.text !== text); // Remove todo with text received in payload
+        }
+        case MARK_TODO_AS_COMPLETED: {
+            const { text } = payload;
+            return state.map(todo => {
+                if(todo.text === text) {
+                    return { ...todo, isCompleted: true };
+                }
+                return todo;
+            });
         }
         default: {
             return state;

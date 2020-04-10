@@ -11,3 +11,10 @@ export const removeTodo = text => ({
     type: REMOVE_TODO,
     payload: { text }
 }); // Action Creator
+
+// MARK_TODO_AS_COMPLETED Action
+export const MARK_TODO_AS_COMPLETED = 'MARK_TODO_AS_COMPLETED'; // Action Type
+export const makrTodoAsCompleted = text => ({
+    type: MARK_TODO_AS_COMPLETED,
+    payload: { text }
+})

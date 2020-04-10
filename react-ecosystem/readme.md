@@ -159,3 +159,12 @@ This is to hold form using which user can create new to do items
 4. Run app with `npm run dev`
 5. Go to localhost and on performing some action: it will show the list of actions. The difference it makes to state and new state after the action, all in the Redux devtools extension
 6. Also we can dispatch actions to test reducers from redux dev tools. Click on the dispatch icon(keyboard) at bottom panel and enter the data in JSON to dispatch `{type: 'CREATE_TODO',payload: {text: 'Gym'}}` and click dispatch btn.
+
+### 4.10 Redux Best Practices
+1. **Export both connected and unconnected version of components.** Your tests should not care whether your component is connected or not.
+2. **Keep redux actions and async operations out of your reducers.**
+3. **Think carefully about which components to be connected to redux.** Because connecting a component to redux makes it less reusable. Thus comes the concept of containers: It is better to use the store in a parent component or say container and then use that in child components which can be reusable.
+
+### 4.11 Redux flow for Mark as Completed
+1. Create MARK_TODO_AS_COMPLETED action in action.js and add it to the list of reducers in reducers.js
+2. Dispatch the action Creator in Todolist.js and pass it as a props to child component TodoListitem.js. Note: We are not connecting redux directly to TodoListItem.js because we want to keep it reusable. Always good practice to keep our redux connection at parent level and pass to child as props.
