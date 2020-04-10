@@ -124,3 +124,7 @@ This is to hold form using which user can create new to do items
 2. Create src/store.js: will hold logic for redux store
     - Create root store by combining all reducers
 3. In index.js: wrap `App`with `Provider`. Ex: `<Provider store={configureStore()}><App/></Provider>`
+
+### 4.4 Creating Redux Actions
+1. Create src/todos/actions.js file.
+2. Create Action type constant and Action creator function for CREATE_TODO and REMOVE_TODO actions.
