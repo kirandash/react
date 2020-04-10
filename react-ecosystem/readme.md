@@ -128,3 +128,10 @@ This is to hold form using which user can create new to do items
 ### 4.4 Creating Redux Actions
 1. Create src/todos/actions.js file.
 2. Create Action type constant and Action creator function for CREATE_TODO and REMOVE_TODO actions.
+
+### 4.5 Creating Reducers
+1. A reducer is basically a fn to perform some tasks when an action is dispatched.
+2. Create src/todos/reducers.ts file.
+3. Reducer takes 2 args: current state, action triggered
+4. Note: In reducers, we should not mutate the original state. Always return a new copy
+5. After todos reducers is created in reducers.ts file. Import it and add it to the list of reducers in store.js file
