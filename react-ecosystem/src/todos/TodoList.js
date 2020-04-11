@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 
-import './TodoList.css';
 import NewTodoForm from './NewTodoForm';
 import TodoListItem from './TodoListItem';
 import { 
@@ -14,6 +14,14 @@ import { loadTodos, removeTodoRequest, markTodoAsCompletedRequest } from './thun
 // import { makrTodoAsCompleted } from './actions';
 // import { displayAlert } from './thunks';
 
+import './TodoList.css';
+
+// Styled Components using tagged fns
+const BigRedText = styled.div`
+    font-size: 48px;
+    color: #FF0000;
+`; // Tagged fns are used to define styled-components
+
 const TodoList = ({ completedTodos = [], incompleteTodos = [], onRemovePressed, onCompletedPressed, isLoading, startLoadingTodos }) => { // Or use todos = [ {text: 'Test Todo item'} ] if a specific default todo item is required
     useEffect(() => {
         startLoadingTodos();
@@ -21,6 +29,7 @@ const TodoList = ({ completedTodos = [], incompleteTodos = [], onRemovePressed, 
     const loadingMessage = <div>Loading todos...</div>;
     const content = (
         <div className="list-wrapper">
+            <BigRedText>I'm a styled component</BigRedText>
             <NewTodoForm />
             {/* 
             {todos.map((todo, index) => 

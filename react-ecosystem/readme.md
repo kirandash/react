@@ -236,7 +236,7 @@ This is to hold form using which user can create new to do items
 1. Till now we have handled **separation of concerns** for the following: 
     - Component ---> Display Data
     - Reducers ---> Manage State
-    - Thunks ---> Thunks
+    - Thunks ---> Side effect logic
 2. Currently, we are mapping data from state directly to mapStateToProps. But what if we need to modify the data from state before assigning to mapStateToProps.
 3. **Selectors** gives us a place to put logic for combining, filtering, transforming storing data.
 4. If JSON data structure of state changes, we don't have to change the mapping in mapStateToProps for every component. All we have to do is just change the code in selectors.js file.
@@ -261,3 +261,23 @@ This is to hold form using which user can create new to do items
 ### 6.5 Adding getCompletedTodos and getIncompletedTodos to components
 1. Add both the selectors to mapStateToProps of TodoList.js
 2. Note: If any issue comes in loading the app, it might be bcoz of the localStorage, so clear the localStorage data. Make sure the defaults are set to empty array and reload the app.
+
+## 7. Styled Components
+### 7.1 Why do we need styled components?
+1. So far we have handled the **Separation of concerns** as follows:
+    - Components ---> Display data
+    - Reducers ---> Manage state
+    - Thunks ---> Side Effect Logic
+    - Selectors ---> Abstracting the state's format, transforming state data
+2. For handling CSS: we are currently using separate .css file. Ex: component.js and component.css file. This is not ideal to have extra css file for every component.
+    - It will clutter our folder structure.
+    - If .css file is separate, then we will need additional classes to change css as per state. Ex: 'selected' or 'active' class needs to be added to the item in component if active style is needed. But with styled components, we don't need these additional classes.
+3. **Styled Component:** Allows us to define styles inside our JS files. Ex: Instead of using `<Item className={item.isSelected ? "selected" : "not-selected"}`, we can just use: `<Item selected={true}>`
+
+### 7.2 Creating a Styled Component
+1. Install: `npm install styled-components`
+2. Create styled components in TodoList.js using tagged fns. styled.div or styled.h1 or styled.button etc
+3. Organizing styled components: 
+    - If the component is unique and there is less amount of code then keep it in js file. 
+    - If amount of code is more, create separate styled component js file. 
+    - If component is common and can be reused, create seaparate file and store all styled components in src/todos/user-interface folder.
