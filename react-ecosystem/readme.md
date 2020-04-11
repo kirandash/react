@@ -273,6 +273,7 @@ This is to hold form using which user can create new to do items
     - It will clutter our folder structure.
     - If .css file is separate, then we will need additional classes to change css as per state. Ex: 'selected' or 'active' class needs to be added to the item in component if active style is needed. But with styled components, we don't need these additional classes.
 3. **Styled Component:** Allows us to define styles inside our JS files. Ex: Instead of using `<Item className={item.isSelected ? "selected" : "not-selected"}`, we can just use: `<Item selected={true}>`
+4. More Benefit: can pass props to them and thus can dynamically change styles
 
 ### 7.2 Creating a Styled Component
 1. Install: `npm install styled-components`
@@ -285,3 +286,7 @@ This is to hold form using which user can create new to do items
 ### 7.3 Converting CSS modules to Styled components
 1. Move code from .css modules to .js files and delete the css files.
 2. Ex: copy styles of list-wrapper from TodoList.css file to TodoList.js file with styled.div and replace `<div className="list-wrapper">` with `<ListWrapper>`
+
+### 7.4 Passing props to Styled Components
+1. The main benefit of styled components is we can pass props to them and thus can dynamically change styles. Thus condition for styling is moved to styled tagged fns and JSX is much more cleaner.
+2. Ex: `border-top: ${props => props.completed === true ? 'none' : '2px solid red'};`
