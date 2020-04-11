@@ -220,3 +220,8 @@ This is to hold form using which user can create new to do items
 2. modify CREATE_TODOS case in todos reducer
 3. Modify CREATE_TODOS action
 4. Call thunk addTodoRequest from NewTodoForm.js file
+
+### 5.10 Using Thunks for DELETE API call - with addTodoRequest thunk
+1. Create removeTodoRequest thunk in thunks.js file
+2. Modify REMOVE_TODO in action and reducer to receive todo instead of text
+3. call removeTodoRequest from TodoList.js file and send id from TodoListItem.js file.

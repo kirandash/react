@@ -33,8 +33,8 @@ export const todos = (state = [], action) => { // Default state is mentioned as 
             return state.concat(todo); // Note: Concat does not mutate the original state. It is important to remember that in reducers, we should not mutate the original state. Always return a new copy
         }
         case REMOVE_TODO: {
-            const { text } = payload;
-            return state.filter(todo => todo.text !== text); // Remove todo with text received in payload
+            const { todo: todoToRemove } = payload; // todo destructured from payload and nick named with todoToRemove as alias
+            return state.filter(todo => todo.id !== todoToRemove.id); // Remove todo with id received in payload
         }
         case MARK_TODO_AS_COMPLETED: {
             const { text } = payload;

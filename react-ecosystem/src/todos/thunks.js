@@ -1,4 +1,4 @@
-import { createTodo, loadTodosInProgress, loadTodosSuccess, loadTodosFailure } from './actions';
+import { createTodo, removeTodo, loadTodosInProgress, loadTodosSuccess, loadTodosFailure } from './actions';
 
 export const loadTodos = () => async (dispatch, getState) => {
     try {
@@ -13,6 +13,7 @@ export const loadTodos = () => async (dispatch, getState) => {
     } // try catch block to catch any error
 }
 
+// POST thunk
 export const addTodoRequest = text => async (dispatch, getState) => {
     try {
         const body = JSON.stringify({ text }); // Get todo data
@@ -25,6 +26,19 @@ export const addTodoRequest = text => async (dispatch, getState) => {
         }); // Make POST call
         const todo = await response.json(); // Get response data from POST API call
         dispatch(createTodo(todo)); // dispatch create to do action
+    } catch (e) {
+        dispatch(displayAlert(e)); // on error, dispatch alert action with error message
+    }
+}
+
+// DELETE Thunk
+export const removeTodoRequest = id => async dispatch => {
+    try {
+        const response = await fetch(`http://localhost:8080/todos/${id}`, {
+            method: 'delete',
+        }); // Make DELETE call
+        const removedTodo = await response.json(); // Get response data in JSON format from DELETE API call
+        dispatch(removeTodo(removedTodo)); // dispatch remove to do action
     } catch (e) {
         dispatch(displayAlert(e)); // on error, dispatch alert action with error message
     }
