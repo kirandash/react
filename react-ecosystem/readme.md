@@ -214,3 +214,9 @@ This is to hold form using which user can create new to do items
 
 ### 5.8 Refactoring the todos reducer to show todos from API response
 1. Update the todos in state with data from API.
+
+### 5.9 Using Thunks to create POST API call - with addTodoRequest thunk
+1. Create addTodoRequest thunk in thunks.js file
+2. modify CREATE_TODOS case in todos reducer
+3. Modify CREATE_TODOS action
+4. Call thunk addTodoRequest from NewTodoForm.js file

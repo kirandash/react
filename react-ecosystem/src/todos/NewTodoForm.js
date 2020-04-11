@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { createTodo } from './actions';
+import { addTodoRequest } from './thunks';
+// import { createTodo } from './actions';
 import './NewTodoForm.css';
 
 const NewTodoForm = ({ todos, onCreatePressed }) => { // todos is now automatically made available by connect as prop for the component to use. as it is added to mapStateToProps below
@@ -35,7 +36,8 @@ const mapStateToProps = (state) => ({
 }); // Fn: takes the entire state of our app as input and return specific props from the state which this NewTodoForm component requires
 
 const mapDispatchToProps = dispatch => ({
-    onCreatePressed: text => dispatch(createTodo(text)), // onCreatePressed is the fn our component will use to call createTodo action
+    // onCreatePressed: text => dispatch(createTodo(text)), // onCreatePressed is the fn our component will use to call createTodo action
+    onCreatePressed: text => dispatch(addTodoRequest(text)), 
 }); // Fn to map Dispatch to props
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewTodoForm);

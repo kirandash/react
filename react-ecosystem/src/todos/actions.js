@@ -1,8 +1,8 @@
 // CREATE_TODO Action
 export const CREATE_TODO = 'CREATE_TODO'; // Action Type
-export const createTodo = text => ({
+export const createTodo = todo => ({
     type: CREATE_TODO,
-    payload: { text }
+    payload: { todo }
 }); // Action Creator
 
 // REMOVE_TODO Action
