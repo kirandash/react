@@ -206,3 +206,8 @@ This is to hold form using which user can create new to do items
 ### 5.6 Async thunks - for Todos API
 1. Create actions for in progress, success and failure state in actions.js file.
 2. Create thunk `loadTodos` in thunks.js file.
+
+### 5.7 Adding isLoading reducer
+1. Create reducer in reducers.js file.
+2. Add it to list of reducers in store.js file.
+3. Call loadTodos thunk in TodoList.js file.
