@@ -14,9 +14,9 @@ export const removeTodo = todo => ({
 
 // MARK_TODO_AS_COMPLETED Action
 export const MARK_TODO_AS_COMPLETED = 'MARK_TODO_AS_COMPLETED'; // Action Type
-export const makrTodoAsCompleted = text => ({
+export const makrTodoAsCompleted = todo => ({
     type: MARK_TODO_AS_COMPLETED,
-    payload: { text }
+    payload: { todo }
 }); // Action Creator
 
 /* Todos API Actions Start */

@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import './TodoList.css';
 import NewTodoForm from './NewTodoForm';
 import TodoListItem from './TodoListItem';
-import { loadTodos, removeTodoRequest } from './thunks';
-import { makrTodoAsCompleted } from './actions';
+import { loadTodos, removeTodoRequest, markTodoAsCompletedRequest } from './thunks';
+// import { makrTodoAsCompleted } from './actions';
 // import { displayAlert } from './thunks';
 
 const TodoList = ({ todos = [], onRemovePressed, onCompletedPressed, isLoading, startLoadingTodos }) => { // Or use todos = [ {text: 'Test Todo item'} ] if a specific default todo item is required
@@ -36,7 +36,8 @@ const mapDispatchToProps = dispatch => ({
     startLoadingTodos: () => dispatch(loadTodos()),
     // onRemovePressed: text => dispatch(removeTodo(text)),
     onRemovePressed: id => dispatch(removeTodoRequest(id)),
-    onCompletedPressed: text => dispatch(makrTodoAsCompleted(text)),
+    // onCompletedPressed: text => dispatch(makrTodoAsCompleted(text)),
+    onCompletedPressed: id => dispatch(markTodoAsCompletedRequest(id)),
     // onDisplayAlertClicked: text => dispatch(displayAlert(text)),
 });
 

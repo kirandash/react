@@ -1,4 +1,4 @@
-import { createTodo, removeTodo, loadTodosInProgress, loadTodosSuccess, loadTodosFailure } from './actions';
+import { createTodo, removeTodo, loadTodosInProgress, loadTodosSuccess, loadTodosFailure, makrTodoAsCompleted } from './actions';
 
 export const loadTodos = () => async (dispatch, getState) => {
     try {
@@ -39,6 +39,19 @@ export const removeTodoRequest = id => async dispatch => {
         }); // Make DELETE call
         const removedTodo = await response.json(); // Get response data in JSON format from DELETE API call
         dispatch(removeTodo(removedTodo)); // dispatch remove to do action
+    } catch (e) {
+        dispatch(displayAlert(e)); // on error, dispatch alert action with error message
+    }
+}
+
+// UPDATE Thunk
+export const markTodoAsCompletedRequest = id => async dispatch => {
+    try {
+        const response = await fetch(`http://localhost:8080/todos/${id}/completed`, {
+            method: 'post',
+        }); // Make post call
+        const updatedTodo = await response.json(); // Get response data in JSON format from POST API call
+        dispatch(makrTodoAsCompleted(updatedTodo)); // dispatch makrTodoAsCompleted action
     } catch (e) {
         dispatch(displayAlert(e)); // on error, dispatch alert action with error message
     }

@@ -37,10 +37,13 @@ export const todos = (state = [], action) => { // Default state is mentioned as 
             return state.filter(todo => todo.id !== todoToRemove.id); // Remove todo with id received in payload
         }
         case MARK_TODO_AS_COMPLETED: {
-            const { text } = payload;
+            const { todo: updatedTodo } = payload; // todo destructured from payload and nick named with updatedTodo as alias
             return state.map(todo => {
-                if(todo.text === text) {
-                    return { ...todo, isCompleted: true };
+                // if(todo.text === text) {
+                //     return { ...todo, isCompleted: true };
+                // }
+                if(todo.id === updatedTodo.id) {
+                    return updatedTodo;
                 }
                 return todo;
             });
