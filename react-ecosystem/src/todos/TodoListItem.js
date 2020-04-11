@@ -8,12 +8,16 @@ const ToDoItemContainer = styled.div`
     background: #fff;
     border-radius: 8px;
     border-bottom: ${props => (new Date(props.createdAt) > new Date(Date.now() - 8640000 * 5) ? 'none' : '2px solid red')};
-    border-top: ${props => props.completed === true ? 'none' : '2px solid red'};
     margin-top: 8px;
     padding: 16px;
     position: relative;
     box-shadow: 0 4px 8px grey;
 `;
+
+// Extending ToDOItemContainer 
+const ToDoItemContainerWithWarning = styled(ToDoItemContainer)`
+    border-top: 2px solid red;
+`; // Will take all styles from ToDoItemContainer and add border-top on top of that
 
 const ButtonsContainer = styled.div`
     position: absolute;
@@ -21,7 +25,7 @@ const ButtonsContainer = styled.div`
     bottom: 12px;
 `;
 
-const CompletedButton = styled.button`
+const Button = styled.button`
     font-size: 16px;
     padding: 8px;
     border: none;
@@ -29,23 +33,24 @@ const CompletedButton = styled.button`
     outline: none;
     cursor: pointer;
     display: inline-block;
+`;
+
+// Extending Button 
+const CompletedButton = styled(Button)`
     background-color: #22ee22;
 `; // button + .completed-button style
 
-const RemoveButton = styled.button`
-    font-size: 16px;
-    padding: 8px;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    cursor: pointer;
-    display: inline-block;
+// Extending Button
+const RemoveButton = styled(Button)`
     background-color: #ee2222;
     margin-left: 8px;
 `; // button + .remove-button style
 
-const TodoListItem = ({ todo, onRemovePressed, onCompletedPressed }) => (
-    <ToDoItemContainer createdAt={todo.createdAt} completed={todo.isCompleted}>
+const TodoListItem = ({ todo, onRemovePressed, onCompletedPressed }) => {
+    const Container = todo.isCompleted ? ToDoItemContainer : ToDoItemContainerWithWarning;
+    return (
+    <Container createdAt={todo.createdAt}>
+    {/* <ToDoItemContainer createdAt={todo.createdAt} completed={todo.isCompleted}> */}
     {/* <div className="todo-item-container"> */}
         <h3>{todo.text}</h3>
         <p>
@@ -76,7 +81,8 @@ const TodoListItem = ({ todo, onRemovePressed, onCompletedPressed }) => (
         {/* </div> */}
         </ButtonsContainer>
     {/* </div> */}
-    </ToDoItemContainer>
-);
+    {/* </ToDoItemContainer> */}
+    </Container>
+)};
 
 export default TodoListItem;

@@ -290,3 +290,6 @@ This is to hold form using which user can create new to do items
 ### 7.4 Passing props to Styled Components
 1. The main benefit of styled components is we can pass props to them and thus can dynamically change styles. Thus condition for styling is moved to styled tagged fns and JSX is much more cleaner.
 2. Ex: `border-top: ${props => props.completed === true ? 'none' : '2px solid red'};`
+
+### 7.5 Extending Styled Components
+1. Will take all styles from ToDoItemContainer and add border-top on top of that
