@@ -14,7 +14,7 @@ import { loadTodos, removeTodoRequest, markTodoAsCompletedRequest } from './thun
 // import { makrTodoAsCompleted } from './actions';
 // import { displayAlert } from './thunks';
 
-import './TodoList.css';
+// import './TodoList.css';
 
 // Styled Components using tagged fns
 const BigRedText = styled.div`
@@ -22,14 +22,20 @@ const BigRedText = styled.div`
     color: #FF0000;
 `; // Tagged fns are used to define styled-components
 
+const ListWrapper = styled.div`
+    max-width: 700px;
+    margin: auto;
+`;
+
 const TodoList = ({ completedTodos = [], incompleteTodos = [], onRemovePressed, onCompletedPressed, isLoading, startLoadingTodos }) => { // Or use todos = [ {text: 'Test Todo item'} ] if a specific default todo item is required
     useEffect(() => {
         startLoadingTodos();
     }, []); // The empty array is to prevent reloading the app constantly
     const loadingMessage = <div>Loading todos...</div>;
     const content = (
-        <div className="list-wrapper">
-            <BigRedText>I'm a styled component</BigRedText>
+        <ListWrapper>
+        {/* <div className="list-wrapper"> */}
+            {/* <BigRedText>I'm a styled component</BigRedText> */}
             <NewTodoForm />
             {/* 
             {todos.map((todo, index) => 
@@ -53,7 +59,8 @@ const TodoList = ({ completedTodos = [], incompleteTodos = [], onRemovePressed, 
                     onCompletedPressed={onCompletedPressed}
                 />
             )}
-        </div>        
+        {/* </div> */}
+        </ListWrapper>
     );
     return isLoading ? loadingMessage : content;
 };

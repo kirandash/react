@@ -269,7 +269,7 @@ This is to hold form using which user can create new to do items
     - Reducers ---> Manage state
     - Thunks ---> Side Effect Logic
     - Selectors ---> Abstracting the state's format, transforming state data
-2. For handling CSS: we are currently using separate .css file. Ex: component.js and component.css file. This is not ideal to have extra css file for every component.
+2. For handling CSS: we are currently using separate .css file aka **css modules**. Ex: component.js and component.css file. This is not ideal to have extra css file or modules for every component.
     - It will clutter our folder structure.
     - If .css file is separate, then we will need additional classes to change css as per state. Ex: 'selected' or 'active' class needs to be added to the item in component if active style is needed. But with styled components, we don't need these additional classes.
 3. **Styled Component:** Allows us to define styles inside our JS files. Ex: Instead of using `<Item className={item.isSelected ? "selected" : "not-selected"}`, we can just use: `<Item selected={true}>`
@@ -281,3 +281,7 @@ This is to hold form using which user can create new to do items
     - If the component is unique and there is less amount of code then keep it in js file. 
     - If amount of code is more, create separate styled component js file. 
     - If component is common and can be reused, create seaparate file and store all styled components in src/todos/user-interface folder.
+
+### 7.3 Converting CSS modules to Styled components
+1. Move code from .css modules to .js files and delete the css files.
+2. Ex: copy styles of list-wrapper from TodoList.css file to TodoList.js file with styled.div and replace `<div className="list-wrapper">` with `<ListWrapper>`
