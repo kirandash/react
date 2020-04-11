@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import './TodoList.css';
 import NewTodoForm from './NewTodoForm';
 import TodoListItem from './TodoListItem';
+import { getTodos, getTodosLoading } from './selectors';
 import { loadTodos, removeTodoRequest, markTodoAsCompletedRequest } from './thunks';
 // import { makrTodoAsCompleted } from './actions';
 // import { displayAlert } from './thunks';
@@ -28,8 +29,10 @@ const TodoList = ({ todos = [], onRemovePressed, onCompletedPressed, isLoading, 
 };
 
 const mapStateToProps = state => ({
-    isLoading: state.isLoading,
-    todos: state.todos,
+    // isLoading: state.isLoading,
+    isLoading: getTodosLoading(state),
+    // todos: state.todos,
+    todos: getTodos(state)
 });
 
 const mapDispatchToProps = dispatch => ({

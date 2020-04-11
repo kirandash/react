@@ -230,3 +230,20 @@ This is to hold form using which user can create new to do items
 1. Create markTodoAsCompletedRequest thunk in thunks.js file
 2. Modify MARK_TODO_AS_COMPLETED in action and reducer to receive todo instead of text
 3. call markTodoAsCompletedRequest from TodoList.js file and send id from TodoListItem.js file.
+
+## 6. Selectors
+### 6.1 Why do we need selectors?
+1. Till now we have handled **separation of concerns** for the following: 
+    - Component ---> Display Data
+    - Reducers ---> Manage State
+    - Thunks ---> Thunks
+2. Currently, we are mapping data from state directly to mapStateToProps. But what if we need to modify the data from state before assigning to mapStateToProps.
+3. **Selectors** gives us a place to put logic for combining, filtering, transforming storing data.
+4. If JSON data structure of state changes, we don't have to change the mapping in mapStateToProps for every component. All we have to do is just change the code in selectors.js file.
+
+### 6.2 Creating selector - getTodos and getTodosLoading
+1. Create src/todos/selectors.js file
+2. Add getTodos and getTodosLoading selectors in selectors.js
+3. Modify todos reducer with new todos structure: `{ isLoading: false, dat: {text: 'some text'}}`
+4. control isLoading prop with LOAD_TODOS_SUCCESS, IN_PROGRESS and FAILURE. Remove isLoading reducer from the app.
+5. **IMPORTANT:** The beauty of selectors is: now if structure of state changes, we don't have to change the mapping in mapStateToProps for every component. All we have to do is just change the code in selectors.js file.
