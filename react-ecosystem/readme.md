@@ -202,3 +202,7 @@ This is to hold form using which user can create new to do items
 2. `npm install`
 3. `npm start`
 4. server will start at port 8080
+
+### 5.6 Async thunks - for Todos API
+1. Create actions for in progress, success and failure state in actions.js file.
+2. Create thunk `loadTodos` in thunks.js file.
