@@ -253,3 +253,7 @@ This is to hold form using which user can create new to do items
 2. We will use getTodos selector to create getIncompleteTodos selector. For this we will use a tool called **reselect** used for combining selectors / modifying them.
 3. `npm install reselect`
 4. **createSelector**: It accepts multiple args. The last fn will take input from all the selectors mentioned before it. The output of last fn is the final o/p
+
+### 6.4 Creating getCompletedTodos selector - And Computation saving
+1. Create getCompletedTodos in selectors.js
+2. **Imp Note**: The benefit of using createSelector is it does not compute everything when our component re-renders. It computes only the prop in state which has changed from the prev state. Thus, createSelector saves a lot of resource when building large scale applications by limiting the computation to only state which is changing on component rerendering.
