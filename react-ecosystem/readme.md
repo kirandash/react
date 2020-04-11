@@ -247,3 +247,9 @@ This is to hold form using which user can create new to do items
 3. Modify todos reducer with new todos structure: `{ isLoading: false, dat: {text: 'some text'}}`
 4. control isLoading prop with LOAD_TODOS_SUCCESS, IN_PROGRESS and FAILURE. Remove isLoading reducer from the app.
 5. **IMPORTANT:** The beauty of selectors is: now if structure of state changes, we don't have to change the mapping in mapStateToProps for every component. All we have to do is just change the code in selectors.js file.
+
+### 6.3 Combining selectors with Reselect
+1. Create selector to get separate list of todos: completed and incomplete todos in selectors.js
+2. We will use getTodos selector to create getIncompleteTodos selector. For this we will use a tool called **reselect** used for combining selectors / modifying them.
+3. `npm install reselect`
+4. **createSelector**: It accepts multiple args. The last fn will take input from all the selectors mentioned before it. The output of last fn is the final o/p
