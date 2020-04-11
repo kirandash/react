@@ -211,3 +211,6 @@ This is to hold form using which user can create new to do items
 1. Create reducer in reducers.js file.
 2. Add it to list of reducers in store.js file.
 3. Call loadTodos thunk in TodoList.js file.
+
+### 5.8 Refactoring the todos reducer to show todos from API response
+1. Update the todos in state with data from API.

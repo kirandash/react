@@ -45,6 +45,12 @@ export const todos = (state = [], action) => { // Default state is mentioned as 
                 return todo;
             });
         }
+        case LOAD_TODOS_SUCCESS: {
+            const { todos } = payload;
+            return todos;
+        }
+        case LOAD_TODOS_IN_PROGRESS:
+        case LOAD_TODOS_FAILURE:
         default: {
             return state;
         } // We will call Todos reducer for all actions. So if the action is not defined in our switch case block, default block will return the state as is
