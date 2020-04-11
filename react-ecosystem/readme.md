@@ -196,3 +196,9 @@ This is to hold form using which user can create new to do items
 1. Create src/todos/thunks.js file
 2. A thunk is a fn which calls another fn which performs a particular task
 3. Create a sample Thunk to test
+
+### 5.5 Setting up Node Server for REST API calls
+1. `cd react-ecosystem-server`
+2. `npm install`
+3. `npm start`
+4. server will start at port 8080
