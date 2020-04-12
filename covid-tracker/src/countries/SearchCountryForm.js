@@ -6,7 +6,7 @@ const SearchCountryForm = () => {
         <div className="search-country-form">
             <input 
                 className="search-country-input" 
-                placeholder="Type country code and submit to get COVID-19 report" />
+                placeholder="Type country code and submit to start tracking" />
             <button className="search-country-button">Submit</button>
         </div>
     )

@@ -30,3 +30,8 @@ This is a web application using which we will be able to track covid-19 reports 
 2. Create src/countries/SearchCountryForm.js and src/countries/SearchCountryForm.css.
 3. Add component code to .js file. Add the component to root component App.js file
 4. Copy css to SearchCountryForm.css file. And add styles to App.css, index.css file.
+
+### 2.2 Create CountriesList component
+1. This functinoal component will hold the list of all countries we are tracking.
+2. Create src/countries/CountriesList.js and CountriesList.css files.
+3. Add CountriesList to App.js.
