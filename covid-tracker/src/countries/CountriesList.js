@@ -7,8 +7,8 @@ import './CountriesList.css';
 const CountriesList = ({ countries = [] }) => {
     return (
         <div className="countries-list-wrapper">
-            {countries.map(country => {
-                return <CountryDetail country={country} />
+            {countries.map((country, index) => {
+                return <CountryDetail country={country} key={index} />
             })}
         </div>
     );
