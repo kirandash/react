@@ -39,3 +39,6 @@ This is a web application using which we will be able to track covid-19 reports 
 ### 2.3 Create CountryDetail component
 1. This functional component will hold the individual country details.
 2. Create src/countries/CountryDetail.js and .css file.
+
+### 2.4 Create sample countries and add to App.js
+1. Create sample-countries.js and send that as props to CountriesList component in App.js file.
