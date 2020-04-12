@@ -305,3 +305,12 @@ This is to hold form using which user can create new to do items
 1. Important. And easy to test, since a reducer is basically a fn. So we just have to pass some args and write what is the expected output.
 2. To test reducer we will need 2 things: 1. Fake state, 2. Fake action
 3. Add code in src/todos/tests/reducers.test.js and run `npm run test`
+
+### 8.3 Testing Redux Thunks
+1. create src/todos/tests/thunks.test.js. We need to test 2 important thins
+    - All dispatch actions are sent in proper order inside our thunk
+    - All fetch API calls are made successfully
+    - Thus, In our app we have to test 3 things: dispatch loadTodosInProgress, fetch todos api call, dispatch loadTodosSuccess
+2. `npm install --save-dev sinon node-fetch fetch-mock`
+3. **sinon**: helps to create a fake fn and keep track of what args it was called with. To mock the async dispatch fn used in loadTodos thunk.
+4. **node-fetch fetch-mock**: helps to creake fake fetch api calls. Since we don't want to make API calls to server while running test scripts.
