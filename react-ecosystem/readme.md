@@ -314,3 +314,6 @@ This is to hold form using which user can create new to do items
 2. `npm install --save-dev sinon node-fetch fetch-mock`
 3. **sinon**: helps to create a fake fn and keep track of what args it was called with. To mock the async dispatch fn used in loadTodos thunk.
 4. **node-fetch fetch-mock**: helps to creake fake fetch api calls. Since we don't want to make API calls to server while running test scripts.
+
+### 8.4 Testeing Selectors
+1. create src/todos/tests/selectors.test.js
