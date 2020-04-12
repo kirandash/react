@@ -293,3 +293,10 @@ This is to hold form using which user can create new to do items
 
 ### 7.5 Extending Styled Components
 1. Will take all styles from ToDoItemContainer and add border-top on top of that
+
+## 8. Testing
+### 8.1 Testing React Eco System
+1. Testing React Eco System tools are easy.
+2. `npm install --save-dev mocha chai`: testing libraries: mocha and chai
+3. `npm install --save-dev @babel/register`: so that our tests can run model babel code
+4. Add test command to package.json `"test": "mocha \"src/**/*.test.js\" --require @babel/register --recursive"`
