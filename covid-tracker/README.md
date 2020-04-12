@@ -23,3 +23,10 @@ This is a web application using which we will be able to track covid-19 reports 
     - Also holds the scripts for starting dev server, creating a build and testing our app.
 5. Run the command `npm run start` to run the project on localhost:3000
 6. Change app title to COVID-19 Tracker in index.html file.
+
+## 2. Creating Components
+### 2.1 Create SearchCountryForm component
+1. This component will hold the form which we will use to search covid report for a specific country.
+2. Create src/countries/SearchCountryForm.js and src/countries/SearchCountryForm.css.
+3. Add component code to .js file. Add the component to root component App.js file
+4. Copy css to SearchCountryForm.css file. And add styles to App.css, index.css file.
