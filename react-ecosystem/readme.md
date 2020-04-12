@@ -297,6 +297,11 @@ This is to hold form using which user can create new to do items
 ## 8. Testing
 ### 8.1 Testing React Eco System
 1. Testing React Eco System tools are easy.
-2. `npm install --save-dev mocha chai`: testing libraries: mocha and chai
+2. `npm install --save-dev mocha chai`: testing libraries: mocha and chai. Mocha is used to run the test files while chai helps with the syntax ex: `expect`
 3. `npm install --save-dev @babel/register`: so that our tests can run model babel code
 4. Add test command to package.json `"test": "mocha \"src/**/*.test.js\" --require @babel/register --recursive"`
+
+### 8.2 Testing Reducers
+1. Important. And easy to test, since a reducer is basically a fn. So we just have to pass some args and write what is the expected output.
+2. To test reducer we will need 2 things: 1. Fake state, 2. Fake action
+3. Add code in src/todos/tests/reducers.test.js and run `npm run test`
