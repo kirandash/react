@@ -1,11 +1,14 @@
 import React from 'react';
-import CountryItem from './CountryItem';
 
-const CountriesList = ({ countries }) => {
+import CountryDetail from './CountryDetail';
+
+import './CountriesList.css';
+
+const CountriesList = ({ countries = [] }) => {
     return (
         <div className="countries-list-wrapper">
             {countries.map(country => {
-                <CountryItem country={country} />
+                return <CountryDetail country={country} />
             })}
         </div>
     );
