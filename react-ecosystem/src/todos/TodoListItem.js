@@ -4,15 +4,29 @@ import styled from 'styled-components';
 // import './TodoListItem.css';
 
 // Styled Components using tagged fns
+export const getBorderStyleForDate = (startingDate, currentDate) => 
+    (startingDate > new Date(currentDate - 86400000 * 5) ? 'none': '2px solid red'); // separating logics out of styled components, makes the code more readable and most importantly the logics can be tested easily.
+// 8640000 = no of milliseconds in a daye
+
 const ToDoItemContainer = styled.div`
     background: #fff;
     border-radius: 8px;
-    border-bottom: ${props => (new Date(props.createdAt) > new Date(Date.now() - 8640000 * 5) ? 'none' : '2px solid red')};
+    border-bottom: ${props => getBorderStyleForDate(new Date(props.createdAt), Date.now())};
     margin-top: 8px;
     padding: 16px;
     position: relative;
     box-shadow: 0 4px 8px grey;
 `;
+
+// const ToDoItemContainer = styled.div`
+//     background: #fff;
+//     border-radius: 8px;
+//     border-bottom: ${props => (new Date(props.createdAt) > new Date(Date.now() - 86400000 * 5) ? 'none' : '2px solid red')};
+//     margin-top: 8px;
+//     padding: 16px;
+//     position: relative;
+//     box-shadow: 0 4px 8px grey;
+// `;
 
 // Extending ToDOItemContainer 
 const ToDoItemContainerWithWarning = styled(ToDoItemContainer)`

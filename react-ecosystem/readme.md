@@ -315,5 +315,19 @@ This is to hold form using which user can create new to do items
 3. **sinon**: helps to create a fake fn and keep track of what args it was called with. To mock the async dispatch fn used in loadTodos thunk.
 4. **node-fetch fetch-mock**: helps to creake fake fetch api calls. Since we don't want to make API calls to server while running test scripts.
 
-### 8.4 Testeing Selectors
+### 8.4 Testing Selectors
 1. create src/todos/tests/selectors.test.js
+
+### 8.5 Testing Styled Components
+1. We don't test full styled components. What we test is only the logic we put inside them. Ex: in our app, we will test the border logic.
+2. Separate logics out of styled components, it makes the code more readable and most importantly the logics can be tested easily.
+3. create src/todos/tests/TodoListItem.test.js file.
+4. Add test code and run `npm run test`
+
+# 9 Project Summary
+1. Basic React Application setup from scratch
+2. Redux
+3. Thunk
+4. Reselect
+5. Styled-components
+6. Testing the ecosystem with Mocha and Chai
