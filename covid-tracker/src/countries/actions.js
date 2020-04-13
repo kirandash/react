@@ -7,7 +7,7 @@ export const createCountry = countryCode => ({
 
 // REMOVE_COUNTRY Action
 export const REMOVE_COUNTRY = 'REMOVE_COUNTRY'; // Action Type
-export const removeCountry = countryCode = ({
+export const removeCountry = countryCode => ({
     type: REMOVE_COUNTRY,
     payload: { countryCode }
 }); // Action Creator
