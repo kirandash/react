@@ -71,3 +71,9 @@ This is a web application using which we will be able to track covid-19 reports 
 ### 3.4 Creating Redux Actions for Create Country and Remove Country
 1. Create src/countries/actions.js file. This is inside countries folder. Because we don't want to make one centralized list of actions. Actions can also come from different modules.
 2. Create Action type constant and Action creator function for CREATE_COUNTRY and REMOVE_COUNTRY actions.
+
+### 3.5 Creating Reducers and Connecting it to root store
+1. A reducer is basically a fn to perform some tasks when an action is dispatched.
+2. Create src/countries/reducers.ts file.
+3. Reducer takes 2 args: current state, action triggered
+4. After countries reducers is created in reducers.ts file. Import it and add it to the list of reducers in store.js file
