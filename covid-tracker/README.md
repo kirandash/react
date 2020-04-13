@@ -62,8 +62,12 @@ This is a web application using which we will be able to track covid-19 reports 
 5. Summary: Components can only interact with the state by triggering Redux actions.
 6. Thus Redux follows a **Unidirectional Data Flow**: UI Triggers action ---> State is updated ---> Components see updated State
 
-### 4.3 Adding redux to our React App
+### 3.3 Adding redux to our React App
 1. Install redux to handle redux tasks and react-redux to integrate redux with react: `npm install redux react-redux`
-2. Create src/store.js: will hold logic for redux store - centralized global store
+2. Create src/store.js: will hold logic for redux store - centralized global store. Thus kept in src folder.
     - Create root store by combining all reducers
 3. In index.js: wrap `App`with `Provider`. Ex: `<Provider store={configureStore()}><App/></Provider>`
+
+### 3.4 Creating Redux Actions for Create Country and Remove Country
+1. Create src/countries/actions.js file. This is inside countries folder. Because we don't want to make one centralized list of actions. Actions can also come from different modules.
+2. Create Action type constant and Action creator function for CREATE_COUNTRY and REMOVE_COUNTRY actions.
