@@ -133,3 +133,9 @@ This is a web application using which we will be able to track covid-19 reports 
 4. thunk is used with applyMiddleware from redux.
 5. The result is passed through composeWithDevTools for dev tools support
 5. After adding Thunks throw applyMiddleware, test on chrome if every thing working as before - action dispatch in dev tool.
+
+### 4.4 Creating a showAlert thunk
+1. Create src/countries/thunks.js file
+2. A thunk is a fn which calls another fn which performs a particular task
+3. Create a sample showAlert Thunk to test
+4. Add the thunk to CountriesList.js for temporary testing.
