@@ -77,3 +77,9 @@ This is a web application using which we will be able to track covid-19 reports 
 2. Create src/countries/reducers.ts file.
 3. Reducer takes 2 args: current state, action triggered
 4. After countries reducers is created in reducers.ts file. Import it and add it to the list of reducers in store.js file
+
+### 3.6 Connecting SearchCountryForm Component to the Store with connect from react-redux
+1. connect is a higher order fn with 2 sets of args: `connect()()` Ex: `conneect(mapStateToProps, mapDispatchToProps)`
+2. mapStateToProps is a Fn which takes the entire state of our app as input and return specific props from the state which the specific component requires. And all props defined inside mapStateToProps is automatically made available by connect as prop for the component to use.
+3. mapDispatchToProps is a Fn which takes dispatch as input. A dispatch is a fn used to call an action creator.
+4. useState react hook is used to create a variable inputCountryCode to hold country code data and setInputCountryCode is a fn to set the variable's value
