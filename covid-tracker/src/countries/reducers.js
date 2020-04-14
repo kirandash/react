@@ -1,4 +1,4 @@
-import { CREATE_COUNTRY, REMOVE_COUNTRY } from './actions';
+import { CREATE_COUNTRY, REMOVE_COUNTRY, PIN_COUNTRY } from './actions';
 
 export const countries = (state = [], action) => { // Default state is mentioned as an empty array to avoid any error in case, the state passed is not having any data
     const { type, payload } = action; // Get Action Type and payload from the action (By destructuring)
@@ -20,13 +20,23 @@ export const countries = (state = [], action) => { // Default state is mentioned
                 "total_new_deaths_today":0,
                 "total_active_cases":1763,
                 "total_serious_cases":31,
-                "total_danger_rank":50
+                "total_danger_rank":50,
+                "isPinned": false // isPinned will not be present in API response - we will add it to the state manually. Would have added the prop to API if we had backend control
             }; // Hard Coded Country details, later to be replaced by API response
             return state.concat(newCountry);
         }
         case REMOVE_COUNTRY: {
             const { countryCode } = payload;
             return state.filter(country => country.info.code !== countryCode); // Remove country with countrycode received in payload
+        }
+        case PIN_COUNTRY: {
+            const { countryCode } = payload;
+            return state.map(country => {
+                if(country.info.code === countryCode) {
+                    return { ...country, isPinned: true }; // isPinned will not be present in API response - we will add it to the state. Would have added the prop to API if we had backend control
+                }
+                return country;
+            });
         }
         default: {
             return state;

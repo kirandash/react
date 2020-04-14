@@ -11,3 +11,10 @@ export const removeCountry = countryCode => ({
     type: REMOVE_COUNTRY,
     payload: { countryCode }
 }); // Action Creator
+
+// PIN_COUNTRY Action
+export const PIN_COUNTRY = 'PIN_COUNTRY'; // Action Type
+export const pinCountry = countryCode => ({
+    type: PIN_COUNTRY,
+    payload: { countryCode }
+}); // Action Creator

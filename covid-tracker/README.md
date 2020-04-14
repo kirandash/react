@@ -103,3 +103,8 @@ This is a web application using which we will be able to track covid-19 reports 
 3. Add __REDUX_DEVTOOLS_EXTENSION__ to store.js createStore fn. It should highlight the redux devtools extension once our app is loaded.
 4. Run app with `npm run start`
 5. Go to localhost and on performing some action: it will show the list of actions. The difference it makes to state and new state after the action, all in the Redux devtools extension
+
+### 3.10 Redux flow for Pin Country
+1. Create PIN_COUNTRY action in action.js and add it to the list of reducers in reducers.js
+2. Dispatch the action Creator in CountriesList.js and pass it as a props to child component CountryDetail.js. Note: We are not connecting redux directly to CountryDetail.js because we want to keep it reusable. Always good practice to keep our redux connection at parent level and pass to child as props.
+3. In CountryDetail.js hide the Pin Country button once it is pinned. Later we will modify the code to show all Pinned countries at top and not pinned one's at bottom.
