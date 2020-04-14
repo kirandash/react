@@ -18,7 +18,7 @@ const SearchCountryForm = ({ countries = [],  onSubmitPressed }) => { // countri
             <button 
                 onClick={()=>{
                     const isDuplicateCountry = countries.some(country => country.info.code === inputCountryCode)
-                    if(!isDuplicateCountry) {
+                    if(!isDuplicateCountry && inputCountryCode) { // Not Duplicate and Null Check
                         onSubmitPressed(inputCountryCode); // Passing input value to createCountry action creator
                         setInputCountryCode(''); // Clear input value for next use
                     }
