@@ -13,6 +13,7 @@ const SearchCountryForm = ({ countries = [],  onSubmitPressed }) => { // countri
             <input 
                 className="search-country-input" 
                 placeholder="Type country code and submit to start tracking"
+                value={inputCountryCode}
                 onChange={e => setInputCountryCode(e.target.value)} />
             <button 
                 onClick={()=>{
