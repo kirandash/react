@@ -83,3 +83,10 @@ This is a web application using which we will be able to track covid-19 reports 
 2. mapStateToProps is a Fn which takes the entire state of our app as input and return specific props from the state which the specific component requires. And all props defined inside mapStateToProps is automatically made available by connect as prop for the component to use.
 3. mapDispatchToProps is a Fn which takes dispatch as input. A dispatch is a fn used to call an action creator.
 4. useState react hook is used to create a variable inputCountryCode to hold country code data and setInputCountryCode is a fn to set the variable's value
+
+### 3.7 Connecting CountriesList component to store and Running our React - Redux application
+1. src/countries/CountriesList.js: Use connect witih mapStateToProps and mapDispatchToProps
+2. Note: mapStateToProps and mapDispatchToProps are optional. Ex: `connect(mapStateToProps)(mycomponent)` and `connect(null, mapDispatchToProps)(mycomponent)`
+3. Remove sampleCountries from CountriesList in App.js. Since now we are populating it from state. Later we will get it from API.
+4. Run: `npm run start` and test create/delete functionality at http://localhost:3000/
+5. Test Adding and Removing Country on browser

@@ -3,7 +3,7 @@ import { CREATE_COUNTRY, REMOVE_COUNTRY } from './actions';
 export const countries = (state = [], action) => { // Default state is mentioned as an empty array to avoid any error in case, the state passed is not having any data
     const { type, payload } = action; // Get Action Type and payload from the action (By destructuring)
     switch (type) {
-        case CREATE_COUNTRY: { // Note: We could use 'CREATE_TODO' string but it is better to import the constants we created in actions.js file. Since there will be less chance of making a typo
+        case CREATE_COUNTRY: { // Note: We could use 'CREATE_COUNTRY' string but it is better to import the constants we created in actions.js file. Since there will be less chance of making a typo
             const { countryCode } = payload;
             const newCountry = {
                 "info":{
@@ -30,6 +30,6 @@ export const countries = (state = [], action) => { // Default state is mentioned
         }
         default: {
             return state;
-        } // Since this reducer is going to be common to our app. The Todos reducer will be called for other actions as well. So if the action is not defined in our switch case block, default block will return the state as is
+        } // Since this reducer is going to be common to our app. The Countries reducer will be called for other actions as well. So if the action is not defined in our switch case block, default block will return the state as is
     }
 }

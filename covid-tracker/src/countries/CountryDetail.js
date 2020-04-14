@@ -2,7 +2,7 @@ import React from 'react';
 
 import './CountryDetail.css';
 
-const CountryDetail = ({ country }) => {
+const CountryDetail = ({ country, onRemovePressed }) => {
     return (
         <div className="country-wrapper">
             <h3>{country.info.title}</h3>
@@ -24,7 +24,11 @@ const CountryDetail = ({ country }) => {
             </table>
             <div className="buttons-wrapper">
                 <button className="pin-button">Pin Country</button>
-                <button className="remove-button">Remove</button>
+                <button 
+                    onClick={() => onRemovePressed(country.info.code)}
+                    className="remove-button">
+                        Remove
+                </button>
             </div>
         </div>
     );
