@@ -90,3 +90,9 @@ This is a web application using which we will be able to track covid-19 reports 
 3. Remove sampleCountries from CountriesList in App.js. Since now we are populating it from state. Later we will get it from API.
 4. Run: `npm run start` and test create/delete functionality at http://localhost:3000/
 5. Test Adding and Removing Country on browser
+
+### 3.8 Persisting the Redux store with redux-persist
+1. Our current store gets cleared on reloading browser. To persist data in store: use **redux-persist**. `npm install redux-persist`
+2. store.js file: Wrap rootReducer with persistReducer configuration.
+3. index.js file: Wrap App with PersistGate
+4. Now on reloading browser, the state will be still saved. In order to clear it, delete the `persist:root` data from localStorage.
