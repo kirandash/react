@@ -22,4 +22,9 @@ const rootReducer = combineReducers(reducers); // Combines all our reducers in a
 
 const persistedReducer = persistReducer(persistConfig, rootReducer); // Wraps root reducer witih persistReducer configuration
 
-export const configureStore = () => createStore(persistedReducer); // Create configureStore: The root centralized store of our App
+export const configureStore = () => 
+    createStore(
+        persistedReducer,
+        window.__REDUX_DEVTOOLS_EXTENSION__ && 
+        window.__REDUX_DEVTOOLS_EXTENSION__(), // connects our app to redux devtools extension
+    ); // Create configureStore: The root centralized store of our App
