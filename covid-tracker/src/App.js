@@ -5,7 +5,7 @@ import CountriesList from './countries/CountriesList';
 
 import './App.css';
 
-import { sampleCountries } from './countries/sample-countries';
+// import { sampleCountries } from './countries/sample-countries';
 
 function App() {
   return (
