@@ -139,3 +139,5 @@ This is a web application using which we will be able to track covid-19 reports 
 2. A thunk is a fn which calls another fn which performs a particular task
 3. Create a sample showAlert Thunk to test
 4. Add the thunk to CountriesList.js for temporary testing.
+
+### 4.5 
