@@ -1,10 +1,13 @@
 import { 
     createStore, // Helps creating a store using reducer
-    combineReducers // Helps combining multiple reducers in a form that the result can be passed to createStore fn
+    combineReducers, // Helps combining multiple reducers in a form that the result can be passed to createStore fn
+    applyMiddleware,
 } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension'; // for adding redux-thunk to our devtools middleware.
 
 import { countries } from './countries/reducers';
 
@@ -25,6 +28,9 @@ const persistedReducer = persistReducer(persistConfig, rootReducer); // Wraps ro
 export const configureStore = () => 
     createStore(
         persistedReducer,
-        window.__REDUX_DEVTOOLS_EXTENSION__ && 
-        window.__REDUX_DEVTOOLS_EXTENSION__(), // connects our app to redux devtools extension
+        composeWithDevTools( // for dev tools support
+            applyMiddleware(thunk) // thunk is used with applyMiddleware from redux
+        )
+        // window.__REDUX_DEVTOOLS_EXTENSION__ && 
+        // window.__REDUX_DEVTOOLS_EXTENSION__(), // connects our app to redux devtools extension
     ); // Create configureStore: The root centralized store of our App

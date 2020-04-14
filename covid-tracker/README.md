@@ -108,3 +108,28 @@ This is a web application using which we will be able to track covid-19 reports 
 1. Create PIN_COUNTRY action in action.js and add it to the list of reducers in reducers.js
 2. Dispatch the action Creator in CountriesList.js and pass it as a props to child component CountryDetail.js. Note: We are not connecting redux directly to CountryDetail.js because we want to keep it reusable. Always good practice to keep our redux connection at parent level and pass to child as props.
 3. In CountryDetail.js hide the Pin Country button once it is pinned. Later we will modify the code to show all Pinned countries at top and not pinned one's at bottom.
+
+## 4. Handling Side Effects
+### 4.1 Why Do We need Redux-Thunk?
+1. With Redux now our components size are really small as most of the state management code is moved out of component to store.js, actions.js and reducers.js file.
+2. Still in our current code: component has to contain code for asnyc/API calls. This is called **Side Effects**
+3. To separate it out we should use **Side effect libraries**
+4. Thus: Redux ---> State Management, Components ---> View Logic, Side Effect Libraries ---> Side Effects
+5. Side Effect libraries: Redux Thunk, Redux Saga, Redux Logic etc.
+6. Redux saga is more popular.
+7. Redux Thunk is simpler and easy to learn.
+
+### 4.2 Understanding Redux Thunk Flow
+1. UI Triggers Action ---> Redux Thunk is executed to make Async/API calls ---> State is Updated ---> Component See updated State.
+
+### 4.3 Adding Redux Thunk to React
+1. `npm install redux-thunk redux-devtools-extension @babel/runtime`
+    - redux-thunk is the main thunk library to be used in our app
+    - redux-devtools-extension is used for adding redux-thunk to our devtools middleware.
+    - @babel/runtime: is used so that async thunks can work in our app
+2. `npm install --save-dev @babel/plugin-transform-runtime`
+    - Dev version of @babel/runtime: used for async thunks to work in our app
+3. Add thunk to store.js file
+4. thunk is used with applyMiddleware from redux.
+5. The result is passed through composeWithDevTools for dev tools support
+5. After adding Thunks throw applyMiddleware, test on chrome if every thing working as before - action dispatch in dev tool.
