@@ -166,10 +166,17 @@ This is a web application using which we will be able to track covid-19 reports 
     - Reducers ---> Manage State
     - Thunks ---> API/Async calls or side effects
 2. Currently, we are mapping data from state directly to mapStateToProps. But what if we need to modify the data from state before assigning to mapStateToProps.
-3. **Selectors** gives us a place to put logic for combining, filtering, transforming and storing data.
+3. **Selectors** gives us a place to put logic for combining, filtering, transforming and storing data. It is one more layer between Redux reducers and React view components.
 4. If JSON data structure of state changes, we don't have to change the mapping in mapStateToProps for every component. All we have to do is just change the code in selectors.js file.
 
 ### 5.2 Creating selector - getCountries and getIsLoading
 1. Create src/countries/selectors.js file
 2. Add getCountries and getIsLoading selectors in selectors.js
 3. **IMPORTANT:** The beauty of selectors is: now if structure of state changes, we don't have to change the mapping in mapStateToProps for every component. All we have to do is just change the code in selectors.js file.
+
+### 5.3 Combining selectors with createSelector from Reselect to create getPinnedCountries and getNotPinnedCountries selectors
+1. Create selectors getPinnedCountries and getNotPinnedCountries to get separate list of countries: pinned and not pinned countries in selectors.js
+2. We will use getCountries selector to create these selectorr. For this we will use a tool called **reselect** used for combining selectors / modifying them.
+3. `npm install reselect`
+4. **createSelector**: It accepts multiple args. The last fn will take input from all the selectors mentioned before it. The output of last fn is the final o/p
+5. Diff b/w createSelector from reselect and normal fn. With a normal fn, the computation will happen all over again when component rerenders. But with createSelector, it does not compute everything when our component re-renders. It computes only the prop in state which has changed from the prev state. Thus, createSelector saves a lot of resource when building large scale applications by limiting the computation to only state which is changing on component rerendering.
