@@ -210,3 +210,6 @@ This is a web application using which we will be able to track covid-19 reports 
 1. Move code from .css modules to .js files, comment import of css files and delete the css files. For: CountriesList.css, CountryDetail.css, SearchCountryForm.css and App.css
 2. Ex: copy styles of list-wrapper from CountriesList.css file to CountriesList.js file with styled.div and replace `<div className="countries-list-wrapper">` with `<CountriesListWrapper>`
 
+### 7.4 Passing props to Styled Components - Diff bg for pinned countries
+1. The main benefit of styled components is we can pass props to them and thus can dynamically change styles. Thus condition for styling is moved to styled tagged fns and JSX is much more cleaner.
+2. Ex: `background: ${props => props.isPinned ? '#350000' : '#212121'};`

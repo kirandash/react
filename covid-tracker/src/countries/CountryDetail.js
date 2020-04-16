@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // import './CountryDetail.css';
 
 const CountryWrapper = styled.div`
-    background: #212121;
+    background: ${props => props.isPinned ? '#350000' : '#212121'};
     color: white;
     margin-top: 1rem;
     padding: 1rem;
@@ -50,7 +50,7 @@ const RemoveButton = styled.button`
 
 const CountryDetail = ({ country, onRemovePressed, onPin }) => {
     return (
-        <CountryWrapper>
+        <CountryWrapper isPinned={country.isPinned}>
             <h3>{country.info.title}</h3>
             <table>
                 <thead>
