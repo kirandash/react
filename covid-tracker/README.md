@@ -152,3 +152,6 @@ This is a web application using which we will be able to track covid-19 reports 
 3. Call loadCountry thunk in SearchCountryForm.js file. When submit button is pressed
 4. send country code to loadCountry thunk, thunk.js file and add a delay to demonstrate isLoading feature
 5. Add loader to CountriesList.js file. Which will show loading message whenever a new country is added to Tracking List.
+
+### 4.7 Modify the countries reducer to show countries from API
+1. reducers.js file - Add actions for LOAD_COUNTRY_SUCCESS, LOAD_COUNTRY_IN_PROGRESS and LOAD_COUNTRY_FAILURE

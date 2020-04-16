@@ -55,6 +55,17 @@ export const countries = (state = [], action) => { // Default state is mentioned
                 return country;
             });
         }
+        case LOAD_COUNTRY_SUCCESS: {
+            if(payload.countries.results && payload.countries.results[0].data === "none"){  
+                alert("Could not find country"); // error handling
+                return state;
+            }
+            const apiCountry = payload.countries.countrydata[0];
+            const newCountry = {...apiCountry, isPinned: false}; // Country Data from API + isPinned not present in API response - we are adding it manually to the state
+            return state.concat(newCountry); // Add the new country to the list of existing countries in state
+        }
+        case LOAD_COUNTRY_IN_PROGRESS:
+        case LOAD_COUNTRY_FAILURE: // retrun the default state for IN PROGRESS and FAILURE Action for now
         default: {
             return state;
         } // Since this reducer is going to be common to our app. The Countries reducer will be called for other actions as well. So if the action is not defined in our switch case block, default block will return the state as is
