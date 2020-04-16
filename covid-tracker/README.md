@@ -155,3 +155,6 @@ This is a web application using which we will be able to track covid-19 reports 
 
 ### 4.7 Modify the countries reducer to show countries from API
 1. reducers.js file - Add actions for LOAD_COUNTRY_SUCCESS, LOAD_COUNTRY_IN_PROGRESS and LOAD_COUNTRY_FAILURE
+2. Sample Country Codes for testing: GB (United Kingdome), US (USA), SG (Singapore), GE (Georgia), IN (India), IT (Italy), ES (Spain)
+3. We have also handled error for use case when user enters invalid countrycode. Pls test.
+4. Also remove manual delay of 3s from loadCountry thunk.

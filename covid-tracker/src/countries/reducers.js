@@ -57,7 +57,7 @@ export const countries = (state = [], action) => { // Default state is mentioned
         }
         case LOAD_COUNTRY_SUCCESS: {
             if(payload.countries.results && payload.countries.results[0].data === "none"){  
-                alert("Could not find country"); // error handling
+                alert("Invalid country code!"); // error handling
                 return state;
             }
             const apiCountry = payload.countries.countrydata[0];

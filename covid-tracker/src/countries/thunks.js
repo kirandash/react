@@ -6,7 +6,7 @@ export const loadCountry = (countryCode) => async (dispatch, getState) => { // l
         const response = await fetch(`https://api.thevirustracker.com/free-api?countryTotal=${countryCode}`); // calling country api
         const country = await response.json(); // Get the response in JSON format (Mandatory with fetch calls. Not required when we use addons like Axios to do API calls)
 
-        await new Promise(resolve => setTimeout(resolve, 3000)); // creating delay to check isLoading functionality
+        // await new Promise(resolve => setTimeout(resolve, 3000)); // creating delay to check isLoading functionality
 
         dispatch(loadCountrySuccess(country)); // dispatch success action
     } catch (e) {
