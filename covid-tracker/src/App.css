@@ -1,11 +1,9 @@
 .App {
   padding: 2rem;
-  color: black;
   max-width: 600px;
   margin: 0 auto;
 }
 
 .App-title {
-  color: white;
   text-align: center;
 }

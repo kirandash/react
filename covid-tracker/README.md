@@ -180,3 +180,7 @@ This is a web application using which we will be able to track covid-19 reports 
 3. `npm install reselect`
 4. **createSelector**: It accepts multiple args. The last fn will take input from all the selectors mentioned before it. The output of last fn is the final o/p
 5. Diff b/w createSelector from reselect and normal fn. With a normal fn, the computation will happen all over again when component rerenders. But with createSelector, it does not compute everything when our component re-renders. It computes only the prop in state which has changed from the prev state. Thus, createSelector saves a lot of resource when building large scale applications by limiting the computation to only state which is changing on component rerendering.
+
+### 5.4 Adding getPinnedCountries and getNotPinnedCountries to components
+1. Add both the selectors to mapStateToProps of CountriesList.js
+2. Note: If any issue comes in loading the app, it might be bcoz of the localStorage, so clear the localStorage data. Make sure the defaults are set to empty array and reload the app.
