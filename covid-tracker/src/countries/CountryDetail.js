@@ -34,6 +34,9 @@ const RemoveButton = styled(ButtonComponent)`
     display: inline-block;
     background-color: #e60000;
     margin-left: 8px;
+    @media screen and (max-width:767px) {
+        background-color: white;
+    }
 `;
 
 const CountryDetail = ({ country, onRemovePressed, onPin }) => {

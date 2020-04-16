@@ -217,3 +217,6 @@ This is a web application using which we will be able to track covid-19 reports 
 ### 7.5 Extending Styled Components
 1. Extend style of one component to another. Like class inheritance.
 2. Test after changing code.
+
+### 7.6 Media Queries
+1. CountryDetail.JS: Let's change btn color for mobile devices. @media screen and (max-width: 767px) {}
