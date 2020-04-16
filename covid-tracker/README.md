@@ -213,3 +213,7 @@ This is a web application using which we will be able to track covid-19 reports 
 ### 7.4 Passing props to Styled Components - Diff bg for pinned countries
 1. The main benefit of styled components is we can pass props to them and thus can dynamically change styles. Thus condition for styling is moved to styled tagged fns and JSX is much more cleaner.
 2. Ex: `background: ${props => props.isPinned ? '#350000' : '#212121'};`
+
+### 7.5 Extending Styled Components
+1. Extend style of one component to another. Like class inheritance.
+2. Test after changing code.

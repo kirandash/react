@@ -25,24 +25,12 @@ const ButtonComponent = styled.button`
     cursor: pointer;
 `;
 
-const PinButton = styled.button`
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 8px;
-    border: none;
-    outline: none;
-    cursor: pointer;
+const PinButton = styled(ButtonComponent)`
     display: inline-block;
     background-color: #73b2ff;
 `;
 
-const RemoveButton = styled.button`
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 8px;
-    border: none;
-    outline: none;
-    cursor: pointer;
+const RemoveButton = styled(ButtonComponent)`
     display: inline-block;
     background-color: #e60000;
     margin-left: 8px;
