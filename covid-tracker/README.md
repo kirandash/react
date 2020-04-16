@@ -140,4 +140,8 @@ This is a web application using which we will be able to track covid-19 reports 
 3. Create a sample showAlert Thunk to test
 4. Add the thunk to CountriesList.js for temporary testing.
 
-### 4.5 
+### 4.5 Async thunks - for loadCountry API from thevirustracker
+1. Create actions for in progress, success and failure state in actions.js file.
+2. Create thunk `loadCountry` in thunks.js file.
+3. API URL to be called in loadCountry thunk: `https://api.thevirustracker.com/free-api?countryTotal=US`. (Not reliable. If this API is not working, please use any other working API from postman URL) Note that countries JSON structure will change based on API URL.
+4. More APIs: `https://covid-19-apis.postman.com/`
