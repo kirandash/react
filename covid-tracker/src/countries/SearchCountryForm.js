@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import { createCountry } from './actions';
+// import { createCountry } from './actions';
 import { loadCountry } from './thunks';
 
 import './SearchCountryForm.css';
@@ -34,7 +34,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    onSubmitPressed: countryCode => dispatch(createCountry(countryCode)), // onSubmitPressed is the fn our component will use to call createCountry action creator
+    // onSubmitPressed: countryCode => dispatch(createCountry(countryCode)), // onSubmitPressed is the fn our component will use to call createCountry action creator
     onSubmitPressed: countryCode => dispatch(loadCountry(countryCode)),
 }); // Fn to map Dispatch to props
 

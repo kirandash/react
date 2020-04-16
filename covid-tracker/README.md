@@ -149,7 +149,7 @@ This is a web application using which we will be able to track covid-19 reports 
 ### 4.6 Adding isLoading reducer and calling loadCountry in SearchCountryForm.js
 1. Create reducer in reducers.js file - to check if API is loading, success or failure.
 2. Add it to list of reducers in store.js file.
-3. Call loadCountry thunk in SearchCountryForm.js file. When submit button is pressed
+3. Call loadCountry thunk in SearchCountryForm.js file. When submit button is pressed. Remove create Country action since load country will handle country creation for us
 4. send country code to loadCountry thunk, thunk.js file and add a delay to demonstrate isLoading feature
 5. Add loader to CountriesList.js file. Which will show loading message whenever a new country is added to Tracking List.
 
