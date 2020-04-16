@@ -145,3 +145,10 @@ This is a web application using which we will be able to track covid-19 reports 
 2. Create thunk `loadCountry` in thunks.js file.
 3. API URL to be called in loadCountry thunk: `https://api.thevirustracker.com/free-api?countryTotal=US`. (Not reliable. If this API is not working, please use any other working API from postman URL) Note that countries JSON structure will change based on API URL.
 4. More APIs: `https://covid-19-apis.postman.com/`
+
+### 4.6 Adding isLoading reducer and calling loadCountry in SearchCountryForm.js
+1. Create reducer in reducers.js file - to check if API is loading, success or failure.
+2. Add it to list of reducers in store.js file.
+3. Call loadCountry thunk in SearchCountryForm.js file. When submit button is pressed
+4. send country code to loadCountry thunk, thunk.js file and add a delay to demonstrate isLoading feature
+5. Add loader to CountriesList.js file. Which will show loading message whenever a new country is added to Tracking List.

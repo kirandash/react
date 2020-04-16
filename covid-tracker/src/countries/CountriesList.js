@@ -10,8 +10,10 @@ import './CountriesList.css';
 const CountriesList = ({ countries = [], onRemovePressed, 
                         onPin, 
                         // onPinClicked 
+                        isLoading,
                       }) => { // countries and onRemovePressed are available from mapStateToProps and mapDispatchToProps
-    return (
+    const loadingMessage = (<div className='loader'>Loading Country...</div>);
+    const content = (
         <div className="countries-list-wrapper">
             {countries.map((country, index) => {
                 return <CountryDetail 
@@ -24,9 +26,11 @@ const CountriesList = ({ countries = [], onRemovePressed,
             })}
         </div>
     );
+    return isLoading ? loadingMessage : content;
 };
 
 const mapStateToProps = state => ({
+    isLoading: state.isLoading,
     countries: state.countries,
 });
 

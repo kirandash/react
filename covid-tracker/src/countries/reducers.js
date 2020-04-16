@@ -1,4 +1,21 @@
-import { CREATE_COUNTRY, REMOVE_COUNTRY, PIN_COUNTRY } from './actions';
+import { CREATE_COUNTRY, REMOVE_COUNTRY, PIN_COUNTRY,
+    LOAD_COUNTRY_IN_PROGRESS,
+    LOAD_COUNTRY_SUCCESS,
+    LOAD_COUNTRY_FAILURE, } from './actions';
+
+export const isLoading = (state = false, action) => {
+    const { type } = action;
+
+    switch (type) {
+        case LOAD_COUNTRY_IN_PROGRESS:
+            return true;
+        case LOAD_COUNTRY_SUCCESS:
+        case LOAD_COUNTRY_FAILURE:
+            return false; // false for both success and failure actions
+        default:
+            return state;
+    }
+} // Reducer to return true or false based on actions occuring in our app
 
 export const countries = (state = [], action) => { // Default state is mentioned as an empty array to avoid any error in case, the state passed is not having any data
     const { type, payload } = action; // Get Action Type and payload from the action (By destructuring)

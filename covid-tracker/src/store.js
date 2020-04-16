@@ -9,10 +9,11 @@ import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension'; // for adding redux-thunk to our devtools middleware.
 
-import { countries } from './countries/reducers';
+import { countries, isLoading } from './countries/reducers';
 
 const reducers = {
     countries,
+    isLoading,
 }; // will contain list of all reducers to use in our App
 
 const persistConfig = {
