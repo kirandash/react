@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 
 import CountryDetail from './CountryDetail';
 import { removeCountry, pinCountry } from './actions';
@@ -8,7 +9,17 @@ import {
     // getCountries, 
     getIsLoading, getPinnedCountries, getNotPinnedCountries } from './selectors';
 
-import './CountriesList.css';
+// import './CountriesList.css';
+
+// Styled Components
+const CountriesListWrapper = styled.div`
+    margin-bottom: 2rem;
+`;
+
+const Loader = styled.div`
+    margin: 15px 0;
+    text-align: center;
+`;
 
 const CountriesList = ({ // countries = [], 
                         onRemovePressed, 
@@ -18,9 +29,9 @@ const CountriesList = ({ // countries = [],
                         pinnedCountries = [],
                         notPinnedCountries = []
                       }) => { // countries and onRemovePressed are available from mapStateToProps and mapDispatchToProps
-    const loadingMessage = (<div className='loader'>Loading Country...</div>);
+    const loadingMessage = (<Loader>Loading Country...</Loader>);
     const content = (
-        <div className="countries-list-wrapper">
+        <CountriesListWrapper>
             {/* {countries.map((country, index) => {
                 return <CountryDetail 
                             country={country} 
@@ -50,7 +61,7 @@ const CountriesList = ({ // countries = [],
                             onPin={onPin} 
                             />
             })}
-        </div>
+        </CountriesListWrapper>
     );
     return isLoading ? loadingMessage : content;
 };

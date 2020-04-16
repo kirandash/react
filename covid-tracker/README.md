@@ -161,7 +161,7 @@ This is a web application using which we will be able to track covid-19 reports 
 
 ### 5. Selectors
 ### 5.1 Why do we need selectors?
-1. Till now we have separated the following code
+1. Till now we have separated the following concerns as follows:
     - Component ---> Display View
     - Reducers ---> Manage State
     - Thunks ---> API/Async calls or side effects
@@ -184,3 +184,29 @@ This is a web application using which we will be able to track covid-19 reports 
 ### 5.4 Adding getPinnedCountries and getNotPinnedCountries to components
 1. Add both the selectors to mapStateToProps of CountriesList.js
 2. Note: If any issue comes in loading the app, it might be bcoz of the localStorage, so clear the localStorage data. Make sure the defaults are set to empty array and reload the app.
+
+## 7. Styled Components
+### 7.1 Why do we need styled components?
+1. So far we have separated the concerns as follows
+    - Components ---> Display data
+    - Reducers ---> Manage state
+    - Thunks ---> Side Effect Logic
+    - Selectors ---> Abstracting the state's format, transforming state data
+2. For handling CSS: we are currently using separate .css file aka **css modules**. Ex: component.js and component.css file. This is not ideal to have extra css file or modules for every component.
+    - It will clutter our folder structure.
+    - If .css file is separate, then we will need additional classes to change css as per state. Ex: 'selected' or 'active' class needs to be added to the item in component if active style is needed. But with styled components, we don't need these additional classes.
+3. **Styled Component:** Allows us to define styles inside our JS files. Ex: Instead of using `<Item className={item.isSelected ? "selected" : "not-selected"}`, we can just use: `<Item selected={true}>`
+4. More Benefit: can pass props to them and thus can dynamically change styles
+
+### 7.2 Creating a Styled Component
+1. Install: `npm install styled-components`
+2. Create styled components in CountriesList.js using tagged fns. styled.div or styled.h1 or styled.button etc
+3. Organizing styled components (Thumb Rules): 
+    - If the component is unique and there is less amount of code then keep it in js file. 
+    - If amount of code is more, create separate styled component js file. 
+    - If component is common and can be reused, create seaparate file and store all styled components in src/todos/user-interface folder.
+
+### 7.3 Converting CSS modules to Styled components
+1. Move code from .css modules to .js files, comment import of css files and delete the css files. For: CountriesList.css, CountryDetail.css, SearchCountryForm.css and App.css
+2. Ex: copy styles of list-wrapper from CountriesList.css file to CountriesList.js file with styled.div and replace `<div className="countries-list-wrapper">` with `<CountriesListWrapper>`
+

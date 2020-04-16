@@ -1,10 +1,56 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import './CountryDetail.css';
+// import './CountryDetail.css';
+
+const CountryWrapper = styled.div`
+    background: #212121;
+    color: white;
+    margin-top: 1rem;
+    padding: 1rem;
+    position: relative;
+    box-shadow: 0 0px 2px white;
+`;
+
+const ButtonsWrapper = styled.div`
+    margin-top: 1rem;
+`;
+
+const ButtonComponent = styled.button`
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+`;
+
+const PinButton = styled.button`
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #73b2ff;
+`;
+
+const RemoveButton = styled.button`
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #e60000;
+    margin-left: 8px;
+`;
 
 const CountryDetail = ({ country, onRemovePressed, onPin }) => {
     return (
-        <div className="country-wrapper">
+        <CountryWrapper>
             <h3>{country.info.title}</h3>
             <table>
                 <thead>
@@ -22,19 +68,19 @@ const CountryDetail = ({ country, onRemovePressed, onPin }) => {
                     </tr>
                 </tbody>
             </table>
-            <div className="buttons-wrapper">
-                {!country.isPinned && <button 
+            <ButtonsWrapper>
+                {!country.isPinned && <PinButton 
                     onClick={() => onPin(country.info.code)}
-                    className="pin-button">
+                    >
                         Pin Country
-                </button>}
-                <button 
+                </PinButton>}
+                <RemoveButton 
                     onClick={() => onRemovePressed(country.info.code)}
-                    className="remove-button">
+                    >
                         Remove
-                </button>
-            </div>
-        </div>
+                </RemoveButton>
+            </ButtonsWrapper>
+        </CountryWrapper>
     );
 };
 
