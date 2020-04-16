@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import CountryDetail from './CountryDetail';
 import { removeCountry, pinCountry } from './actions';
 // import { showAlert } from './thunks';
+import { getCountries, getIsLoading } from './selectors';
 
 import './CountriesList.css';
 
@@ -30,8 +31,10 @@ const CountriesList = ({ countries = [], onRemovePressed,
 };
 
 const mapStateToProps = state => ({
-    isLoading: state.isLoading,
-    countries: state.countries,
+    // isLoading: state.isLoading,
+    isLoading: getIsLoading(state),
+    // countries: state.countries,
+    countries: getCountries(state),
 });
 
 const mapDispatchToProps = dispatch => ({

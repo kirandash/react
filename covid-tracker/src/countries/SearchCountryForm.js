@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 // import { createCountry } from './actions';
 import { loadCountry } from './thunks';
+import { getCountries } from './selectors';
 
 import './SearchCountryForm.css';
 
@@ -30,7 +31,8 @@ const SearchCountryForm = ({ countries = [],  onSubmitPressed }) => { // countri
 }
 
 const mapStateToProps = (state) => ({
-    countries: state.countries,
+    // countries: state.countries,
+    countries: getCountries(state),
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -158,3 +158,18 @@ This is a web application using which we will be able to track covid-19 reports 
 2. Sample Country Codes for testing: GB (United Kingdome), US (USA), SG (Singapore), GE (Georgia), IN (India), IT (Italy), ES (Spain)
 3. We have also handled error for use case when user enters invalid countrycode. Pls test.
 4. Also remove manual delay of 3s from loadCountry thunk.
+
+### 5. Selectors
+### 5.1 Why do we need selectors?
+1. Till now we have separated the following code
+    - Component ---> Display View
+    - Reducers ---> Manage State
+    - Thunks ---> API/Async calls or side effects
+2. Currently, we are mapping data from state directly to mapStateToProps. But what if we need to modify the data from state before assigning to mapStateToProps.
+3. **Selectors** gives us a place to put logic for combining, filtering, transforming and storing data.
+4. If JSON data structure of state changes, we don't have to change the mapping in mapStateToProps for every component. All we have to do is just change the code in selectors.js file.
+
+### 5.2 Creating selector - getCountries and getIsLoading
+1. Create src/countries/selectors.js file
+2. Add getCountries and getIsLoading selectors in selectors.js
+3. **IMPORTANT:** The beauty of selectors is: now if structure of state changes, we don't have to change the mapping in mapStateToProps for every component. All we have to do is just change the code in selectors.js file.
