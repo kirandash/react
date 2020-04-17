@@ -41,5 +41,6 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.9.0"
-  }
+  },
+  "homepage": "/projects/ui/covid-tracker/"
 }

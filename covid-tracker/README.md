@@ -1,6 +1,6 @@
 # COVID-19 Tracker
 ## 1. Intro and Setup
-This is a web application using which we will be able to track covid-19 reports for any specific country and also monitor global stats. We will also be able to pin specific countries so that the results will always show at the top.
+This is a web application using which we will be able to track covid-19 reports for any specific country. We will also be able to pin specific countries so that the pinned countries results will always show at the top.
 
 ### 1.1 Create app with create-react-app
 1. Create react app is a tool that helps us create a react app quickly so that we don't have to setup the project from scrathc. Run the command: `npx create-react-app covid-tracker`.
@@ -155,7 +155,7 @@ This is a web application using which we will be able to track covid-19 reports 
 
 ### 4.7 Modify the countries reducer to show countries from API
 1. reducers.js file - Add actions for LOAD_COUNTRY_SUCCESS, LOAD_COUNTRY_IN_PROGRESS and LOAD_COUNTRY_FAILURE
-2. Sample Country Codes for testing: GB (United Kingdome), US (USA), SG (Singapore), GE (Georgia), IN (India), IT (Italy), ES (Spain)
+2. Sample Country Codes for testing: GB (United Kingdom), US (USA), SG (Singapore), GE (Georgia), IN (India), IT (Italy), ES (Spain)
 3. We have also handled error for use case when user enters invalid countrycode. Pls test.
 4. Also remove manual delay of 3s from loadCountry thunk.
 
@@ -185,8 +185,8 @@ This is a web application using which we will be able to track covid-19 reports 
 1. Add both the selectors to mapStateToProps of CountriesList.js
 2. Note: If any issue comes in loading the app, it might be bcoz of the localStorage, so clear the localStorage data. Make sure the defaults are set to empty array and reload the app.
 
-## 7. Styled Components
-### 7.1 Why do we need styled components?
+## 6. Styled Components
+### 6.1 Why do we need styled components?
 1. So far we have separated the concerns as follows
     - Components ---> Display data
     - Reducers ---> Manage state
@@ -198,7 +198,7 @@ This is a web application using which we will be able to track covid-19 reports 
 3. **Styled Component:** Allows us to define styles inside our JS files. Ex: Instead of using `<Item className={item.isSelected ? "selected" : "not-selected"}`, we can just use: `<Item selected={true}>`
 4. More Benefit: can pass props to them and thus can dynamically change styles
 
-### 7.2 Creating a Styled Component
+### 6.2 Creating a Styled Component
 1. Install: `npm install styled-components`
 2. Create styled components in CountriesList.js using tagged fns. styled.div or styled.h1 or styled.button etc
 3. Organizing styled components (Thumb Rules): 
@@ -206,17 +206,26 @@ This is a web application using which we will be able to track covid-19 reports 
     - If amount of code is more, create separate styled component js file. 
     - If component is common and can be reused, create seaparate file and store all styled components in src/todos/user-interface folder.
 
-### 7.3 Converting CSS modules to Styled components
+### 6.3 Converting CSS modules to Styled components
 1. Move code from .css modules to .js files, comment import of css files and delete the css files. For: CountriesList.css, CountryDetail.css, SearchCountryForm.css and App.css
 2. Ex: copy styles of list-wrapper from CountriesList.css file to CountriesList.js file with styled.div and replace `<div className="countries-list-wrapper">` with `<CountriesListWrapper>`
 
-### 7.4 Passing props to Styled Components - Diff bg for pinned countries
+### 6.4 Passing props to Styled Components - Diff bg for pinned countries
 1. The main benefit of styled components is we can pass props to them and thus can dynamically change styles. Thus condition for styling is moved to styled tagged fns and JSX is much more cleaner.
 2. Ex: `background: ${props => props.isPinned ? '#350000' : '#212121'};`
 
-### 7.5 Extending Styled Components
+### 6.5 Extending Styled Components
 1. Extend style of one component to another. Like class inheritance.
 2. Test after changing code.
 
-### 7.6 Media Queries
+### 6.6 Media Queries
 1. CountryDetail.JS: Let's change btn color for mobile devices. @media screen and (max-width: 767px) {}
+
+## 7. Building Files for Production
+1. Run command `npm run build` and move the files to your server where you want your files.
+2. If you want to move your files to a subfolder, then you will have to add another property called: `homepage` to package.json file. Note that this will only work if you app is built using create-react-app tool.
+
+### 7.1 Next Tasks
+1. Create Unpin Country Button, clicking which The pinned Countries can come back to the Not Pinned Countries Section.
+2. Create another React Component to show the Global Stats of total cases,  from API: https://api.thevirustracker.com/free-api?global=stats. Use the same flow of first creating a GlobalStats.js component, add redux globalstats reducer, add selectors and finally adding styles with styled components.
+3. Modify the reducer code to remove isLoading reducer and add isLoading as a property of state.countries instead of direct child of the state. Because now we are adding a new API. and we will need isLoading property for individual API. So also we need to add another isLoading prop for state.globalstats.

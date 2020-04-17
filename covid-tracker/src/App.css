@@ -4,6 +4,6 @@
   margin: 0 auto;
 }
 
-.App-title {
+.App-title, .App-subtitle {
   text-align: center;
 }
