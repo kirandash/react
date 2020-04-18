@@ -51,22 +51,23 @@ This is a web application using which we will be able to track covid-19 reports 
     - **Global State Management**: A single centralized state, With all child components having unlimited access to it. **Pros**: No Props drilling. Easy to share state data b/w components. **Cons**: No rules/organizations on how to create state and use it. Thus leads to inconsistency b/w developers. And hard to recreate bugs for troubleshooting. Thus, unrestricted global state is not an ideal choice.
     - **Redux** solves this problem by adding rules/orgnaizations to global state management.
 
-### 3.2 How redux works?
-1. Works on global state management concept. Thus have a centralized state called **Store**.
-2. **The redux store** is basically a JSON object that can hold any type of data we want. Ex: `{ user: {...}, products: {...} }`
-3. How redux controls the global state?: The main problem with global state is there is no rules/restrictions. Redux solves this problem by adding some rules.
-4. Other pieces of Redux: 
-    - **{ Redux Store }**: JSON object that contains current state of our app
-    - **Redux actions**: JSON object consisting of two things: `{ type, payload }`. It defines different actions that can occur in our app. Ex: `USER_DATA_LOADED`, `ITEM_ADDED_TO_CART`
-    - **Reducers**: This defines what changes to do with Redux Store when a Redux action occurs. Ex: When `ITEM_ADDED_TO_CART` action occurs, we take all the data in payload and store it in shoppingcart prop in redux store.
-5. Summary: Components can only interact with the state by triggering Redux actions.
-6. Thus Redux follows a **Unidirectional Data Flow**: UI Triggers action ---> State is updated ---> Components see updated State
+### 3.2 Understanding Redux
+1. Redux helps managing state or data in our application.
+2. Redux consists of 3 things: A Redux Store, Redux Actions and Reducers.
+    - **{ Redux Store }**: JSON object that contains current state of our app. Redux Works on global state management concept. It has one centralized state where all our data is available and the centralized state is called **Store**. **The redux store** is basically a JSON object that can hold any type of data we want. Ex: In our application, the store will hold all the countries data.
+    - **Redux actions**: It defines different actions that can occur in our app. Ex: `COUNTRIES_DATA_LOADED`, `SUBMIT_BUTTON_CLICKED`. A Redux action is a JSON object consisting of two things: type of the action and payload. 
+    - **Reducers**: This defines what changes to do with Redux Store when a Redux action occurs. Ex: When `SUBMIT_BUTTON_CLICKED` action occurs, we take all the data in payload and store it in countries property in our redux store.
+3. How redux helps react with state/data management?
+    - We can also manage state or data without React but the main problem is there are no standard sets of rules to follow. So, if you are building a large application with a team, not having a set of standards will create more bugs in your project. Redux solves this problem by adding some extra set of standards or rules that each developer can follow.
 
 ### 3.3 Adding redux to our React App
-1. Install redux to handle redux tasks and react-redux to integrate redux with react: `npm install redux react-redux`
-2. Create src/store.js: will hold logic for redux store - centralized global store. Thus kept in src folder.
+1. We will need two packages for implementing Redux in our Application. 
+    - redux to handle redux realated tasks and 
+    - react-redux to integrate redux with react
+    - Install using npm: `npm install redux react-redux`
+2. Create src/store.js: This file will hold logic for our redux store. Since the store is global for the entire app, we will keep the store.js file at root level which is src folder instead of keeping it inside countries folder.
     - Create root store by combining all reducers
-3. In index.js: wrap `App`with `Provider`. Ex: `<Provider store={configureStore()}><App/></Provider>`
+3. In index.js: wrap `App`with `Provider`. Provider provides our centralized Redux store to a react component. Ex: `<Provider store={configureStore()}><App/></Provider>`
 
 ### 3.4 Creating Redux Actions for Create Country and Remove Country
 1. Create src/countries/actions.js file. This is inside countries folder. Because we don't want to make one centralized list of actions. Actions can also come from different modules.
