@@ -110,15 +110,15 @@ This is a web application using which we will be able to track covid-19 reports 
 2. Dispatch the action Creator in CountriesList.js and pass it as a props to child component CountryDetail.js. Note: We are not connecting redux directly to CountryDetail.js because we want to keep it reusable. Always good practice to keep our redux connection at parent level and pass to child as props.
 3. In CountryDetail.js hide the Pin Country button once it is pinned. Later we will modify the code to show all Pinned countries at top and not pinned one's at bottom.
 
-## 4. Handling Side Effects
+## 4. Handling API/Asynchronous Calls with Thunks or Redux Thunks
 ### 4.1 Why Do We need Redux-Thunk?
 1. With Redux now our components size are really small as most of the state management code is moved out of component to store.js, actions.js and reducers.js file.
-2. Still in our current code: component has to contain code for asnyc/API calls. This is called **Side Effects**
-3. To separate it out we should use **Side effect libraries**
-4. Thus: Redux ---> State Management, Components ---> View Logic, Side Effect Libraries ---> Side Effects
-5. Side Effect libraries: Redux Thunk, Redux Saga, Redux Logic etc.
+2. Still in our current code: component has to contain code for asnyc/API calls.
+3. We can handle API calls in React component. But since our goal is to create a scalable application, we will handover the responsibility of making API calls to Thunks which has better sets of standards for managing API calls.
+4. Thus we have used Redux for State Management, Components for creating Views and now we will use Redux Thunks for handling API calls.
+5. Alternate Libraries to Redux Thunk for managing API calls: Redux Saga, Redux Logic etc.
 6. Redux saga is more popular.
-7. Redux Thunk is simpler and easy to learn.
+7. But Redux Thunk is simpler and easy to learn. And It does a pretty good job. I use it in most of my projects.
 
 ### 4.2 Understanding Redux Thunk Flow
 1. UI Triggers Action ---> Redux Thunk is executed to make Async/API calls ---> State is Updated ---> Component See updated State.
@@ -162,13 +162,14 @@ This is a web application using which we will be able to track covid-19 reports 
 
 ### 5. Selectors
 ### 5.1 Why do we need selectors?
-1. Till now we have separated the following concerns as follows:
+1. Till now we have separated the application responsibilities as follows:
     - Component ---> Display View
     - Reducers ---> Manage State
-    - Thunks ---> API/Async calls or side effects
-2. Currently, we are mapping data from state directly to mapStateToProps. But what if we need to modify the data from state before assigning to mapStateToProps.
-3. **Selectors** gives us a place to put logic for combining, filtering, transforming and storing data. It is one more layer between Redux reducers and React view components.
-4. If JSON data structure of state changes, we don't have to change the mapping in mapStateToProps for every component. All we have to do is just change the code in selectors.js file.
+    - Thunks ---> API/Async calls
+2. Currently, we are mapping data from state directly to mapStateToProps. Ex in CountriesList.js file. But what if we need to modify the data from state before assigning to mapStateToProps.
+3. **Selectors** 
+    - gives us a place to put logic for combining, filtering, transforming and storing data before passing it to the React View Component. It is one more layer between Redux reducers and React view components.
+    - If JSON data structure of state changes, we don't have to change the mapping in mapStateToProps for every component. All we have to do is just change the code in selectors.js file.
 
 ### 5.2 Creating selector - getCountries and getIsLoading
 1. Create src/countries/selectors.js file
@@ -195,9 +196,9 @@ This is a web application using which we will be able to track covid-19 reports 
     - Selectors ---> Abstracting the state's format, transforming state data
 2. For handling CSS: we are currently using separate .css file aka **css modules**. Ex: component.js and component.css file. This is not ideal to have extra css file or modules for every component.
     - It will clutter our folder structure.
-    - If .css file is separate, then we will need additional classes to change css as per state. Ex: 'selected' or 'active' class needs to be added to the item in component if active style is needed. But with styled components, we don't need these additional classes.
-3. **Styled Component:** Allows us to define styles inside our JS files. Ex: Instead of using `<Item className={item.isSelected ? "selected" : "not-selected"}`, we can just use: `<Item selected={true}>`
-4. More Benefit: can pass props to them and thus can dynamically change styles
+3. **Styled Component:** Allows us to define styles inside our JS files.
+    - Benefit: Lesser files. Clean folder structure.
+    - Important Benefit: can pass props to Styled Component and thus can dynamically change styles. And hence the styled components are reusable.
 
 ### 6.2 Creating a Styled Component
 1. Install: `npm install styled-components`
