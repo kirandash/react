@@ -13,6 +13,7 @@
 8. **covid-tracker**: Practical implementation of **react-ecosystem** concepts. 
     - **Topics**: How to add Redux, create thunks, use selectors (Reselect), work with styled-components, perform testing etc.
 9. **react typescript** Create web apps using the React component approach with TypeScript.
+10. **react-test-debug** Testing and Debugging in React.
 
 ## Basic Helpful React Tips:
 1. Create-react-app: Package to help create react apps with ease - npm install -g create-react-app
