@@ -35,3 +35,9 @@
 3. any
 4. void
     * In fn, when no return statements - return type should be void
+
+### 02.03 Functional/Stateless Component Intro
+1. A Fn component is a JS fn at it's core which returns JSX or HTML statemetns.
+2. **Type**:
+    * Fn arguments
+    * return type

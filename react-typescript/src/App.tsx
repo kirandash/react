@@ -1,4 +1,6 @@
 import React from 'react';
+
+import Message from './Message'
 import logo from './logo.svg';
 import './App.css';
 
@@ -38,6 +40,7 @@ function App() {
           The value {Codes.first} is of {typeof Codes.first} type! <br/>
           The value {firstName} is of {typeof firstName} type! <br/>
         </p>
+        <Message />
       </header>
     </div>
   );
