@@ -24,6 +24,14 @@
 2. `// let secondValue: number = 'Manny';` Wrong
 3. `let secondValue: number = 34;`
 4. `let thirdValue: boolean = true;`
-5. Array types:
+5. **Array types**:
     * `let fourthValue: number[] = [2,3,56];`
     * `let fifthValue: Array<string> = ['kiran', 'hero'];`
+6. `{typeof variablename}` is used to check the type of a variable.
+
+### 02.03 Complex Types
+1. **Tuple**: Similar to array but can have multiple types.
+2. enum
+3. any
+4. void
+    * In fn, when no return statements - return type should be void
