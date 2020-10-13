@@ -29,3 +29,7 @@
     * install npm? yes
 4. will create `.eslintrc.json` file.
 5. Note eslint will not break our code but help us maintain coding standards.
+
+### 1.4 Test Numbers with Matchers
+1. comp/listings/Grid.js
+2. `npm run test`
