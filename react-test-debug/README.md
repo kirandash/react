@@ -13,3 +13,19 @@
 4. Add commenet `// @flow` to the top of .js or .tsx file on which we want to run type check.
 5. `npm run flow`
     - should show all errors related to type checking in code
+
+### 1.3 Linting with ESLint
+1. VS: Install ESLint by Dirk Baeumer
+2. install globally: `npm i -g eslint`
+3. initialize a new file automatically: (eslint airbnb settings)
+    * `eslint --init`
+    * how: to check syntax, find problems and enforce code style
+    * modules: js modules
+    * project: react
+    * where? browser and node
+    * style? use a popular style guide
+    * style guide? airbnb
+    * config? JSON format
+    * install npm? yes
+4. will create `.eslintrc.json` file.
+5. Note eslint will not break our code but help us maintain coding standards.
