@@ -12,6 +12,7 @@
 7. **react-ecosystem**: Covers some of the most important tools in the React ecosystem to simplify development and manage the complexities of state, side effects, structure, and styling. Topics: how to create a basic React project, how to add Redux, create thunks, use selectors (Reselect), work with styled-components, perform testing etc.
 8. **covid-tracker**: Practical implementation of **react-ecosystem** concepts. 
     - **Topics**: How to add Redux, create thunks, use selectors (Reselect), work with styled-components, perform testing etc.
+9. **react typescript** Create web apps using the React component approach with TypeScript.
 
 ## Basic Helpful React Tips:
 1. Create-react-app: Package to help create react apps with ease - npm install -g create-react-app
