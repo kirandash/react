@@ -54,7 +54,8 @@
 ### 02.06 Class/Stateful Component Syntax
 1. `class ClassMessage extends React.Component <any>`
 
-### 02.07 Interfaces
+## 03 Interfaces
+### 03.01 Interfaces
 1. Interfaces are great to define the shape or model of our data and the types of properties in data.
 2. used by compiler for - validation only. Not for programming.
 3. interface is not a JS feature. Only available with typescript
@@ -64,8 +65,24 @@
 }`
 5. `const Message = (props: UserMessage): any => {}`
 
-### 02.08 Define our state
+### 03.02 Define our state
 1. Create `initialState`
 2. Create `type State = Readonly<typeof initialState>;`
 3. Create state variable: `readonly state: State = initialState;`
     * Be careful as type of state might change if different data types might come in state variables
+
+### 03.03 Best practices for Interfaces
+1. Interfaces won't show up in compiled code
+2. Proper method:
+    * Define props in interface
+    * Pass them into the Component
+    * Interface: `Warrior {money?: number}` To indicate optional values: `?`
+    * **readOnly**: items that can only be read once created
+
+## 04 HOC in TS
+### 04.01 HOCs - intro
+1. **Defn**: HOC is a function that takes a component and returns a new component.
+2. Why?
+    - Reuse common components
+
+### 04.02 HOC in TS

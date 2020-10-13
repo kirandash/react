@@ -5,18 +5,20 @@ import ClassMessage from './ClassMessage';
 import logo from './logo.svg';
 import './App.css';
 
-// define Initial state
-const initialState = {
-  name: 'Kiran Dash',
-  message: 'TS is cool'
-}
+// // define Initial state
+// const initialState = {
+//   name: 'Kiran Dash',
+//   message: 'TS is cool'
+// }
 
-// define State Type - Be careful as type of state might change if different data types might come in state variables
-type State = Readonly<typeof initialState>;
+// // define State Type - Be careful as type of state might change if different data types might come in state variables
+// type State = Readonly<typeof initialState>;
 
-class App extends React.Component<any, State> {
-  // define the state
-  readonly state: State = initialState;
+// class App extends React.Component<any, State> {
+//   // define the state
+//   readonly state: State = initialState;
+
+class App extends React.Component {
 
   render() {
     // Basic Types
@@ -56,7 +58,8 @@ class App extends React.Component<any, State> {
             The value {Codes.first} is of {typeof Codes.first} type! <br />
             The value {firstName} is of {typeof firstName} type! <br />
           </p>
-          <Message name={this.state.name} message={this.state.message} />
+          {/* <Message name={this.state.name} message={this.state.message} /> */}
+          <Message />
           <ClassMessage />
         </header>
       </div>
