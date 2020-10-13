@@ -63,3 +63,9 @@
     message: string
 }`
 5. `const Message = (props: UserMessage): any => {}`
+
+### 02.08 Define our state
+1. Create `initialState`
+2. Create `type State = Readonly<typeof initialState>;`
+3. Create state variable: `readonly state: State = initialState;`
+    * Be careful as type of state might change if different data types might come in state variables
