@@ -43,7 +43,7 @@ function App() {
           The value {Codes.first} is of {typeof Codes.first} type! <br/>
           The value {firstName} is of {typeof firstName} type! <br/>
         </p>
-        <Message message='This is a message' />
+        <Message name='Kiran' message='This is a message' />
         <ClassMessage />
       </header>
     </div>

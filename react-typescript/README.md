@@ -53,3 +53,13 @@
 
 ### 02.06 Class/Stateful Component Syntax
 1. `class ClassMessage extends React.Component <any>`
+
+### 02.07 Interfaces
+1. Interfaces are great to define the shape or model of our data and the types of properties in data.
+2. used by compiler for - validation only. Not for programming.
+3. interface is not a JS feature. Only available with typescript
+4. syntax: `interface UserMessage {
+    name: string,
+    message: string
+}`
+5. `const Message = (props: UserMessage): any => {}`
