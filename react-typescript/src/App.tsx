@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Message from './Message'
+import Message from './Message';
+import ClassMessage from './ClassMessage';
 import logo from './logo.svg';
 import './App.css';
 
@@ -43,6 +44,7 @@ function App() {
           The value {firstName} is of {typeof firstName} type! <br/>
         </p>
         <Message message='This is a message' />
+        <ClassMessage />
       </header>
     </div>
   );

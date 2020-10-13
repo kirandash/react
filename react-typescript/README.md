@@ -46,3 +46,10 @@
 1. `(prop: {message: string}): any => {}`
     * prop - message of type string
     * return type: any - default: any - so optional.
+
+### 02.05 Class/Stateful Component Intro
+1. Class is a syntax introduced in ES6 in JS. And also used in TS
+2. Class allows us to create a blueprint of properties and methods that can be used and leveraged later.
+
+### 02.06 Class/Stateful Component Syntax
+1. `class ClassMessage extends React.Component <any>`
