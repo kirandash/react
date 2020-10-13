@@ -41,3 +41,8 @@
 2. **Type**:
     * Fn arguments
     * return type
+
+### 02.04 Functional/Stateless Component Syntax
+1. `(prop: {message: string}): any => {}`
+    * prop - message of type string
+    * return type: any - default: any - so optional.

@@ -25,6 +25,8 @@ function App() {
     console.log('Warning!')
   }
 
+  warning();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -40,7 +42,7 @@ function App() {
           The value {Codes.first} is of {typeof Codes.first} type! <br/>
           The value {firstName} is of {typeof firstName} type! <br/>
         </p>
-        <Message />
+        <Message message='This is a message' />
       </header>
     </div>
   );
