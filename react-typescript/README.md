@@ -86,3 +86,11 @@
     - Reuse common components
 
 ### 04.02 HOC in TS
+
+### 04.03 HOC best practices
+1. Don't change the HOC once in Use
+2. `<WrapperdComponent injectedProp={injectedProp} {...passThroughProps} />`
+3. Don't use HOCs  inside of a render method
+4. More to discover - read React and TS docs
+5. HOCs are useful when an application grows
+    - for smaller and more controllable components
