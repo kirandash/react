@@ -13,3 +13,17 @@
     * index.tsx
 4. Run: `npm start`
     - will create the tsconfig.json file automatically for us
+
+## 02 React and TS
+### 02.01 Intro to TS with React
+1. ts packages in package.json for: node, react-dom and jest
+2. tsconfig.json file for ts settings
+
+### 02.02 Basic Types
+1. `let firstValue: string = 'Manny';`
+2. `// let secondValue: number = 'Manny';` Wrong
+3. `let secondValue: number = 34;`
+4. `let thirdValue: boolean = true;`
+5. Array types:
+    * `let fourthValue: number[] = [2,3,56];`
+    * `let fifthValue: Array<string> = ['kiran', 'hero'];`
